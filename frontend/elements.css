@@ -34,14 +34,27 @@ html, body {
     width: 252px;
     height: 100%;
     box-sizing: border-box;
+    padding: 10px !important;
     
     background: #fff;
     border-right: 5px solid #306079;
     
-     position: absolute;
+    position: absolute;
     top:0;
     left:0;
     background: #fff;
+}
+#stats {
+    width: 100%;
+    margin: 0;
+    
+    background: #ddd;
+}
+#stats li {
+    list-style: none;
+}
+#stats h1 {
+    color: #ff0000;
 }
 
 
