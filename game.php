@@ -10,7 +10,7 @@
     <script>
 var map, addP, json;
 function showStats(i){
-	$('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '</ul>')
+	$('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '</ul>')
 }
 function initialize() {
     var styles = [{
@@ -40,17 +40,20 @@ function initialize() {
     });
     var myLatLng = new google.maps.LatLng(51.5, - 0.116);
     var mapOptions = {
-        zoom: 5,
+        zoom: 6,
         center: myLatLng,
         mapTypeControlOptions: {
             mapTypeIds: []
         },
         maxZoom:10,
-        minZoom:6,
+        minZoom:5,
         streetViewControl:false,
-            panControl: false,
-            zoomControl: true,
-            zoomControlOptions:{position:'RIGHT_TOP'}
+        panControl: false,
+        zoomControl: true,
+        zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.SMALL,
+        position: google.maps.ControlPosition.RIGHT_TOP
+        }
     };
 
     var map = new google.maps.Map(document.getElementById('map_canvas'),
