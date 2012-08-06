@@ -80,18 +80,20 @@ a.button { vertical-align:middle; }
 	display: none;
 }
 .stats h1,.stats h2{
-	display: center;
+	text-align: center;
+}
+.stats li{
+	font-weight: bold;
 }
     </style>
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>
 var map, addP, json;
-
 function showStats(i){
 	//Do stuff
 	$('.stats').show();
-	$('.stats').html('<h1>' + json[i].name + '</h1><h2>StatsStatsStats ;)</h2>')
+	$('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li>')
 }
 function initialize() {
     var styles = [{
@@ -163,6 +165,7 @@ function run(){
 	for(i=0;i<12;i++){
 		addP(i);
 	}
+	$('.stats').click(function(){$(this).hide()});
 	
 }
     </script>
