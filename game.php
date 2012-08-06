@@ -40,17 +40,20 @@ function initialize() {
     });
     var myLatLng = new google.maps.LatLng(51.5, - 0.116);
     var mapOptions = {
-        zoom: 5,
+        zoom: 6,
         center: myLatLng,
         mapTypeControlOptions: {
             mapTypeIds: []
         },
         maxZoom:10,
-        minZoom:6,
+        minZoom:5,
         streetViewControl:false,
             panControl: false,
             zoomControl: true,
-            zoomControlOptions:{position:'RIGHT_TOP'}
+            zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.SMALL,
+        position: google.maps.ControlPosition.RIGHT_TOP
+    }
     };
 
     var map = new google.maps.Map(document.getElementById('map_canvas'),
