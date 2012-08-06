@@ -33,7 +33,6 @@ html, body {
     <script>
 var map, addP, json;
 
-
 function showStats(i){
 	//Do stuff
 }
@@ -71,7 +70,9 @@ function initialize() {
             mapTypeIds: ['Minimal Map']
         },
         maxZoom:10,
-        minZoom:5
+        minZoom:5,
+        streetViewControl:false,
+        tilt:45
     };
 
     var map = new google.maps.Map(document.getElementById('map_canvas'),
