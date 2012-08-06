@@ -10,7 +10,7 @@
     <script>
 var map, addP, json;
 function showStats(i){
-	$('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '</li><label>Population Density: </label>' + json[i].density + '</ul>')
+	$('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '</ul>')
 }
 function initialize() {
     var styles = [{
@@ -46,7 +46,7 @@ function initialize() {
             mapTypeIds: []
         },
         maxZoom:10,
-        minZoom:5,
+        minZoom:6,
         streetViewControl:false,
             panControl: false,
             zoomControl: true,
