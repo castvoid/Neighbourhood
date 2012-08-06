@@ -14,7 +14,7 @@
 <div class="ui"> <!-- All the UI elements -->
 	<div id="bottom_menu">
 		<a class="button" href="#">Global Command A</a>
-		<a class="button" href="#">Global Command B</a>
+		<a class="button" href="#">Review</a>
 		<a class="button" href="#">Build</a>
 	</div>
 	<div id="sidebar">
