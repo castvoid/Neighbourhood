@@ -26,41 +26,68 @@ html, body {
     }
     </style>
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>
-var map, addP;
-      function initialize() {
-      var styles = [
-  {
-    stylers: [
-      { visibility: "off" }
-    ]
-  },{
-    featureType: "landscape",
-    stylers: [
-      { visibility: "on" },
-      { color: "#ccc" }
-    ]
-  },{
-    featureType: "water",
-    stylers: [
-      { visibility: "simplified" },
-      { color: "#408099" }
-    ]
-  },{
-    featureType: "landscape",
-  }
-]
-               var styledMap = new google.maps.StyledMapType(styles,
-    {name: "Minimal Map"});
-        var myLatLng = new google.maps.LatLng(51.5, -0.116);
-        var mapOptions = {
-          zoom: 5,
-          center: myLatLng,
-          mapTypeControlOptions: {
-	          mapTypeIds: ['Minimal Map']
-	      }
-	    };
-var j = [{
+var map, addP, json;
+
+function initialize() {
+    var styles = [{
+        stylers: [{
+            visibility: "off"
+        }]
+    }, {
+        featureType: "landscape",
+        stylers: [{
+            visibility: "on"
+        }, {
+            color: "#ccc"
+        }]
+    }, {
+        featureType: "water",
+        stylers: [{
+            visibility: "simplified"
+        }, {
+            color: "#408099"
+        }]
+    }, {
+        featureType: "landscape",
+    }]
+    
+    var styledMap = new google.maps.StyledMapType(styles, {
+        name: "Minimal Map"
+    });
+    var myLatLng = new google.maps.LatLng(51.5, - 0.116);
+    var mapOptions = {
+        zoom: 5,
+        center: myLatLng,
+        mapTypeControlOptions: {
+            mapTypeIds: ['Minimal Map']
+        }
+    };
+
+    var map = new google.maps.Map(document.getElementById('map_canvas'),
+    mapOptions);
+
+
+    addP = function (i) {
+    if (json[i].path != null){
+        new google.maps.Polygon({
+            path: json[i].path,
+            strokeColor: "#ff0000",
+            fillColor: '#ca8080',
+            fillOpacity: '1',
+            strokeWeight: 1,
+            strokeOpacity: 0.4,
+            map: map,
+
+        })
+        }
+    }
+
+    map.mapTypes.set('Minimal Map', styledMap);
+    map.setMapTypeId('Minimal Map');
+    
+json = [{
     id: "0",
     name: "Greater London",
     population: "8174000",
@@ -177,26 +204,12 @@ new google.maps.LatLng(52.981723223906855, 0.911865234375)]
     crime: "82",
     path:[new google.maps.LatLng(55.95, -3.08), new google.maps.LatLng(56, -2.55), new google.maps.LatLng(55.83, -2.05), new google.maps.LatLng(55.38, -2.34), new google.maps.LatLng(55.14, -2.81), new google.maps.LatLng(54.98, -3.32), new google.maps.LatLng(54.86, -3.84), new google.maps.LatLng(54.87, -4.37), new google.maps.LatLng(54.84, -4.9), new google.maps.LatLng(55.36, -4.77), new google.maps.LatLng(55.87, -4.89), new google.maps.LatLng(56, -5.4), new google.maps.LatLng(55.49, -5.52), new google.maps.LatLng(56.01, -5.6), new google.maps.LatLng(56.51, -5.42), new google.maps.LatLng(56.58, -5.94), new google.maps.LatLng(56.98, -5.6), new google.maps.LatLng(57.45, -5.86), new google.maps.LatLng(57.92, -5.62), new google.maps.LatLng(57.85, -5.1), new google.maps.LatLng(58.37, -5.17), new google.maps.LatLng(58.55, -4.67), new google.maps.LatLng(58.56, -4.14), new google.maps.LatLng(58.62, -3.61), new google.maps.LatLng(58.65, -3.08), new google.maps.LatLng(58.24, -3.43), new google.maps.LatLng(57.99, -3.89), new google.maps.LatLng(57.65, -4.31), new google.maps.LatLng(57.62, -3.78), new google.maps.LatLng(57.71, -3.25), new google.maps.LatLng(57.69, -2.72), new google.maps.LatLng(57.67, -2.18), new google.maps.LatLng(57.15, -2.08), new google.maps.LatLng(56.76, -2.43), new google.maps.LatLng(56.46, -2.87), new google.maps.LatLng(56.06, -3.22), new google.maps.LatLng(56.08, -3.75), new google.maps.LatLng(55.99, -3.23), new google.maps.LatLng(55.95, -3.08)]
 }]
-        var map = new google.maps.Map(document.getElementById('map_canvas'),
-            mapOptions);
-
-http://localhost/Neighbourhood/game.php
-
-addP = function (i){
-	     new google.maps.Polygon({
-        path: j[i].path,
-        strokeColor: "#ff0000",
-        fillColor:'#ca8080',
-        fillOpacity:'1',
-        strokeWeight: 1,
-        strokeOpacity: 0.8,
-        map:map
-        })
-        }
-
-map.mapTypes.set('Minimal Map', styledMap);
-  map.setMapTypeId('Minimal Map');
-      }
+}
+function run(){
+	for(i=0;i<12;i++){
+		addP(i);
+	}
+}
     </script>
   </head>
   <body onload="initialize()">
