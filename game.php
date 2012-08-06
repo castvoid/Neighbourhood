@@ -66,7 +66,7 @@ function initialize() {
             path: json[i].path,
             strokeColor: "#5a5",
                            strokeWeight: '2',
-                           fillColor: '#9e9',
+                           fillColor: '#ff0000',
                            fillOpacity: '0.5',
             map: map
 
