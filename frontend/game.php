@@ -71,15 +71,18 @@ function initialize() {
 
     addP = function (i) {
     if (json[i].path != null){
-        new google.maps.Polygon({
+        json[i].poly = new google.maps.Polygon({
             path: json[i].path,
             strokeColor: "#ff0000",
             fillColor: '#ca8080',
             fillOpacity: '1',
-            strokeWeight: 10,
+            strokeWeight: 5,
             strokeOpacity: 0.4,
             map: map
 
+        })
+        google.maps.event.addListener(json[i].poly, 'click', function() {
+	        alert('You clicked on ' + json[i].name)
         })
         }
     }
@@ -212,6 +215,7 @@ function run(){
 	for(i=0;i<12;i++){
 		addP(i);
 	}
+	
 }
     </script>
   </head>
