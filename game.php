@@ -76,9 +76,9 @@ function initialize() {
             strokeColor: "#ff0000",
             fillColor: '#ca8080',
             fillOpacity: '1',
-            strokeWeight: 1,
+            strokeWeight: 10,
             strokeOpacity: 0.4,
-            map: map,
+            map: map
 
         })
         }
@@ -101,14 +101,16 @@ json = [{
     population: "2597000",
     density: "302",
     gva: "15688",
-    crime: "59"
+    crime: "59",
+    path:[new google.maps.LatLng(55.78892895389265,-2.04345703125),new google.maps.LatLng(55.61558902526751,-1.790771484375),new google.maps.LatLng(55.50374985927514,-1.58203125),new google.maps.LatLng(55.166318941250886,-1.58203125),new google.maps.LatLng(54.882927024213885,-1.373291015625),new google.maps.LatLng(54.572061655658544,-.94482421875),new google.maps.LatLng(54.54020652089137,-.6591796875),new google.maps.LatLng(54.48918653875086,-1.417236328125),new google.maps.LatLng(54.46365264504479,-1.988525390625),new google.maps.LatLng(54.42532191246645,-2.340087890625),new google.maps.LatLng(54.75633118164471,-2.79052734375),new google.maps.LatLng(55.03431871502809,-3.021240234375)]
 }, {
     id: "2",
     name: "North West England",
     population: "7052000",
     density: "498",
     gva: "17433",
-    crime: "70"
+    crime: "70",
+    path:[new google.maps.LatLng(55.02802211299252,-3.087158203125),new google.maps.LatLng(54.76267040025495,-2.823486328125),new google.maps.LatLng(54.49556752187406,-2.603759765625),new google.maps.LatLng(54.406143090319674,-2.296142578125),new google.maps.LatLng(54.12382170046237,-2.537841796875),new google.maps.LatLng(54.04003822492974,-2.493896484375),new google.maps.LatLng(53.9560855309879,-2.2412109375),new google.maps.LatLng(53.8460456413833,-2.08740234375),new google.maps.LatLng(53.657661020298,-2.08740234375),new google.maps.LatLng(53.48804553605622,-1.856689453125),new google.maps.LatLng(53.50111704294316,-1.988525390625),new google.maps.LatLng(53.30462107510271,-2.0654296875),new google.maps.LatLng(53.225768435790194,-1.99951171875),new google.maps.LatLng(52.9751081817353,-2.493896484375),new google.maps.LatLng(52.94201777829491,-2.8125),new google.maps.LatLng(53.07422751310222,-2.8564453125),new google.maps.LatLng(53.28492154619621,-3.109130859375),new google.maps.LatLng(53.48804553605622,-3.1201171875),new google.maps.LatLng(53.92375094101389,-3.05419921875),new google.maps.LatLng(53.969012350740314,-2.889404296875),new google.maps.LatLng(54.02713344412541,-2.889404296875),new google.maps.LatLng(54.10450206317112,-2.7685546875),new google.maps.LatLng(54.194583360162646,-2.867431640625),new google.maps.LatLng(54.16243396806779,-2.9443359375),new google.maps.LatLng(54.20101023973888,-3.076171875),new google.maps.LatLng(54.04003822492974,-3.197021484375),new google.maps.LatLng(54.09161730232633,-3.284912109375),new google.maps.LatLng(54.271639968447985,-3.18603515625),new google.maps.LatLng(54.213861000644926,-3.306884765625),new google.maps.LatLng(54.41253702796794,-3.504638671875),new google.maps.LatLng(54.508326500290735,-3.603515625),new google.maps.LatLng(54.77534585936447,-3.482666015625),new google.maps.LatLng(54.93345430690937,-3.482666015625),new google.maps.LatLng(55.034318715028064,-3.065185546875)]
 }, {
     id: "3",
     name: "Yorkshire and the Humber",
@@ -170,7 +172,8 @@ new google.maps.LatLng(52.981723223906855, 0.911865234375)]
     population: "8635000",
     density: "452",
     gva: "22624",
-    crime: "63"
+    crime: "63",
+    path:[new google.maps.LatLng(51.48822432632349,.46142578125),new google.maps.LatLng(51.303145259199084,.230712890625),new google.maps.LatLng(51.23440735163461,-.186767578125),new google.maps.LatLng(51.37178037591742,-.560302734375),new google.maps.LatLng(51.55658218576256,-.999755859375),new google.maps.LatLng(51.795027225829166,-1.16455078125),new google.maps.LatLng(52.07275365395322,-.72509765625),new google.maps.LatLng(52.10650519075635,-.87890625),new google.maps.LatLng(51.984880139916655,-1.219482421875),new google.maps.LatLng(52.13348804077152,-1.307373046875),new google.maps.LatLng(51.984880139916655,-1.56005859375),new google.maps.LatLng(51.76104049272955,-1.658935546875),new google.maps.LatLng(51.590722643120166,-1.571044921875),new google.maps.LatLng(51.43346414054374,-1.51611328125),new google.maps.LatLng(51.048301133312265,-1.6259765625),new google.maps.LatLng(50.9791824266019,-1.812744140625),new google.maps.LatLng(50.80593472676911,-1.77978515625),new google.maps.LatLng(50.76425935711649,-1.77978515625),new google.maps.LatLng(50.77120783188785,-1.3623046875),new google.maps.LatLng(50.77120783188785,-.977783203125),new google.maps.LatLng(50.85450904781298,-.230712890625),new google.maps.LatLng(50.6947178381929,.296630859375),new google.maps.LatLng(50.92381327191295,.823974609375),new google.maps.LatLng(50.89610395554361,.955810546875),new google.maps.LatLng(51.08282186160981,1.16455078125),new google.maps.LatLng(51.158676864423676,1.40625),new google.maps.LatLng(51.351200630656,1.417236328125)]
 }, {
     id: "8",
     name: "South West England",
@@ -212,7 +215,7 @@ function run(){
 }
     </script>
   </head>
-  <body onload="initialize()">
+  <body onload="initialize();run()">
     <div id="map_canvas"></div>
   </body>
 </html>
