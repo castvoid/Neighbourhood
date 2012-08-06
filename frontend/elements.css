@@ -24,8 +24,10 @@ html, body {
 #sidebar {
     width: 20%;
     height: 100%;
+    box-sizing: border-box;
     
     background: #fff;
+    border-right: 5px solid #306079;
 }
 
 
