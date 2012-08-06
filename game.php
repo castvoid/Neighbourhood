@@ -67,7 +67,7 @@ function initialize() {
         zoom: 5,
         center: myLatLng,
         mapTypeControlOptions: {
-            mapTypeIds: ['Minimal Map']
+            mapTypeIds: []
         },
         maxZoom:10,
         minZoom:5,
