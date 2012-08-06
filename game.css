@@ -22,11 +22,12 @@ html, body {
 	background-image:			linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
 	position: absolute;
 	bottom: 0px;
-	left:252px;
 	padding: 0;
 	padding-left: 10px;
 	line-height: 36px;
 	width:100%;
+	text-align:right;
+	right: 0px;
 }
 
 a.button { text-align:right; }
@@ -78,9 +79,7 @@ a.button { text-align:right; }
     border-bottom: 5px solid #444;
 }
 
-.button {
-	text-align:center;	
-}
+
 
 a.button:link { 
 	color: black;

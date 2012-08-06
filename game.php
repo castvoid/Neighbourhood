@@ -15,7 +15,7 @@
 	<div id="bottom_menu">
 		<a class="button" href="#">Global Command A</a>
 		<a class="button" href="#">Global Command B</a>
-		<a class="button" href="#">Global Command C</a>
+		<a class="button" href="#">Build</a> 
 	</div>
 	<div id="sidebar">
 		<div class="stats" id="stats"></div>
