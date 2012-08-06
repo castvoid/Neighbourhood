@@ -21,6 +21,13 @@ html, body {
 	
 }
 
+#sidebar {
+    width: 20%;
+    height: 100%;
+    
+    background: #fff;
+}
+
 
 
 a.button:link { 

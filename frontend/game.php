@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
-<title>Hal Neighbourhood</title>
+<title>Neighbourhood</title>
 <style>
 
     </style>
@@ -206,5 +206,6 @@ function run(){
     <div id="bottom_menu" style="width: 100%; height: 36px;" >
 		<a class="button" href="#">Build</a>
 	</div>
+    <div id="sidebar"></div>
   </body>
 </html>
