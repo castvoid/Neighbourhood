@@ -68,7 +68,18 @@ a.button:active {
 
 a.button { vertical-align:middle; }
 
-
+.stats{
+	width:600px;
+	height:400px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-left: -300px;
+	margin-top: -200px;
+	background: gray;
+	border-radius: 4px;
+	display: none;
+}
     </style>
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -77,6 +88,7 @@ var map, addP, json;
 
 function showStats(i){
 	//Do stuff
+	alert('You click on ' + json[i].name);
 }
 function initialize() {
     var styles = [{
@@ -160,5 +172,6 @@ function run(){
 </div>
 <div id="sidebar"></div>
     </div>
+    <div class="stats" id="stats"></div>
   </body>
 </html>
