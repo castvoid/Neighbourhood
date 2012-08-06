@@ -1,0 +1,64 @@
+/* CSS Document */
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	color: black;
+	}
+
+#map_canvas {
+	height: 100%;
+	}
+	
+#bottom_menu {
+
+	height: 36px;
+	background-image:url(IMG/bottom_menu_background.png);
+	background-repeat:repeat-x;
+	position: absolute;
+	bottom: 0px;
+	
+}
+
+#sidebar {
+    width: 20%;
+    height: 100%;
+    box-sizing: border-box;
+    
+    background: #fff;
+    border-right: 5px solid #306079;
+}
+
+
+
+a.button:link { 
+	color: black;
+	}
+a.button:visited { 
+	color: black;
+	}
+a.button:hover { 
+	color: red;
+	background-color: blue;
+	text-decoration: none;
+	}
+a.button:active { 
+	color: red;
+	background-color: blue;
+	text-decoration: none;
+	}
+
+a.button { vertical-align:middle; }
+
+
+
+@media print {
+	html, body {
+		height: auto;
+		}
+
+	#map_canvas {
+    	height: 650px;
+    	}	
+    }
