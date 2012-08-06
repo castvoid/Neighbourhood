@@ -61,9 +61,10 @@ function initialize() {
     if (json[i].path != null){
         json[i].poly = new google.maps.Polygon({
             path: json[i].path,
-            strokeColor: "#ff0000",
-            fillColor: '#ca8080',
-            fillOpacity: '1',
+            strokeColor: "#5a5",
+                           strokeWeight: '2',
+                           fillColor: '#9e9',
+                           fillOpacity: '0.5',
             map: map
 
         })
