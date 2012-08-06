@@ -30,7 +30,10 @@ html, body {
 #bottom_menu {
 
 	height: 36px;
-	background-image:-webkit-linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+	background-image:
+		-moz-linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)
+			-webkit-linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)
+				linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
 	position: absolute;
 	bottom: 0px;
 
