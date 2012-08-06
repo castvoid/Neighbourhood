@@ -10,9 +10,8 @@
     <script>
 var map, addP, json;
 function showStats(i){
-	//Do stuff
-	$('.stats').show();
-	$('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li>')
+	$('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '</li>
+					 <label>Population Density: </label>' + json[i].density + '</ul>')
 }
 function initialize() {
     var styles = [{
@@ -84,7 +83,6 @@ function run(){
 	for(i=0;i<12;i++){
 		addP(i);
 	}
-	$('.stats').click(function(){$(this).hide()});
 	
 }
     </script>
@@ -95,8 +93,8 @@ function run(){
     <div id="bottom_menu" style="width: 100%; height: 36px;" >
 <a class="button" href="#">Build</a>
 </div>
-<div id="sidebar"></div>
+<div id="sidebar"><div class="stats" id="stats"></div></div>
     </div>
-    <div class="stats" id="stats"></div>
+    
   </body>
 </html>
