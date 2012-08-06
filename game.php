@@ -79,6 +79,9 @@ a.button { vertical-align:middle; }
 	border-radius: 4px;
 	display: none;
 }
+.stats h1,.stats h2{
+	display: center;
+}
     </style>
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -87,7 +90,8 @@ var map, addP, json;
 
 function showStats(i){
 	//Do stuff
-	alert('You click on ' + json[i].name);
+	$('.stats').show();
+	$('.stats').html('<h1>' + json[i].name + '</h1><h2>StatsStatsStats ;)</h2>')
 }
 function initialize() {
     var styles = [{
