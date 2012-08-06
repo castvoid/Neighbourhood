@@ -3,28 +3,13 @@
 <head>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
-<title>Hal Neighbourhood</title>
+<title>Neighbourhood</title>
 <style>
-html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	}
 
-#map_canvas {
-	height: 100%;
-	}
-
-@media print {
-	html, body {
-		height: auto;
-		}
-
-	#map_canvas {
-    	height: 650px;
-    	}	
-    }
     </style>
+    
+    <link rel="stylesheet" type="text/css" href="elements.css" />
+    
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>
@@ -217,5 +202,9 @@ function run(){
   </head>
   <body onload="initialize();run()">
     <div id="map_canvas"></div>
+    
+    <div id="bottom_menu" style="width: 100%; height: 36px;" >
+		<a class="button" href="#">Build</a>
+	</div>
   </body>
 </html>
