@@ -21,6 +21,29 @@ html, body {
 	
 }
 
+
+
+a.button:link { 
+	color: black;
+	}
+a.button:visited { 
+	color: black;
+	}
+a.button:hover { 
+	color: red;
+	background-color: blue;
+	text-decoration: none;
+	}
+a.button:active { 
+	color: red;
+	background-color: blue;
+	text-decoration: none;
+	}
+
+a.button { vertical-align:middle; }
+
+
+
 @media print {
 	html, body {
 		height: auto;
