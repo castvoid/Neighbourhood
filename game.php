@@ -4,7 +4,7 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
 <title>Neighbourhood</title>
-<link type="text/css" href="/frontend/elements.css" rel="stylesheet" />
+<link type="text/css" href="frontend/elements.css" rel="stylesheet" />
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>
