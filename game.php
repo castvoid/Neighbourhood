@@ -9,10 +9,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>
 var map, addP, json;
-
 function showStats(i){
 	//Do stuff
-	alert('You click on ' + json[i].name);
+	$('.stats').show();
+	$('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li>')
 }
 function initialize() {
     var styles = [{
@@ -84,6 +84,7 @@ function run(){
 	for(i=0;i<12;i++){
 		addP(i);
 	}
+	$('.stats').click(function(){$(this).hide()});
 	
 }
     </script>
