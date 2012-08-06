@@ -57,7 +57,7 @@ var map, addP;
           zoom: 5,
           center: myLatLng,
           mapTypeControlOptions: {
-	          mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'Minimal Map']
+	          mapTypeIds: ['Minimal Map']
 	      }
 	    };
 var j = [{
@@ -66,7 +66,8 @@ var j = [{
     population: "8174000",
     density: "5200",
     gva: "30385",
-    crime: "104"
+    crime: "104",
+    path:[new google.maps.LatLng(51.70660846336452,-.4339599609375),new google.maps.LatLng(51.71086332658573,-.428466796875),new google.maps.LatLng(51.71681946274873,-.3790283203125),new google.maps.LatLng(51.707459468026094,-.330963134765625),new google.maps.LatLng(51.717670275312415,-.273284912109375),new google.maps.LatLng(51.685328143638216,-.2252197265625),new google.maps.LatLng(51.68362528576683,-.177154541015625),new google.maps.LatLng(51.68788231035757,-.157928466796875),new google.maps.LatLng(51.691287641824474,-.10986328125),new google.maps.LatLng(51.68277383281327,-.061798095703125),new google.maps.LatLng(51.678516327862134,.009613037109375),new google.maps.LatLng(51.678516327862134,.031585693359375),new google.maps.LatLng(51.68788231035757,.0823974609375),new google.maps.LatLng(51.68958500811337,.098876953125),new google.maps.LatLng(51.64699834847127,.207366943359375),new google.maps.LatLng(51.60181277107468,.270538330078125),new google.maps.LatLng(51.558289817660665,.2911376953125),new google.maps.LatLng(51.42490192575532,.237579345703125),new google.maps.LatLng(51.36320660581431,.15380859375),new google.maps.LatLng(51.30657945585936,.1593017578125),new google.maps.LatLng(51.267929925864756,.01373291015625),new google.maps.LatLng(51.26535213392538,-.14556884765625),new google.maps.LatLng(51.25589899305907,-.2252197265625),new google.maps.LatLng(51.269648373496736,-.25543212890625),new google.maps.LatLng(51.2928411273273,-.2911376953125),new google.maps.LatLng(51.30743796487254,-.41473388671875),new google.maps.LatLng(51.33833359386697,-.487518310546875),new google.maps.LatLng(51.415481636209535,-.542449951171875),new google.maps.LatLng(51.534377136326285,-.50537109375),new google.maps.LatLng(51.56768064709022,-.536956787109375),new google.maps.LatLng(51.61545844207285,-.52734375),new google.maps.LatLng(51.66914840783795,-.490264892578125)]
 }, {
     id: "1",
     name: "North East England",
@@ -112,7 +113,30 @@ var j = [{
     density: "306",
     gva: "20524",
     crime: "59",
-    path:[new google.maps.LatLng(52.53, 1.74), new google.maps.LatLng(52.38, 1.72), new google.maps.LatLng(52.26, 1.63), new google.maps.LatLng(52.11, 1.59), new google.maps.LatLng(52.04, 1.46), new google.maps.LatLng(51.95, 1.33), new google.maps.LatLng(51.95, 1.18), new google.maps.LatLng(51.96, 1.03), new google.maps.LatLng(51.97, 0.88), new google.maps.LatLng(52.03, 0.74), new google.maps.LatLng(52.08, 0.6), new google.maps.LatLng(52.07, 0.44), new google.maps.LatLng(52.09, 0.29), new google.maps.LatLng(52.05, 0.14), new google.maps.LatLng(52.06, - 0.02), new google.maps.LatLng(52.14, - 0.15), new google.maps.LatLng(52.21, - 0.29), new google.maps.LatLng(52.29, - 0.42), new google.maps.LatLng(52.43, - 0.37), new google.maps.LatLng(52.58, - 0.42), new google.maps.LatLng(52.67, - 0.3), new google.maps.LatLng(52.65, - 0.14), new google.maps.LatLng(52.66, 0.01), new google.maps.LatLng(52.74, 0.14), new google.maps.LatLng(52.81, 0.27), new google.maps.LatLng(52.84, 0.42), new google.maps.LatLng(52.96, 0.51), new google.maps.LatLng(52.98, 0.66), new google.maps.LatLng(52.97, 0.82), new google.maps.LatLng(52.96, 0.97), new google.maps.LatLng(52.95, 1.13), new google.maps.LatLng(52.94, 1.28), new google.maps.LatLng(52.89, 1.42), new google.maps.LatLng(52.81, 1.57), new google.maps.LatLng(52.72, 1.7), new google.maps.LatLng(52.57, 1.74), new google.maps.LatLng(52.53, 1.74)]
+    path:[
+new google.maps.LatLng(52.96187505907605, 0.4833984375),
+new google.maps.LatLng(52.822682558069324, 0.24169921875),
+new google.maps.LatLng(52.66305767075937, -0.02197265625),
+new google.maps.LatLng(52.669720383688194, -0.318603515625),
+new google.maps.LatLng(52.16045455774708, -0.50537109375),
+new google.maps.LatLng(51.83577752045251, -1.142578125),
+new google.maps.LatLng(51.73383267274116, -1.043701171875),
+new google.maps.LatLng(51.49506473014373, -0.94482421875),
+new google.maps.LatLng(51.39920565355381, -0.63720703125),
+new google.maps.LatLng(51.385495069223225, -0.538330078125),
+new google.maps.LatLng(51.69979984974196, -0.263671875),
+new google.maps.LatLng(51.66574141105715, 0.010986328125),
+new google.maps.LatLng(51.66574141105715, 0.17578125),
+new google.maps.LatLng(51.5634123286759, 0.263671875),
+new google.maps.LatLng(51.46085244645552, 0.263671875),
+new google.maps.LatLng(51.31001339554937, 0.142822265625),
+new google.maps.LatLng(51.50190410761816, 0.428466796875),
+new google.maps.LatLng(51.55658218576256, 0.911865234375),
+new google.maps.LatLng(51.81540697949439, 1.219482421875),
+new google.maps.LatLng(51.93749209045437, 1.29638671875),
+new google.maps.LatLng(52.099756925757276, 1.636962890625),
+new google.maps.LatLng(52.70967533219885, 1.724853515625),
+new google.maps.LatLng(52.981723223906855, 0.911865234375)]
 }, {
     id: "7",
     name: "South East England",
@@ -173,7 +197,6 @@ addP = function (i){
 map.mapTypes.set('Minimal Map', styledMap);
   map.setMapTypeId('Minimal Map');
       }
-      var key = "AIzaSyBOpj9rpZXyvdtmgcFEINtiwjdIVFj1--8";
     </script>
   </head>
   <body onload="initialize()">
