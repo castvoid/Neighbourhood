@@ -102,7 +102,9 @@ function initialize() {
         },
         maxZoom:10,
         minZoom:5,
-        streetViewControl:false
+        streetViewControl:false,
+            panControl: false,
+            zoomControl: true
     };
 
     var map = new google.maps.Map(document.getElementById('map_canvas'),
