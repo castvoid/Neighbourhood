@@ -28,6 +28,11 @@ html, body {
     
     background: #fff;
     border-right: 5px solid #306079;
+    
+     position: absolute;
+    top:0;
+    left:0;
+    background: #fff;
 }
 
 
