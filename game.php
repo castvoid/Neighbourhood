@@ -27,6 +27,37 @@ html, body {
     	height: 650px;
     	}	
     }
+#bottom_menu {
+
+	height: 36px;
+	background-image:-webkit-linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+	position: absolute;
+	bottom: 0px;
+
+}
+
+
+
+a.button:link { 
+	color: black;
+	}
+a.button:visited { 
+	color: black;
+	}
+a.button:hover { 
+	color: red;
+	background-color: blue;
+	text-decoration: none;
+	}
+a.button:active { 
+	color: red;
+	background-color: blue;
+	text-decoration: none;
+	}
+
+a.button { vertical-align:middle; }
+
+
     </style>
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -85,8 +116,6 @@ function initialize() {
             strokeColor: "#ff0000",
             fillColor: '#ca8080',
             fillOpacity: '1',
-            strokeWeight: 7,
-            strokeOpacity: 0.4,
             map: map
 
         })
@@ -111,5 +140,10 @@ function run(){
   </head>
   <body onload="initialize();run()">
     <div id="map_canvas"></div>
+    <div class="ui">
+    <div id="bottom_menu" style="width: 100%; height: 36px;" >
+<a class="button" href="#">Build</a>
+</div>
+    </div>
   </body>
 </html>
