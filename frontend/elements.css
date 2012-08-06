@@ -5,6 +5,9 @@ html, body {
 	margin: 0;
 	padding: 0;
 	color: black;
+    
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	overflow: hidden;
 	}
 
 #map_canvas {
@@ -19,21 +22,39 @@ html, body {
 	background-image:			linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
 	position: absolute;
 	bottom: 0px;
+	left:252px;
 	
 }
 
+.gmnoprint *{
+	color:rgba(0,0,0,0) !important;
+	background: transparent !important;
+}
 #sidebar {
-    width: 20%;
+    width: 252px;
     height: 100%;
     box-sizing: border-box;
+    padding: 10px !important;
     
     background: #fff;
     border-right: 5px solid #306079;
     
-     position: absolute;
+    position: absolute;
     top:0;
     left:0;
     background: #fff;
+}
+#stats {
+    width: 100%;
+    margin: 0;
+    
+    background: #ddd;
+}
+#stats li {
+    list-style: none;
+}
+#stats h1 {
+    color: #ff0000;
 }
 
 

@@ -8,9 +8,10 @@
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>
-var map, addP, json;
+var map, addP, json, selected = -1;
 function showStats(i){
-	$('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '</ul>')
+selected = i;
+	$('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '</ul>')
 }
 function initialize() {
     var styles = [{
@@ -40,17 +41,20 @@ function initialize() {
     });
     var myLatLng = new google.maps.LatLng(51.5, - 0.116);
     var mapOptions = {
-        zoom: 5,
+        zoom: 6,
         center: myLatLng,
         mapTypeControlOptions: {
             mapTypeIds: []
         },
         maxZoom:10,
-        minZoom:6,
+        minZoom:5,
         streetViewControl:false,
-            panControl: false,
-            zoomControl: true,
-            zoomControlOptions:{position:'RIGHT_TOP'}
+        panControl: false,
+        zoomControl: true,
+        zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.SMALL,
+        position: google.maps.ControlPosition.RIGHT_TOP
+        }
     };
 
     var map = new google.maps.Map(document.getElementById('map_canvas'),
@@ -62,8 +66,9 @@ function initialize() {
         json[i].poly = new google.maps.Polygon({
             path: json[i].path,
             strokeColor: "#ff0000",
-            fillColor: '#ca8080',
-            fillOpacity: '1',
+                           strokeWeight: '2',
+                           fillColor: '#ff0000',
+                           fillOpacity: '0.5',
             map: map
 
         })
