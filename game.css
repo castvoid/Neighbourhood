@@ -78,6 +78,9 @@ a.button { text-align:right; }
     border-bottom: 5px solid #444;
 }
 
+.button {
+	text-align:center;	
+}
 
 a.button:link { 
 	color: black;
