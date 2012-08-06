@@ -68,22 +68,21 @@ a.button:active {
 a.button { vertical-align:middle; }
 
 .stats{
-	width:600px;
-	height:400px;
 	position: absolute;
-	top:50%;
-	left:50%;
-	margin-left: -300px;
-	margin-top: -200px;
-	background: gray;
-	border-radius: 4px;
-	display: none;
+	top:100px;
+	left:0;
+	height:100%;
+	width:100%;
 }
 .stats h1,.stats h2{
 	text-align: center;
 }
 .stats li{
-	font-weight: bold;
+
+	list-style: none;
+}
+.stats label{
+		font-weight: bold;
 }
     </style>
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
@@ -91,9 +90,8 @@ a.button { vertical-align:middle; }
     <script>
 var map, addP, json;
 function showStats(i){
-	//Do stuff
-	$('.stats').show();
-	$('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li>')
+	$('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '</li>
+					 <label>Population Density: </label>' + json[i].density + '</ul>')
 }
 function initialize() {
     var styles = [{
@@ -165,7 +163,6 @@ function run(){
 	for(i=0;i<12;i++){
 		addP(i);
 	}
-	$('.stats').click(function(){$(this).hide()});
 	
 }
     </script>
@@ -176,8 +173,8 @@ function run(){
     <div id="bottom_menu" style="width: 100%; height: 36px;" >
 <a class="button" href="#">Build</a>
 </div>
-<div id="sidebar"></div>
+<div id="sidebar"><div class="stats" id="stats"></div></div>
     </div>
-    <div class="stats" id="stats"></div>
+    
   </body>
 </html>
