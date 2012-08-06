@@ -48,12 +48,12 @@ function initialize() {
         maxZoom:10,
         minZoom:5,
         streetViewControl:false,
-            panControl: false,
-            zoomControl: true,
-            zoomControlOptions: {
+        panControl: false,
+        zoomControl: true,
+        zoomControlOptions: {
         style: google.maps.ZoomControlStyle.SMALL,
         position: google.maps.ControlPosition.RIGHT_TOP
-    }
+        }
     };
 
     var map = new google.maps.Map(document.getElementById('map_canvas'),
