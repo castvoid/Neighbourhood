@@ -95,7 +95,7 @@ function run(){
     <div id="map_canvas"></div>
     <div class="ui">
     <div id="bottom_menu" style="width: 100%; height: 36px;" >
-<a class="button" href="#">Build</a>
+<a class="button" href="#">Build-----------------------------------------------------------------------------------</a>
 </div>
 <div id="sidebar"><div class="stats" id="stats"></div></div>
     </div>
