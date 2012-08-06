@@ -8,8 +8,9 @@
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>
-var map, addP, json;
+var map, addP, json, selected = -1;
 function showStats(i){
+selected = i;
 	$('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '</ul>')
 }
 function initialize() {
@@ -64,9 +65,9 @@ function initialize() {
     if (json[i].path != null){
         json[i].poly = new google.maps.Polygon({
             path: json[i].path,
-            strokeColor: "#5a5",
+            strokeColor: "#ff0000",
                            strokeWeight: '2',
-                           fillColor: '#9e9',
+                           fillColor: '#ff0000',
                            fillOpacity: '0.5',
             map: map
 
