@@ -37,7 +37,6 @@ a.button { text-align:right; }
     width: 252px;
     height: 100%;
     box-sizing: border-box;
-    padding: 10px;
     
     background: #fff;
     border-right: 5px solid #306079;
@@ -48,6 +47,10 @@ a.button { text-align:right; }
     background: #fff;
 }
 #stats {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
     width: 207px;
     height: 500px;
     
