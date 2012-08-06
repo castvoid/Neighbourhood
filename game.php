@@ -71,8 +71,7 @@ function initialize() {
         },
         maxZoom:10,
         minZoom:5,
-        streetViewControl:false,
-        tilt:45
+        streetViewControl:false
     };
 
     var map = new google.maps.Map(document.getElementById('map_canvas'),
@@ -86,7 +85,7 @@ function initialize() {
             strokeColor: "#ff0000",
             fillColor: '#ca8080',
             fillOpacity: '1',
-            strokeWeight: 5,
+            strokeWeight: 7,
             strokeOpacity: 0.4,
             map: map
 
