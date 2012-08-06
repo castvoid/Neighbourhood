@@ -15,13 +15,18 @@ html, body {
 #bottom_menu {
 
 	height: 36px;
-	background-image:url(IMG/bottom_menu_background.png);
-	background-repeat:repeat-x;
+	background-image:	-moz-linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+	background-image:		-webkit-linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+	background-image:			linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
 	position: absolute;
 	bottom: 0px;
 	
 }
 
+.gmnoprint *{
+	color:rgba(0,0,0,0) !important;
+	background: transparent !important;
+}
 #sidebar {
     width: 20%;
     height: 100%;
