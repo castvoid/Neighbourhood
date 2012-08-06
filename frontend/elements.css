@@ -1,2 +1,32 @@
 /* CSS Document */
 
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	color: black;
+	}
+
+#map_canvas {
+	height: 100%;
+	}
+	
+#bottom_menu {
+
+	height: 36px;
+	background-image:url(IMG/bottom_menu_background.png);
+	background-repeat:repeat-x;
+	position: absolute;
+	bottom: 0px;
+	
+}
+
+@media print {
+	html, body {
+		height: auto;
+		}
+
+	#map_canvas {
+    	height: 650px;
+    	}	
+    }
