@@ -36,6 +36,14 @@ html, body {
 
 }
 
+#sidebar {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background: #fff;
+}
 
 
 a.button:link { 
@@ -104,7 +112,8 @@ function initialize() {
         minZoom:5,
         streetViewControl:false,
             panControl: false,
-            zoomControl: true
+            zoomControl: true,
+            zoomControlOptions:{position:'RIGHT_TOP'}
     };
 
     var map = new google.maps.Map(document.getElementById('map_canvas'),
@@ -146,6 +155,7 @@ function run(){
     <div id="bottom_menu" style="width: 100%; height: 36px;" >
 <a class="button" href="#">Build</a>
 </div>
+<div id="sidebar"></div>
     </div>
   </body>
 </html>
