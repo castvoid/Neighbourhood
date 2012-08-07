@@ -15,7 +15,7 @@
 	<div id="bottom_menu">
 		<a class="button" href="#">Global Command A</a>
 		<a class="button" href="#">Review</a>
-		<a class="button" href="#">Build</a>
+	
 	</div>
 	<div id="sidebar">
 		<div class="stats" id="stats"><h1>No Selection</h1></div>
