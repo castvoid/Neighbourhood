@@ -32,9 +32,7 @@
 	<div id="buildMenu">
     <h1>Build / Destroy</h1><br />
     This is some text.
-    <form>
-    <input type="range" name="testrange" />
-    </form>
+    <div id="buildOptions"></div>
     </div>
 </div>
 </body>
