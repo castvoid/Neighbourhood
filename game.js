@@ -7,6 +7,7 @@ var map, addP, json, selected = -1,
     buildBox = function (z) {
     	p = ['none', 'block']
 	    $('#buildBox').css('display', p[z]);
+	    $('#buildMenu').css('display', p[z]);
     },
     showStats = function (i) {
         if (i > -1) {

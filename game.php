@@ -20,9 +20,8 @@
 	<div id="sidebar">
 		<div class="stats" id="stats"><h1>No Selection</h1></div>
 	</div>
-	<div id="buildBox" onClick="buildBox(0);">
-		
-	</div>
+	<div id="buildBox" onClick="buildBox(0);"></div>
+	<div id="buildMenu"></div>
 </div>
 </body>
 </html>
