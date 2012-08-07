@@ -113,6 +113,20 @@ a {
 				</td>
 			</tr>
 		<?php endif; ?>
+		<?php if ($_GET['unamereq']): ?>
+			<tr>
+				<td colspan="2" id="error" class="nohover">
+					User name required.
+				</td>
+			</tr>
+		<?php endif; ?>
+		<?php if ($_GET['pwshort']): ?>
+			<tr>
+				<td colspan="2" id="error" class="nohover">
+					Password must be at least 8 characters.
+				</td>
+			</tr>
+		<?php endif; ?>
 		<?php if ($_GET['out']): ?>
 			<tr>
 				<td colspan="2" id="success" class="nohover">
