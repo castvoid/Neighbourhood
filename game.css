@@ -128,3 +128,5 @@ a.sideB:active { color: #ee0000 }
     background: #fff;
     display: none;
 	padding-left: 5px;
+	border-width: 1px;
+	border-style: solid;
