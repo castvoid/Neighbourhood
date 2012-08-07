@@ -142,12 +142,9 @@ a{
     border-radius: 3px;
 }
 #bars li:hover .bar span {
-    background: #222;
+    background: #eee;
 }
 
-.bar span:hover {
-	backgroud: #999;	
-}
 #buildBox{
 	position:absolute;
 	top:0;
