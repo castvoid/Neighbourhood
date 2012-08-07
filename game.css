@@ -63,6 +63,8 @@ a.button { text-align:right; }
     padding: 10px;
     border-radius: 10px;
     box-shadow: inset 0 0 7px #555;
+    
+    
 }
 #stats ul{
 	margin-left: 10px;
@@ -102,4 +104,16 @@ a.button:active {
 	color: #ff3333;
 	}
 
-a.button { vertical-align:middle; }
+.sideB{
+	width:100%;
+	display: block;
+	background: #fff;
+	padding:5px;
+	box-sizing: border-box;
+	margin:5px;
+	margin-left: 0;
+	border-radius: 5px;
+	margin-top:5px;
+	color: #333;
+	text-decoration: none;
+}
