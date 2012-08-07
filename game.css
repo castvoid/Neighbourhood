@@ -32,10 +32,7 @@ i { text-shadow: none !important }
     padding-right: 5px;
 }
 a.button { text-align: right }
-.gmnoprint * {
-    color: rgba(0,0,0,0) !important;
-    background: transparent !important;
-}
+
 
 #playername{
 	font-weight: bold;
