@@ -29,7 +29,11 @@
 	</div>
 	<div id="buildBox" onClick="buildBox(0);"></div>
 	<div id="buildMenu">
-    <h1>Build</h1>
+    <h1>Build / Destroy</h1><br />
+    This is some text.
+    <form>
+    <input type="range" name="testrange" />
+    </form>
     </div>
 </div>
 </body>
