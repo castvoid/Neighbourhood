@@ -81,6 +81,7 @@ a.button { text-align:right; }
     padding-bottom: 5px;
     margin-bottom: 10px;
     border-bottom: 5px solid #fff;
+
 }
 
 
@@ -97,8 +98,7 @@ a.button:visited {
 	color: #000;
 	}
 a.button:hover,a.button:active { 
-	color: #000;
-	background-color: #1BBCE0;
+	color: #ee0000;
 	}
 a.button:active { 
 	color: #ff3333;
