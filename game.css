@@ -121,6 +121,11 @@ a.button:active {
 	color: #333;
 	text-decoration: none;
 }
+
+a.sideB:hover,a.sideB:active { 
+	color: #ee0000;
+	}
+	
 #buildBox{
 	position:absolute;
 	top:0;
