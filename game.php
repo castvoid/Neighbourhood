@@ -21,10 +21,8 @@
 	<div id="sidebar">
 		<div class="profile">
 			<h3><i class="icon-user"></i><span id="playername">Player</span></h3>
-			<ul>
-                <li><i class="icon-money icon-large"></i> &pound;<span id="currentmoney">0</span></li>
-                <li><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span></span></span></li>
-            </ul>
+                <i class="icon-money icon-large"></i> &pound;<span id="currentmoney">0</span>
+            
 		</div>
 		<div class="stats" id="stats">
 			<h1>No Selection</h1>

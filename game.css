@@ -128,7 +128,7 @@ a.sideB:hover,a.sideB:active {
 	color: #ee0000;
 	}
 
-.profile li, .profile ul {
+#sidebar li {
     list-style: none;
     position: relative;
 }
@@ -139,7 +139,7 @@ a.sideB:hover,a.sideB:active {
     left: 35px;
     display: block;
     height: 14px;
-    width: 217px;
+    width: 202px;
     margin-top: 3px;
     background: rgba(0,0,0,0.1);
     border-radius: 3px;
@@ -147,7 +147,6 @@ a.sideB:hover,a.sideB:active {
 
 .bar span {
     background: #fff;
-    width: 50%;
     height: 100%;
     display: block;
     border-radius: 4px;
