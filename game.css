@@ -75,6 +75,10 @@ a.button { text-align:right; }
     padding-bottom: 5px;
     margin-bottom: 10px;
     border-bottom: 5px solid #fff;
+	font-size: 40px;
+	-moz-text-shadow: 0px 4px 3px #888;
+		-webkit-text-shadow: 0px 4px 3px #888;
+			text-shadow: 0px 4px 3px #888;
 }
 
 
