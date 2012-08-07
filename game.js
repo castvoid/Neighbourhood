@@ -7,7 +7,7 @@ var map, addP, json, selected = -1,
     showStats = function (i) {
         if (i > -1) {
             selected = i
-            $('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '<li><label>Hospitals: </labels>' + json[i].hospitals + '</ul><ul id="bars"><li><i class="icon-minus icon-large"></i><span id="happiness" class="bar"><span style="width: 50%;"></span></span><i class="icon-plus icon-large"></i></li><li><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: 50%;"></span></span><i class="icon-bolt icon-large"></i></li></ul><a class="sideB btn" href="javascript:modal();">Build</a>');
+            $('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '<li><label>Hospitals: </labels>' + json[i].hospitals + '</ul><ul id="bars"><li><i class="icon-minus icon-large"></i><span id="happiness" class="bar"><span style="width: ' + json[i].happiness + '%;"></span></span><i class="icon-plus icon-large"></i></li><li><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: 50%;"></span></span><i class="icon-bolt icon-large"></i></li></ul><a class="sideB btn" href="javascript:modal();">Build</a>');
         } else {
             selected = -1
             $('.stats').html('<h1>No Selection</h1>')
@@ -21,15 +21,10 @@ var map, addP, json, selected = -1,
     },
     happiness= function(j){
 	    h = 50
-	    	x = json[j].density - 150
-	    	j = 1
-	    	if (x < 0) j = -1
-	    h -= (Math.sqrt(x) / 2) * j
-	    
-	    
+	    if (json[j].density > 150) h -= (Math.sqrt(json[j].density - 150) / 2);else h += 10;
 	    h -= json[j].crime / 3
-	    h += json[j].schools / 400
-	    h += Math.sqrt(json[j].hospitals)
+	    h += json[j].schools / json[j].population * 20000
+	    h += json[0].hospitals / json[0].population * 1000000
 	    
 	    return Math.round(h)
     }
@@ -96,6 +91,7 @@ json = [{id:"0",name:"London",population:"8174000",density:"5200",gva:"30385",cr
 function run(){
 	for(x=0;x<12;x++){
 		addP(x);
+		json[x].happiness = happiness(x);
 	}
 	
 }
