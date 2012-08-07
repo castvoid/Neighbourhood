@@ -1,3 +1,5 @@
 .DS_Store
+backend/inc/db_login.inc
+backend/inc/hashing.inc
 hal
 hal2.pub
