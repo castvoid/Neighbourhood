@@ -6,13 +6,13 @@
 	$user = mysql_fetch_array($response);
 	
 	if (mysql_num_rows($response) < 1) {
-		header('Location: ../signin.php?err=1');
+		header('Location: ../index.php?err=1');
 	}
 	
 	if (hashPassword($_POST['password']) == $user['upass']) {
 		$_SESSION['nh_uid'] = $user['UID'];
 		header('Location: ../game.php');
 	} else {
-		header('Location: ../signin.php?err=1');
+		header('Location: ../index.php?err=1');
 	}
 ?>

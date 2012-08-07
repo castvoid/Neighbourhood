@@ -1,9 +1,3 @@
-<?php
-	session_start();
-	if (isset($_SESSION['nh_uid'])) {
-		header('Location: ../game.php');
-	}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +34,7 @@ h1{
 		-webkit-text-shadow: 0px 5px 3px #888;
 			text-shadow: 0px 5px 3px #888;
 }
-table.login{
+table#regions{
 	position: absolute;
 	top:50%;
 	left:50%;
@@ -53,26 +47,29 @@ table.login{
 
 }
 
-table.login  td{
+table#regions  td{
 	width:150px;
 	height:100px;
 	text-align: center;
+	border-bottom: 1px solid rgba(51,51,51,.5);
+	border-right: 1px solid rgba(51,51,51,.5);
 	background: rgba(0,0,0,.1);
 	padding:10px;
+	box-sizing: border-box;
 	-moz-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 }
-table.login td:hover:not(#error){
+table#regions td:hover{
 	background: rgba(29, 195, 223, 0.1);
 	cursor:pointer;
+	
 }
-table.login td#error {
-	background: rgba(255,0,0,.2);
+table#regions tr:last-child td{
+	border-bottom:none;
 }
-input {
-	padding: 5px;
-	width: 60%;
+table#regions tr td:last-child{
+	border-right: none;
 }
 footer{
 	width:500px;
@@ -91,53 +88,31 @@ footer{
 </head>
 <body>
 <h1>Neighbourhood</h1>
-<form action="backend/auth.php" method="post" id="loginform">
-	<table class="login">
-		<?php if ($_GET['err']): ?>
-			<tr>
-				<td colspan="2" id="error">
-					User name or password incorrect.
-				</td>
-			</tr>
-		<?php endif; ?>
-		<?php if ($_GET['inuse']): ?>
-			<tr>
-				<td colspan="2" id="error">
-					User name already in use.
-				</td>
-			</tr>
-		<?php endif; ?>
-		<tr>
-			<td colspan="2" id="uname-td">
-				<input type="text" name="username" placeholder="User name" id="uname" />
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2" id="upass-td">
-				<input type="password" name="password" placeholder="Password" id="upass" />
-			</td>
-		</tr>
-		<tr>
-			<td id="signin">Sign in</td>
-			<td id="signup">Sign up</td>
-		</tr>
-	</table>
-</form>
+<table cellspacing="0" id="regions">
+	<tr>
+		<td data-id="0">London</td>
+		<td data-id="1">North East England</td>
+		<td data-id="2">North West England</td>
+		<td data-id="3">Yorkshire & the Humber</td>
+	</tr>
+	<tr>
+		<td data-id="4">East Midlands</td>
+		<td data-id="5">West Midlands</td>
+		<td data-id="7">South East England</td>
+		<td data-id="8">South West England</td>
+	</tr>
+	<tr>
+		<td data-id="6">East of England</td>
+		<td data-id="9">Wales</td>
+		<td data-id="10">Northern Ireland</td>
+		<td data-id="11">Scotland</td>
+	</tr>
+</table>
 <footer>A game by Harry, Chris, Hal & Pete</footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
-	$('td#uname-td').click(function(event){
-		$('#uname').focus();
-	});
-	$('td#upass-td').click(function(event){
-		$('#upass').focus();
-	});
-	$('td#signin').click(function(event){
-		$('#loginform').submit();
-	});
-	$('td#signup').click(function(event){
-		document.getElementById("loginform").action = "backend/signup.php";
-		$('#loginform').submit();
+	$('td').click(function(event){
+		window.location = 'game.php?region=' + $(this).data('id')
 	});
 </script>
 </body>
