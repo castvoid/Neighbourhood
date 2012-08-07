@@ -21,6 +21,10 @@ var map, addP, json, selected = -1,
 
 
 function initialize() {
+	$.post("backend/user.php", { uid: "CURRENT", field: "uname" },
+		function(data) {
+			$('#playername').html(data);
+	});
 	$.post("backend/user.php", { uid: "CURRENT", field: "money" },
 		function(data) {
 			$('#currentmoney').html(data);
