@@ -19,6 +19,9 @@ body {
 	height: 100%;
 	}
 	
+i{
+	text-shadow: none !important;
+}
 #bottom_menu {
 	height: 36px;
 	background-image:	-moz-linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
@@ -58,6 +61,7 @@ a.button { text-align:right; }
 		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 }
+
 #sidebar h1{
 	height:78px;
 }
@@ -169,5 +173,6 @@ a.sideB:hover,a.sideB:active {
 	background: #fff;
     display: none;
 	border-color: #CCC;
-	border-style: dashed;
+	border-style: dotted;
+	padding-left: 5px;
 }
