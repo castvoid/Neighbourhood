@@ -89,12 +89,12 @@ a.button:active { color: #ff3333 }
     margin-top: 5px;
     color: #444;
     text-decoration: none;
-    text-shadow: ;
+    text-shadow: none;
 }
 a.sideB:hover,
 a.sideB:active { color: #ee0000 }
-.profile li,
-.profile ul {
+#stats li,
+#stats ul {
     list-style: none;
     position: relative;
 }
@@ -114,8 +114,8 @@ a.sideB:active { color: #ee0000 }
 .bar span {
     background: #fff;
     height: 100%;
-    background: rgba(255,255,255,0.75);
-    display: none;
+    display: block;
+    border-radius: 3px;
 }
 #buildMenu {
     width: 600px;
