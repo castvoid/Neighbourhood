@@ -1,12 +1,18 @@
 <?php
-if ($_SERVER['HTTP_HOST'] != "localhost" && $_SERVER['HTTP_HOST'] != "localhost:21482" && !isset($_REQUEST["testing"])) { //Do NOT use in produtction, can be spoofed.
+if ($_SERVER['HTTP_HOST'] != "localhost" || $_SERVER['HTTP_HOST'] != "localhost:21482" || !isset($_REQUEST["testing"])) { //Do NOT use in produtction, can be spoofed fairly easily
 	session_start();
 	if (!isset($_SESSION['nh_uid'])) {
 		header('Location: index.php');
-	}
-	if (isset($_GET['region'])) {
+	} else {
 		require_once('backend/inc/db.inc');
-		move_player($_SESSION['nh_uid'], intval($_GET['region']));
+		if (isset($_GET['region'])) {
+			move_player($_SESSION['nh_uid'], intval($_GET['region']));
+		} else {
+			$user = user_details($_SESSION['nh_uid']);
+			if ($user['currentregion'] == -1) {
+				header('Location: select.php');
+			}
+		}
 	}
 }
 ?>
