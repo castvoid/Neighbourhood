@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER['HTTP_HOST'] != "localhost" || $_SERVER['HTTP_HOST'] != "localhost:21482" || !isset($_REQUEST["testing"])) { //Do NOT use in produtction, can be spoofed fairly easily
+if ($_SERVER['HTTP_HOST'] != "localhost" && $_SERVER['HTTP_HOST'] != "localhost:21482" && !isset($_REQUEST["testing"])) { //Do NOT use in produtction, can be spoofed fairly easily
 	session_start();
 	if (!isset($_SESSION['nh_uid'])) {
 		header('Location: index.php');
@@ -43,12 +43,13 @@ if ($_SERVER['HTTP_HOST'] != "localhost" || $_SERVER['HTTP_HOST'] != "localhost:
 	<div id="sidebar">
 		<div id="profile">
 			<ul>
-				<li><i class="icon-user icon-large"></i> <span id="playername">Player</span>
-				<li><i class="icon-money icon-large"></i> &pound;<span id="currentmoney">0</span>
+				<li><i class="icon-user icon-large"></i> <span id="playername">Player</span></li>
+				<li><i class="icon-money icon-large"></i> &pound;<span id="currentmoney">0</span></li>
+				<li><i class="icon-map-marker icon-large"></i> <span id="currentregion">Loading...</span></li>
 			</ul>
 		</div>
 		<div class="stats" id="stats">
-			<h1>No Selection</h1>
+			<h1>No selection</h1>
 		</div>
 	</div>
 	<div class="modal hide fade" id="modal">
@@ -57,7 +58,7 @@ if ($_SERVER['HTTP_HOST'] != "localhost" || $_SERVER['HTTP_HOST'] != "localhost:
 		</div>
 		<div class="modal-body">
 			<p>
-				One fine body…
+				Loading...
 			</p>
 		</div>
 		<div class="modal-footer">

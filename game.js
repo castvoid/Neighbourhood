@@ -15,7 +15,7 @@ var map, addP, json, selected = -1,
     },
     modal = function () {
         $('#modal h3').html(json[selected].name);
-        $('#modal .modal-body').html('<p>What would you like to build or destroy in ' + json[selected].name + '? There are:</p><ul><li>' + json[selected].schools + ' schools <a href="#" class="btn btn-mini btn-success">Build school</a> <a href="#" class="btn btn-mini btn-danger">Destroy school</a></li><li>' + json[selected].hospitals + ' hospitals <a href="#" class="btn btn-mini btn-success">Build hospital</a> <a href="#" class="btn btn-mini btn-danger">Destroy hospital</a></li></ul>');
+        $('#modal .modal-body').html('<p>What would you like to build or destroy in ' + json[selected].name + '? There are:</p><ul><li><strong>' + json[selected].schools + '</strong> schools <a href="#" class="btn btn-mini btn-success">Build school</a> <a href="#" class="btn btn-mini btn-danger">Destroy school</a></li><li><strong>' + json[selected].hospitals + '</strong> hospitals <a href="#" class="btn btn-mini btn-success">Build hospital</a> <a href="#" class="btn btn-mini btn-danger">Destroy hospital</a></li></ul>');
         $('#modal').modal('show');
     },
     happiness = function (j) { // J is the ID of the place in the JSON db
@@ -33,9 +33,6 @@ var map, addP, json, selected = -1,
 	    return o 
     }
     function initialize() {
-        $('#modal').modal({
-            show: false
-        }); //Initialize the modal
         $.post("backend/user.php", {
             uid: "CURRENT",
             field: "uname"
@@ -51,6 +48,15 @@ var map, addP, json, selected = -1,
 
         function (data) {
             $('#currentmoney').html(data);
+        });
+        
+        $.post("backend/user.php", {
+            uid: "CURRENT",
+            field: "currentregion"
+        },
+
+        function (data) {
+            $('#currentregion').html(json[data].name);
         });
         var styles = [{
             stylers: [{

@@ -36,6 +36,7 @@ a.button { text-align: right }
 
 #playername{
 	font-weight: bold;
+	font-size: 1.3em;
 }
 #sidebar {
     width: 231px;
@@ -126,13 +127,13 @@ a{
     cursor: pointer;
 }
 #bars li:hover i.icon-plus {
-    color: #5e5;
+    color: #0d0;
 }
 #bars li:hover i.icon-minus {
-    color: #e55;
+    color: #f50000;
 }
 #bars li:hover i.icon-bolt {
-    color: #ff0;
+    color: #fd0;
 }
 #bars li i.icon-plus, #bars li i.icon-bolt:last-child {
     position: absolute;
