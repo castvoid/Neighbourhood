@@ -1,12 +1,14 @@
 <?php
+if ($_SERVER["HTTP_HOST"] != "localhost"){
 	session_start();
 	if (!isset($_SESSION['nh_uid'])) {
-		header('Location: ../index.php');
+		header('Location: index.php');
 	}
 	if (isset($_GET['region'])) {
 		require_once('backend/inc/db.inc');
 		move_player($_SESSION['nh_uid'], intval($_GET['region']));
 	}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,7 +45,7 @@
 			<h1>No Selection</h1>
 		</div>
 	</div>
-	<div class="modal hide" id="modal">
+	<div class="modal hide fade" id="modal">
 		<div class="modal-header">
 			<h3>City</h3>
 		</div>
