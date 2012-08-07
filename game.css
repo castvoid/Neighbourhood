@@ -90,6 +90,12 @@ a.button:visited{
     margin-left: 0;
     border-radius: 5px;
     margin-top: 5px;
+    
+    background: #fff;
+    border: none;
+}
+.sideB:hover {
+    background: #ddd;
 }
 #stats li,
 #stats ul {
