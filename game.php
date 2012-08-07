@@ -18,13 +18,13 @@
 <div class="ui"> <!-- All the UI elements -->
 	<div id="bottom_menu">
 		<a class="button" href="#">Profile</a>
-		<a class="button" href="#">Log Out</a>
+		<a class="button" href="/backend/signout.php">Log Out</a>
 	
 	</div>
 	<div id="sidebar">
 		<div class="profile">
 			<ul>
-			<li><i class="icon-user icon-large"></i><h3><span id="playername">Player</span></h3>
+			<li><i class="icon-user icon-large"></i> <h3><span id="playername">Player</span></h3>
                 <li><i class="icon-money icon-large"></i> &pound;<span id="currentmoney">0</span>
             </ul>
 		</div>
