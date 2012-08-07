@@ -43,8 +43,8 @@ a.button { text-align:right; }
     box-sizing: border-box;
     padding: 10px;
     
-    background: rgba(0,0,0,0.5);
-    border-right: 1px solid #555;
+    background: rgba(0,0,0,0.1);
+    border-right: 1px solid rgba(51,51,51,0.5);
     
     position: absolute;
     top:0;
@@ -54,14 +54,11 @@ a.button { text-align:right; }
 	height:78px;
 }
 #stats {
-    width: 90%;
-    height: 93%;
+    width: 100%;
+	height: 50%;
     
     top: 0;
-    background: #ddd;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: inset 0 0 7px #555;
+	color: #fff;
     
     
 }
@@ -74,11 +71,10 @@ a.button { text-align:right; }
 }
 #stats h1 {
     margin: 0;
-    color: #444;
     font-weight: bold;
     padding-bottom: 5px;
     margin-bottom: 10px;
-    border-bottom: 5px solid #444;
+    border-bottom: 5px solid #fff;
 }
 
 
