@@ -119,6 +119,11 @@ a.button:active {
 	text-decoration: none;
     text-shadow: 
 }
+
+a.sideB:hover,a.sideB:active { 
+	color: #ee0000;
+	}
+	
 #buildBox{
 	position:absolute;
 	top:0;
@@ -137,7 +142,6 @@ a.button:active {
 	margin-top: -250px;
 	margin-left: -300px;
 	background: #fff;
-	background: #000;
     display: none;
 	border-color: #CCC;
 	border-style: dashed;
