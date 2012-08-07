@@ -126,8 +126,7 @@ a.button:active {
 	height:100%;
 	background: rgba(255,255,255,0.75);
 	display: none;
-	border-color: #CCC;
-	border-style: dashed;
+
 	
 }
 #buildMenu {
