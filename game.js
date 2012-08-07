@@ -3,19 +3,24 @@ var map, addP, json, selected = -1,
         money: 0,
         name: 'Player',
         controlOf: []
+    },
+    buildBox = function (z) {
+    	p = ['none', 'block']
+	    $('#buildBox').css('display', p[z]);
+    },
+    showStats = function (i) {
+        if (i > -1) {
+            selected = i
+            $('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '</ul><a class="sideB" href="javascript:buildBox(1);">Build</a>')
+        } else {
+            selected = -1
+            $('.stats').html('<h1>No Selection</h1>')
+        }
     }
 
-function showStats(i) {
-if (i > -1){
-    selected = i
-    $('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '</ul><a class="sideB" href="#">Build</a>')
-}else{
-	selected = -1
-	$('.stats').html('<h1>No Selection</h1>')
-}
-}
 
 function initialize() {
+	
     var styles = [{stylers:[{visibility:"off"}]},{featureType:"landscape",stylers:[{visibility:"on"},{color:"#ccc"}]},{featureType:"water",stylers:[{visibility:"simplified"},{color:"#408099"}]},{featureType:"landscape"}]
     var styledMap=new google.maps.StyledMapType(styles,{name:"Minimal Map"})
     var myLatLng = new google.maps.LatLng(56.46,-7.015);
