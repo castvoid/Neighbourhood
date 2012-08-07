@@ -110,6 +110,9 @@ a{
 #bars {
     margin: 5px 0 20px 0;
 }
+#bars li {
+    cursor: pointer;
+}
 #bars li:hover i.icon-plus {
     color: #5e5;
 }
@@ -142,7 +145,7 @@ a{
     border-radius: 3px;
 }
 #bars li:hover .bar span {
-    background: #222;
+    background: #ddd;
 }
 
 .bar span:hover {
