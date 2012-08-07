@@ -6,8 +6,13 @@ var map, addP, json, selected = -1,
     }
 
 function showStats(i) {
+if (i > -1){
     selected = i
     $('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '</ul>')
+}else{
+	selected = -1
+	$('.stats').html('<h1>No Selection</h1>')
+}
 }
 
 function initialize() {
@@ -46,6 +51,9 @@ function initialize() {
                 fillColor: '#ff0000',
                 fillOpacity: '0.5',
                 map: map
+            })
+            google.maps.event.addListener(map, 'click', function () {
+                showStats(-1);
             })
             google.maps.event.addListener(json[i].poly, 'click', function () {
                 showStats(i)

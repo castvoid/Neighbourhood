@@ -18,7 +18,7 @@
 		<a class="button" href="#">Build</a>
 	</div>
 	<div id="sidebar">
-		<div class="stats" id="stats"></div>
+		<div class="stats" id="stats"><h1>No Selection</h1></div>
 	</div>
 	<div id="popUp">
 		
