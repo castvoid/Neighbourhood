@@ -75,9 +75,12 @@ a.button { text-align:right; }
     padding-bottom: 5px;
     margin-bottom: 10px;
     border-bottom: 5px solid #fff;
+<<<<<<< HEAD
 	-moz-text-shadow: 0px 4px 3px #444;
 		-webkit-text-shadow: 0px 4px 3px #444;
 			text-shadow: 0px 4px 3px #444;
+=======
+>>>>>>> 0604f48d393fb0ae7966eafdd004d561285c3c86
 }
 
 
