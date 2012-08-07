@@ -43,13 +43,12 @@ a.button { text-align:right; }
     box-sizing: border-box;
     padding: 10px;
     
-    background: #fff;
-    border-right: 5px solid #306079;
+    background: rgba(0,0,0,0.5);
+    border-right: 1px solid #555;
     
     position: absolute;
     top:0;
     left:0;
-    background: #fff;
 }
 #sidebar h1{
 	height:78px;
