@@ -104,6 +104,7 @@ a {
 </head>
 <body>
 <h1>Neighbourhood</h1>
+<div id="indexinfobtn">info</div>
 <form action="backend/auth.php" method="post" id="loginform">
 	<table class="login">
 		<?php if ($_GET['err']): ?>
