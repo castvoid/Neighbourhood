@@ -10,6 +10,10 @@ html, body {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	overflow: hidden;
 	}
+	
+body {
+	background: #408099;
+}
 
 #map_canvas {
 	height: 100%;
@@ -97,8 +101,8 @@ a.button:visited {
 	color: #000;
 	}
 a.button:hover,a.button:active { 
-	color: #1BBCE0;
-	background-color: #eee;
+	color: #000;
+	background-color: #1BBCE0;
 
 	}
 a.button:active { 
