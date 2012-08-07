@@ -56,6 +56,9 @@ a.button { text-align:right; }
     top:0;
     left:0;
     color: #fff;
+	-moz-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 }
 #sidebar h1{
 	height:78px;
