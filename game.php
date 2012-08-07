@@ -18,7 +18,12 @@
 	
 	</div>
 	<div id="sidebar">
-		<div class="stats" id="stats"><h1>No Selection</h1></div>
+		<div class="profile">
+			<strong>Money</strong> &pound;<span id="currentmoney">0</span>
+		</div>
+		<div class="stats" id="stats">
+			<h1>No Selection</h1>
+		</div>
 	</div>
 	<div id="buildBox" onClick="buildBox(0);"></div>
 	<div id="buildMenu"></div>

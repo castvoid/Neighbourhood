@@ -21,7 +21,10 @@ var map, addP, json, selected = -1,
 
 
 function initialize() {
-	
+	$.post("backend/user.php", { uid: "CURRENT", field: "money" },
+		function(data) {
+			$('#currentmoney').html(data);
+	});
     var styles = [{stylers:[{visibility:"off"}]},{featureType:"landscape",stylers:[{visibility:"on"},{color:"#ccc"}]},{featureType:"water",stylers:[{visibility:"simplified"},{color:"#408099"}]},{featureType:"landscape"}]
     var styledMap=new google.maps.StyledMapType(styles,{name:"Minimal Map"})
     var myLatLng = new google.maps.LatLng(56.46,-7.015);
