@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <title>Neighbourhood</title>
 <link type="text/css" href="game.css" rel="stylesheet"/>
+<link type="text/css" href="font.css" rel="stylesheet"/>
 <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="game.js"></script>
@@ -19,7 +20,7 @@
 	</div>
 	<div id="sidebar">
 		<div class="profile">
-			<strong>ⓜ</strong> &pound;<span id="currentmoney">10</span>
+			<i class="icon-money"></i> &pound;<span id="currentmoney">10</span>
 		</div>
 		<div class="stats" id="stats">
 			<h1>No Selection</h1>
