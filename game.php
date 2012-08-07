@@ -34,11 +34,7 @@
 	<div id="buildMenu">
     <h1>Build / Destroy</h1><br />
     This is some text.
-<<<<<<< HEAD
-
-=======
     <div id="buildOptions"></div>
->>>>>>> Added buildoptions
     </div>
 </div>
 </body>
