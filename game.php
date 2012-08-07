@@ -28,7 +28,9 @@
 		</div>
 	</div>
 	<div id="buildBox" onClick="buildBox(0);"></div>
-	<div id="buildMenu"></div>
+	<div id="buildMenu">
+    <h1>Build</h1>
+    </div>
 </div>
 </body>
 </html>
