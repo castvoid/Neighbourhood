@@ -125,4 +125,37 @@ a{
     height: 100%;
     display: block;
     border-radius: 3px;
+<<<<<<< HEAD
+=======
+}
+
+.bar span:hover {
+	backgroud: #999;	
+}
+#buildBox{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background: rgba(255,255,255,0.75);
+	display: none;
+
+
+}
+#buildMenu {
+   width: 600px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -300px;
+    background: #fff;
+    display: none;
+	padding-left: 5px;
+	border-width: 1px;
+	border-style: solid;
+	border-ccolor: #999;
+>>>>>>> Work now!
 }
