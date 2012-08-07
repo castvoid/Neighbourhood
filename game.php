@@ -20,7 +20,7 @@
 	</div>
 	<div id="sidebar">
 		<div class="profile">
-			<i class="icon-money icon-large"></i> &pound;<span id="currentmoney">10</span>
+			<i class="icon-money icon-large"></i> &pound;<span id="currentmoney">0</span>
 		</div>
 		<div class="stats" id="stats">
 			<h1>No Selection</h1>
