@@ -18,7 +18,7 @@ var map, addP, json, selected = -1,
     	$('#modal h3').html(json[selected].name);
 	    m.modal('toggle');
     },
-    function happiness(){
+    happiness= function(){
 	    h = 50
 	    	x = json[selected] - 150
 	    	j = 1
