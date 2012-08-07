@@ -1,6 +1,8 @@
 <?php
 	session_start();
-	if (!$_POST['username']) die("ERROR");
+	if (!$_POST['username']) {
+		header('Location: ../signin.php?err=1');
+	}
 	require_once('inc/db.inc');
 	require_once('inc/hashing.inc');
 	$response = mysql_query("SELECT * FROM users WHERE uname='" . $_POST['username'] . "'");
@@ -10,6 +12,6 @@
 		$_SESSION['nh_uid'] = $user['UID'];
 		header('Location: ../game.php');
 	} else {
-		die("Username or password incorrect.");
+		header('Location: ../signin.php?err=1');
 	}
 ?>
