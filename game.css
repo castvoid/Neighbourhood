@@ -33,6 +33,10 @@ a.button { text-align: right }
     color: rgba(0,0,0,0) !important;
     background: transparent !important;
 }
+
+#playername{
+	font-weight: bold;
+}
 #sidebar {
     width: 252px;
     height: 100%;
