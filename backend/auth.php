@@ -2,6 +2,7 @@
 	session_start();
 	if (!$_POST['username']) {
 		header('Location: ../signin.php?err=1');
+		die();
 	}
 	require_once('inc/db.inc');
 	require_once('inc/hashing.inc');
