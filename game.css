@@ -98,7 +98,6 @@ a.button:visited {
 a.button:hover,a.button:active { 
 	color: #000;
 	background-color: #1BBCE0;
-
 	}
 a.button:active { 
 	color: #ff3333;
