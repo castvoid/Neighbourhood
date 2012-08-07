@@ -100,6 +100,31 @@ a {
 	padding-left: 5px;
 	padding-top: 5px;
 }
+
+#infoBox{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background: rgba(255,255,255,0.75);
+	display: none;
+
+
+}
+#infoMenu {
+   width: 600px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -300px;
+    background: #fff;
+    display: none;
+    padding-left: 5px;
+    border: 1px solid #999;
+}
 </style>
 </head>
 <body>
