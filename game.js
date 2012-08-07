@@ -7,7 +7,7 @@ var map, addP, json, selected = -1,
     showStats = function (i) {
         if (i > -1) {
             selected = i
-            $('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '<li><label>Hospitals: </labels>' + json[i].hospitals + '</ul><ul id="bars"><li><i class="icon-minus icon-large"></i><span id="happiness" class="bar"><span style="width: 50%;"></span></span><i class="icon-plus icon-large"></i></li><li><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: 50%;"></span></span><i class="icon-bolt icon-large"></i></li></ul><a class="sideB btn" data-toggle="modal" href="#modal">Build</a>');
+            $('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '<li><label>Hospitals: </labels>' + json[i].hospitals + '</ul><ul id="bars"><li><i class="icon-minus icon-large"></i><span id="happiness" class="bar"><span style="width: 50%;"></span></span><i class="icon-plus icon-large"></i></li><li><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: 50%;"></span></span><i class="icon-bolt icon-large"></i></li></ul><a class="sideB btn" href="javascript:modal();">Build</a>');
         } else {
             selected = -1
             $('.stats').html('<h1>No Selection</h1>')
@@ -16,6 +16,7 @@ var map, addP, json, selected = -1,
     modal = function(){
     	m = $('#modal')
     	$('#modal h3').html(json[selected].name);
+    	$('#modal .modal-body').html('YEAAAAAHHHH!')
 	    m.modal('toggle');
     },
     happiness= function(j){
@@ -28,8 +29,9 @@ var map, addP, json, selected = -1,
 	    
 	    h -= json[j].crime / 3
 	    h += json[j].schools / 400
-	    h += json[j].hospitals / 1
-	    return h
+	    h += Math.sqrt(json[j].hospitals)
+	    
+	    return Math.round(h)
     }
 
 
