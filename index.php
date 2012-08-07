@@ -152,12 +152,16 @@ a {
 			</td>
 		</tr>
 		<tr>
-			<td id="signin">Sign in</td>
-			<td id="signup">Sign up</td>
+			<td id="signin">
+				Sign in
+				<button type="submit" style="display:none">Sign in</button>
+			</td>
+			<td id="signup">
+				Sign up
+			</td>
 		</tr>
 	</table>
 </form>
-<div id="indexinfobtn">info</div>
 <footer>A game by Harry, Chris, Hal & Pete for <a href="http://youngrewiredstate.org/">YRS2012</a></footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
