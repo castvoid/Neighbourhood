@@ -4,7 +4,7 @@
 <title>Neighbourhood</title>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
-<style>
+<style type="text/css">
 *{
 	margin: 0;
 	padding: 0;
@@ -56,9 +56,9 @@ table#regions  td{
 	background: rgba(0,0,0,.1);
 	padding:10px;
 	box-sizing: border-box;
-	-moz-text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
-		-webkit-text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
-			text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
+	-moz-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 }
 table#regions td:hover{
 	background: rgba(29, 195, 223, 0.1);
@@ -80,18 +80,33 @@ footer{
 	text-align: center;
 	font-weight: bold;
 	font-size: 13px;
-	-moz-text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
-		-webkit-text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
-			text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
+	-moz-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 }
 </style>
 </head>
 <body>
 <h1>Neighbourhood</h1>
 <table cellspacing="0" id="regions">
-<tr><td>London</td><td>North East England</td><td>North West England</td><td>Yorkshire & the Humber</td></tr>
-<tr><td>East Midlands</td><td>West Midlands</td><td>South East England</td><td>South West England</td></tr>
-<tr><td>East of England</td><td>Wales</td><td>Northern Ireland</td><td>Scotland</td></tr>
+	<tr>
+		<td>London</td>
+		<td>North East England</td>
+		<td>North West England</td>
+		<td>Yorkshire & the Humber</td>
+	</tr>
+	<tr>
+		<td>East Midlands</td>
+		<td>West Midlands</td>
+		<td>South East England</td>
+		<td>South West England</td>
+	</tr>
+	<tr>
+		<td>East of England</td>
+		<td>Wales</td>
+		<td>Northern Ireland</td>
+		<td>Scotland</td>
+	</tr>
 </table>
 <footer>A game by Harry, Chris, Hal & Pete</footer>
 </body>
