@@ -148,5 +148,6 @@ a.sideB:hover,a.sideB:active {
 	background: #fff;
     display: none;
 	border-color: #CCC;
-	border-style: dashed;
+	border-style: dotted;
+	padding-left: 5px;
 }
