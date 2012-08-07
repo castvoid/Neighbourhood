@@ -14,8 +14,8 @@
 <div id="map_canvas"></div> <!-- The Google Map -->
 <div class="ui"> <!-- All the UI elements -->
 	<div id="bottom_menu">
-		<a class="button" href="#">Global Command A</a>
-		<a class="button" href="#">Review</a>
+		<a class="button" href="#">Profile</a>
+		<a class="button" href="#">Log Out</a>
 	
 	</div>
 	<div id="sidebar">
