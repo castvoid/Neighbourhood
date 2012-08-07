@@ -157,7 +157,7 @@ a {
 		</tr>
 	</table>
 </form>
-<div id="indexinfobtn">Info</div>
+<div id="indexinfobtn">info</div>
 <footer>A game by Harry, Chris, Hal & Pete for <a href="http://youngrewiredstate.org/">YRS2012</a></footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
