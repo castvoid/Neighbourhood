@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if (isset($_SESSION['nh_uid'])) {
-		header('Location: ../game.php');
+		header('Location: game.php');
 	}
 ?>
 <!DOCTYPE html>
@@ -63,12 +63,15 @@ table.login  td{
 		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 }
-table.login td:hover:not(#error){
+table.login td:hover:not(.nohover){
 	background: rgba(29, 195, 223, 0.1);
 	cursor:pointer;
 }
 table.login td#error {
 	background: rgba(255,0,0,.2);
+}
+table.login td#success {
+	background: rgba(0,255,0,.2);
 }
 input {
 	padding: 5px;
@@ -87,6 +90,9 @@ footer{
 		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 }
+a {
+	color: #fff;
+}
 </style>
 </head>
 <body>
@@ -95,15 +101,22 @@ footer{
 	<table class="login">
 		<?php if ($_GET['err']): ?>
 			<tr>
-				<td colspan="2" id="error">
+				<td colspan="2" id="error" class="nohover">
 					User name or password incorrect.
 				</td>
 			</tr>
 		<?php endif; ?>
 		<?php if ($_GET['inuse']): ?>
 			<tr>
-				<td colspan="2" id="error">
+				<td colspan="2" id="error" class="nohover">
 					User name already in use.
+				</td>
+			</tr>
+		<?php endif; ?>
+		<?php if ($_GET['out']): ?>
+			<tr>
+				<td colspan="2" id="success" class="nohover">
+					You have successfully logged out.
 				</td>
 			</tr>
 		<?php endif; ?>
@@ -123,7 +136,7 @@ footer{
 		</tr>
 	</table>
 </form>
-<footer>A game by Harry, Chris, Hal & Pete</footer>
+<footer>A game by Harry, Chris, Hal & Pete for <a href="http://youngrewired.org">YRS2012</a></footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
 	$('td#uname-td').click(function(event){

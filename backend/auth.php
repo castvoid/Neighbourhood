@@ -11,7 +11,11 @@
 	
 	if (hashPassword($_POST['password']) == $user['upass']) {
 		$_SESSION['nh_uid'] = $user['UID'];
-		header('Location: ../game.php');
+		if ($user['currentregion'] == -1) {
+			header('Location: ../select.php');
+		} else {
+			header('Location: ../game.php');
+		}
 	} else {
 		header('Location: ../index.php?err=1');
 	}

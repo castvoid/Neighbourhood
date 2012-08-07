@@ -4,15 +4,10 @@ var map, addP, json, selected = -1,
         name: 'Player',
         controlOf: []
     },
-    buildBox = function (z) {
-    	p = ['none', 'block']
-	    $('#buildBox').css('display', p[z]);
-	    $('#buildMenu').css('display', p[z]);
-    },
     showStats = function (i) {
         if (i > -1) {
             selected = i
-            $('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '<li><label>Hospitals: </labels>' + json[i].hospitals + '</ul><ul style="margin-top: 5px; margin-bottom: 15px;"><li><i class="icon-plus icon-large"></i><span id="happiness" class="bar"><span style="width: 50%;"></span></span></li><li><i class="icon-minus icon-large"></i><span id="sadness" class="bar"><span style="width: 50%;"></span></span></li><li><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: 50%;"></span></span></li></ul><a class="sideB" href="javascript:buildBox(1);">Build</a>');
+            $('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '<li><label>Hospitals: </labels>' + json[i].hospitals + '</ul><ul style="margin-top: 5px; margin-bottom: 20px;"><li><i class="icon-plus icon-large"></i><span id="happiness" class="bar"><span style="width: 50%;"></span></span></li><li><i class="icon-minus icon-large"></i><span id="sadness" class="bar"><span style="width: 50%;"></span></span></li><li><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: 50%;"></span></span></li></ul><a class="sideB" data-toggle="modal" href="#modal">Build</a>');
         } else {
             selected = -1
             $('.stats').html('<h1>No Selection</h1>')
@@ -21,6 +16,7 @@ var map, addP, json, selected = -1,
 
 
 function initialize() {
+	$('#modal').modal({show: false}); //Initialize the modal
 	$.post("backend/user.php", { uid: "CURRENT", field: "uname" },
 		function(data) {
 			$('#playername').html(data);
@@ -52,7 +48,7 @@ function initialize() {
         zoomControl: true,
         zoomControlOptions: {
             style: google.maps.ZoomControlStyle.SMALL,
-            position: google.maps.ControlPosition.RIGHT_TOP
+            position: google.maps.ControlPosition.TOP_RIGHT
         }
     }
     map = new google.maps.Map(document.getElementById('map_canvas'),mapOptions)
