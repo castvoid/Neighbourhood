@@ -55,6 +55,7 @@ a.button { text-align:right; }
     position: absolute;
     top:0;
     left:0;
+    color: #fff;
 }
 #sidebar h1{
 	height:78px;
