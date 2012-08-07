@@ -14,11 +14,11 @@ function buildtoggle() {
 	var text = document.getElementById("displayText");
 	if(ele.style.display == "block") {
     		ele.style.display = "none";
-		text.innerHTML = "show";
+		text.innerHTML = "Build";
   	}
 	else {
 		ele.style.display = "block";
-		text.innerHTML = "hide";
+		text.innerHTML = "Build";
 	}
 } 
 </script>
