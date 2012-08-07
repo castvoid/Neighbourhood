@@ -80,25 +80,13 @@ a.button:link {
     border-radius: 5px;
     background: #fff;
 }
-a.button:visited { color: #000 }
-a.button:hover,
-a.button:active { color: #ee0000 }
-a.button:active { color: #ff3333 }
 .sideB {
     display: block;
-    background: #fff;
-    padding: 5px;
-    box-sizing: border-box;
     margin: 5px;
     margin-left: 0;
     border-radius: 5px;
     margin-top: 5px;
-    color: #444;
-    text-decoration: none;
-    text-shadow: none;
 }
-a.sideB:hover,
-a.sideB:active { color: #ee0000 }
 #stats li,
 #stats ul {
     list-style: none;
@@ -147,7 +135,6 @@ a{
 #bars li:hover .bar span {
     background: #ddd;
 }
-
 #buildBox{
 	position:absolute;
 	top:0;
