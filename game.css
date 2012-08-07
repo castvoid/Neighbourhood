@@ -143,6 +143,4 @@ a.button:active {
 	background: #fff;
 	background: #000;
     display: none;
-	border-color: #CCC;
-	border-style: dashed;
 }
