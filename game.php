@@ -34,7 +34,7 @@
 	<div id="sidebar">
 		<div class="profile">
 			<ul>
-			<li><i class="icon-user icon-large"></i> <h3><span id="playername">Player</span></h3>
+			<li><i class="icon-user icon-large"></i><span id="playername">Player</span>
                 <li><i class="icon-money icon-large"></i> &pound;<span id="currentmoney">0</span>
             </ul>
 		</div>
