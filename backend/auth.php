@@ -8,7 +8,7 @@
 
 	if (hashPassword($_POST['password']) == $user['upass']) {
 		$_SESSION['nh_uid'] = $user['UID'];
-		header('Location: game.php');
+		header('Location: ../game.php');
 	} else {
 		die("Username or password incorrect.");
 	}
