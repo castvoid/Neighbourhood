@@ -95,8 +95,10 @@ a {
 }
 
 #indexinfobtn {
-	top: 5px;
-	left: 5px;	
+	top: 0px;
+	left: 0px;	
+	padding-left: 5px;
+	padding-top: 5px;
 }
 </style>
 </head>
@@ -155,7 +157,7 @@ a {
 		</tr>
 	</table>
 </form>
-<i class="icon-info-sign" id="indexinfobtn"></i>
+<div id="indexinfobtn">Info</div>
 <footer>A game by Harry, Chris, Hal & Pete for <a href="http://youngrewiredstate.org/">YRS2012</a></footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
