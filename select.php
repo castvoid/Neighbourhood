@@ -126,7 +126,7 @@ a {
 		<td class="region" data-id="11">Scotland</td>
 	</tr>
 </table>
-<footer>A game by Harry, Chris, Hal & Pete for <a href="http://youngrewired.org">YRS2012</a></footer>
+<footer>A game by Harry, Chris, Hal & Pete for <a href="http://youngrewiredstate.org">YRS2012</a></footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
 	$('td.region').click(function(event){
