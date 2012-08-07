@@ -17,6 +17,16 @@ var map, addP, json, selected = -1,
     	m = $('#modal')
     	$('#modal h3').html(json[selected].name);
 	    m.modal('toggle');
+    },
+    function happiness(){
+	    h = 50
+	    	x = json[selected] - 150
+	    	j = 1
+	    	if (x < 0) j = -1
+	    h -= (Math.sqrt(x) / 2) * j
+	    
+	    h 
+	    return h
     }
 
 
