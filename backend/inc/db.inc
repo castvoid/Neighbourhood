@@ -19,6 +19,6 @@
 		return addslashes(trim(strtolower($string)));
 	}
 	function move_player($uid, $region) {
-		return mysql_query("UPDATE users SET region=" . $region . " WHERE UID=" . $uid);
+		return mysql_query("UPDATE users SET currentregion=" . $region . " WHERE UID=" . $uid);
 	}
 ?>
