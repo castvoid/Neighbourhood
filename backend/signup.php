@@ -3,6 +3,14 @@
 	require_once('inc/db.inc');
 	require_once('inc/hashing.inc');
 	
+	if (strlen($_POST['username'] < 1)) {
+		header('Location: ../index.php?namereq=1');
+	}
+	
+	if (strlen($_POST['password'] < 8)) {
+		header('Location: ../index.php?pwshort=1');
+	}
+	
 	if (!mysql_query("INSERT INTO users (uname, upass, money, currentregion) VALUES ('" . sanitise_lower($_POST['username']) . "', '" . hashPassword($_POST['password']) . "', 500, -1)")) {
 		header('Location: ../index.php?err=1');
 	} else {

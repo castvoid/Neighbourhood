@@ -12,6 +12,11 @@ var map, addP, json, selected = -1,
             selected = -1
             $('.stats').html('<h1>No Selection</h1>')
         }
+    },
+    modal = function(){
+    	m = $('#modal')
+    	$('#modal h3').html(json[selected].name);
+	    m.modal('toggle');
     }
 
 
