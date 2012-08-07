@@ -21,12 +21,7 @@ var map, addP, json, selected = -1,
     },
     happiness= function(j){
 	    h = 50
-	    	x = json[j].density - 150
-	    	j = 1
-	    	if (x < 0) j = -1
-	    h -= (Math.sqrt(x) / 2) * j
-	    
-	    
+	    if (json[j].density > 150) h -= (Math.sqrt(json[j].density - 150) / 2);else h += 10;
 	    h -= json[j].crime / 3
 	    h += json[j].schools / 200
 	    h += Math.sqrt(json[j].hospitals) *3
