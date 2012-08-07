@@ -55,8 +55,8 @@ a.button { text-align:right; }
 	height:78px;
 }
 #stats {
-    width: 207px;
-    height: 500px;
+    width: 90%;
+    height: 93%;
     
     top: 0;
     background: #ddd;

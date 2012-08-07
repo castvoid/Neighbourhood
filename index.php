@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Neighbourhood</title>
@@ -30,6 +30,9 @@ h1{
 	width:500px;
 	margin-top: -300px;
 	margin-left: -250px;
+	-moz-text-shadow: 0px 5px 3px #888;
+		-webkit-text-shadow: 0px 5px 3px #888;
+			text-shadow: 0px 5px 3px #888;
 }
 table#regions{
 	position: absolute;
@@ -53,7 +56,9 @@ table#regions  td{
 	background: rgba(0,0,0,.1);
 	padding:10px;
 	box-sizing: border-box;
-	text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
+	-moz-text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
+		-webkit-text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
+			text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
 }
 table#regions td:hover{
 	background: rgba(29, 195, 223, 0.1);
@@ -75,7 +80,9 @@ footer{
 	text-align: center;
 	font-weight: bold;
 	font-size: 13px;
-	text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
+	-moz-text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
+		-webkit-text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
+			text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
 }
 </style>
 </head>
