@@ -7,7 +7,8 @@ var map, addP, json, selected = -1,
     showStats = function (i) {
         if (i > -1) {
             selected = i
-            $('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '<li><label>Hospitals: </labels>' + json[i].hospitals + '</ul><ul id="bars"><li><i class="icon-minus icon-large"></i><span id="happiness" class="bar"><span style="width: ' + json[i].happiness + '%;"></span></span><i class="icon-plus icon-large"></i></li><li><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: ' + json[i].opression + '%;"></span></span><i class="icon-bolt icon-large"></i></li></ul><a class="sideB btn" href="javascript:modal();">Build</a>');
+            $('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '<li><label>Hospitals: </labels>' + json[i].hospitals + '</ul><ul id="bars"><li class="tip" title="Happiness of this region"><i class="icon-minus icon-large"></i><span id="happiness" class="bar"><span style="width: ' + json[i].happiness + '%;"></span></span><i class="icon-plus icon-large"></i></li><li class="tip" title="Oppression of this region"><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: ' + json[i].opression + '%;"></span></span><i class="icon-bolt icon-large"></i></li></ul><a class="sideB btn tip" title="Build something in this region" href="javascript:modal();">Build</a>');
+			$('.tip').tooltip({ 'placement': 'top' });
         } else {
             selected = -1
             $('.stats').html('<h1>No Selection</h1>')
@@ -58,6 +59,8 @@ var map, addP, json, selected = -1,
         function (data) {
             $('#currentregion').html(json[data].name);
         });
+        
+        $('.tip').tooltip({ 'placement': 'right' });
         var styles = [{
             stylers: [{
                 visibility: "off"

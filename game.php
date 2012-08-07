@@ -1,14 +1,14 @@
 <?php
-if ($_SERVER['HTTP_HOST'] != "localhost" && $_SERVER['HTTP_HOST'] != "localhost:21482" && !isset($_REQUEST["testing"])) { //Do NOT use in produtction, can be spoofed fairly easily
+if ($_SERVER['HTTP_HOST'] != "localhost" && $_SERVER['HTTP_HOST'] != "localhost:21482" && !isset($_REQUEST["testing"])) { //Do NOT use in production, can be spoofed fairly easily
 	session_start();
 	if (!isset($_SESSION['nh_uid'])) {
 		header('Location: index.php');
 	} else {
 		require_once('backend/inc/db.inc');
+		$user = user_details($_SESSION['nh_uid']);
 		if (isset($_GET['region'])) {
-			move_player($_SESSION['nh_uid'], intval($_GET['region']));
+			move_player($user['UID'], intval($_GET['region']));
 		} else {
-			$user = user_details($_SESSION['nh_uid']);
 			if ($user['currentregion'] == -1) {
 				header('Location: select.php');
 			}
@@ -43,9 +43,17 @@ if ($_SERVER['HTTP_HOST'] != "localhost" && $_SERVER['HTTP_HOST'] != "localhost:
 	<div id="sidebar">
 		<div id="profile">
 			<ul>
-				<li><i class="icon-user icon-large"></i> <span id="playername">Player</span></li>
-				<li><i class="icon-money icon-large"></i> &pound;<span id="currentmoney">0</span></li>
-				<li><i class="icon-map-marker icon-large"></i> <span id="currentregion">Loading...</span></li>
+				<li>
+					<?php echo $user['uname']; ?>
+					<?php if ($user['uemail'] == "NO_EMAIL"): ?>
+						<img src="http://www.gravatar.com/avatar/<?php echo md5($user['uname']); ?>?s=70&d=retro" />
+					<?php else: ?>
+						<img src="http://www.gravatar.com/avatar/<?php echo md5($user['uemail']); ?>?s=70&d=wavatar" />
+					<?php endif; ?>
+					<span id="playername">Player</span>
+				</li>
+				<li><i class="icon-money icon-large tip" title="Your money"></i> &pound;<span id="currentmoney">0</span></li>
+				<li><i class="icon-map-marker icon-large tip" title="Your current location"></i> <span id="currentregion">Loading...</span></li>
 			</ul>
 		</div>
 		<div class="stats" id="stats">
@@ -54,7 +62,7 @@ if ($_SERVER['HTTP_HOST'] != "localhost" && $_SERVER['HTTP_HOST'] != "localhost:
 	</div>
 	<div class="modal hide fade" id="modal">
 		<div class="modal-header">
-			<h3>City</h3>
+			<h3>Region</h3>
 		</div>
 		<div class="modal-body">
 			<p>
