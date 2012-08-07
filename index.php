@@ -93,6 +93,11 @@ footer{
 a {
 	color: #fff;
 }
+
+#indexinfobtn {
+	top: 5px;
+	left: 5px;	
+}
 </style>
 </head>
 <body>
@@ -150,7 +155,8 @@ a {
 		</tr>
 	</table>
 </form>
-<footer>A game by Harry, Chris, Hal & Pete for <a href="http://www.youngrewiredstate.org">YRS2012</a></footer>
+<i class="icon-info-sign" id="indexinfobtn"></i>
+<footer>A game by Harry, Chris, Hal & Pete for <a href="http://youngrewiredstate.org/">YRS2012</a></footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
 	$('td#uname-td').click(function(event){
