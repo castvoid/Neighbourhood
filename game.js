@@ -23,8 +23,8 @@ var map, addP, json, selected = -1,
 	    h = 50
 	    if (json[j].density > 150) h -= (Math.sqrt(json[j].density - 150) / 2);else h += 10;
 	    h -= json[j].crime / 3
-	    h += json[j].schools / 200
-	    h += Math.sqrt(json[j].hospitals) *3
+	    h += json[j].schools / json[j].population * 20000
+	    h += json[0].hospitals / json[0].population * 1000000
 	    
 	    return Math.round(h)
     }
