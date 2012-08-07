@@ -60,7 +60,7 @@ table#regions  td{
 		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 }
-table#regions td:hover{
+table#regions td:hover:not(#help){
 	background: rgba(29, 195, 223, 0.1);
 	cursor:pointer;
 	
@@ -90,28 +90,31 @@ footer{
 <h1>Neighbourhood</h1>
 <table cellspacing="0" id="regions">
 	<tr>
-		<td data-id="0">London</td>
-		<td data-id="1">North East England</td>
-		<td data-id="2">North West England</td>
-		<td data-id="3">Yorkshire & the Humber</td>
+		<td id="help" colspan="4">Please select the region you would like to start in.</td>
 	</tr>
 	<tr>
-		<td data-id="4">East Midlands</td>
-		<td data-id="5">West Midlands</td>
-		<td data-id="7">South East England</td>
-		<td data-id="8">South West England</td>
+		<td class="region" data-id="0">London</td>
+		<td class="region" data-id="1">North East England</td>
+		<td class="region" data-id="2">North West England</td>
+		<td class="region" data-id="3">Yorkshire & the Humber</td>
 	</tr>
 	<tr>
-		<td data-id="6">East of England</td>
-		<td data-id="9">Wales</td>
-		<td data-id="10">Northern Ireland</td>
-		<td data-id="11">Scotland</td>
+		<td class="region" data-id="4">East Midlands</td>
+		<td class="region" data-id="5">West Midlands</td>
+		<td class="region" data-id="7">South East England</td>
+		<td class="region" data-id="8">South West England</td>
+	</tr>
+	<tr>
+		<td class="region" data-id="6">East of England</td>
+		<td class="region" data-id="9">Wales</td>
+		<td class="region" data-id="10">Northern Ireland</td>
+		<td class="region" data-id="11">Scotland</td>
 	</tr>
 </table>
 <footer>A game by Harry, Chris, Hal & Pete</footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
-	$('td').click(function(event){
+	$('td.region').click(function(event){
 		window.location = 'game.php?region=' + $(this).data('id')
 	});
 </script>

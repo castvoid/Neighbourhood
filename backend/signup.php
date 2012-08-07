@@ -8,6 +8,6 @@
 	} else {
 		$user = uname_details(sanitise_lower($_POST['username']));
 		$_SESSION['nh_uid'] = $user['UID'];
-		header('Location: ../game.php');
+		header('Location: ../select.php');
 	}
 ?>
