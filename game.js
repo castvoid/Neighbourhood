@@ -29,8 +29,9 @@ var map, addP, json, selected = -1,
 	    
 	    h -= json[j].crime / 3
 	    h += json[j].schools / 400
-	    h += json[j].hospitals / 1
-	    return h
+	    h += Math.sqrt(json[j].hospitals)
+	    
+	    return Math.round(h)
     }
 
 
