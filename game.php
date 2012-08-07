@@ -8,23 +8,6 @@
 <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="game.js"></script>
-<<<<<<< HEAD
-       <script language="javascript"> 
-function buildtoggle() {
-	var ele = document.getElementById("buildtoggle");
-	var text = document.getElementById("displayText");
-	if(ele.style.display == "block") {
-    		ele.style.display = "none";
-		text.innerHTML = "Build";
-  	}
-	else {
-		ele.style.display = "block";
-		text.innerHTML = "Build";
-	}
-} 
-</script>
-=======
->>>>>>> Revert "Added Build Toggle"
 </head>
 <body onload="initialize();run()">
 <div id="map_canvas"></div> <!-- The Google Map -->
