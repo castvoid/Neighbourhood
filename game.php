@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER['HTTP_HOST'] != "localhost" || $_SERVER['HTTP_HOST'] != "localhost:21482") {
+if ($_SERVER['HTTP_HOST'] != "localhost" && $_SERVER['HTTP_HOST'] != "localhost:21482") {
 	session_start();
 	if (!isset($_SESSION['nh_uid'])) {
 		header('Location: index.php');
