@@ -148,9 +148,6 @@ a{
     background: #ddd;
 }
 
-.bar span:hover {
-	backgroud: #999;	
-}
 #buildBox{
 	position:absolute;
 	top:0;
