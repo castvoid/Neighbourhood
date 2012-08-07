@@ -146,6 +146,7 @@ a.sideB:hover,a.sideB:active {
 	margin-top: -250px;
 	margin-left: -300px;
 	background: #fff;
-	background: #000;
     display: none;
+	border-color: #CCC;
+	border-style: dashed;
 }
