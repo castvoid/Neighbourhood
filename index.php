@@ -90,6 +90,9 @@ footer{
 		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 }
+a {
+	color: #fff;
+}
 </style>
 </head>
 <body>
@@ -133,7 +136,7 @@ footer{
 		</tr>
 	</table>
 </form>
-<footer>A game by Harry, Chris, Hal & Pete</footer>
+<footer>A game by Harry, Chris, Hal & Pete for <a href="http://youngrewired.org">YRS2012</a></footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
 	$('td#uname-td').click(function(event){
