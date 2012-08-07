@@ -1,3 +1,14 @@
+<?php
+	session_start();
+	if (!isset($_SESSION['nh_uid'])) {
+		header('Location: index.php');
+	} else {
+		$user = user_details($_SESSION['nh_uid']);
+		if ($user['currentregion'] != -1) {
+			header('Location: game.php');
+		}
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
