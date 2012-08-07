@@ -28,7 +28,7 @@ h1{
 	top:50%;
 	left:50%;
 	width:500px;
-	margin-top: -350px;
+	margin-top: -300px;
 	margin-left: -250px;
 }
 table#regions{
