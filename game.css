@@ -81,6 +81,9 @@ a.button:link {
     border-radius: 5px;
     background: #fff;
 }
+a.button:visited{
+	color: #000;
+}
 .sideB {
     display: block;
     margin: 5px;
