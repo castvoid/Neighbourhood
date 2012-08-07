@@ -5,7 +5,6 @@ if ($_SERVER['HTTP_HOST'] != "localhost") {
 		header('Location: index.php');
 	}
 	if (isset($_GET['region'])) {
-		echo $_GET['region'];
 		require_once('backend/inc/db.inc');
 		move_player($_SESSION['nh_uid'], intval($_GET['region']));
 	}
