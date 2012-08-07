@@ -107,6 +107,12 @@ a.sideB:active { color: #ee0000 }
 a{
 	text-decoration: none;
 }
+.bars {
+    margin: 5px 0 20px 0;
+}
+.bars li:hover i {
+    color: #0f0;
+}
 .bar {
     position: absolute;
     top: 0;
@@ -124,8 +130,6 @@ a{
     height: 100%;
     display: block;
     border-radius: 3px;
-<<<<<<< HEAD
-=======
 }
 
 .bar span:hover {
