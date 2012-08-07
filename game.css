@@ -76,7 +76,7 @@ a.button:link {
     text-decoration: none;
     padding: 4px;
     border-radius: 5px;
-    background: #eee;
+    background: #fff;
 }
 a.button:visited { color: #000 }
 a.button:hover,
