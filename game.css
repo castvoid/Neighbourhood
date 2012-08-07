@@ -169,11 +169,9 @@ a{
 	height:100%;
 	background: rgba(255,255,255,0.75);
 	display: none;
-
-
 }
 #buildMenu {
-   width: 600px;
+    width: 600px;
     height: 500px;
     position: absolute;
     top: 50%;
