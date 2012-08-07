@@ -17,10 +17,11 @@ body {
 
 #map_canvas {
 	height: 100%;
-	
-	box-shadow:inset 0 0 100px rgba(0,0,0,0.5);
 	}
 	
+i{
+	text-shadow: none !important;
+}
 #bottom_menu {
 	height: 36px;
 	background-image:	-moz-linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
@@ -60,6 +61,7 @@ a.button { text-align:right; }
 		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 }
+
 #sidebar h1{
 	height:78px;
 }
@@ -109,7 +111,6 @@ a.button:active {
 	}
 
 .sideB{
-	width:95%;
 	display: block;
 	background: #fff;
 	padding:5px;
@@ -118,8 +119,9 @@ a.button:active {
 	margin-left: 0;
 	border-radius: 5px;
 	margin-top:5px;
-	color: #333;
+	color: #444;
 	text-decoration: none;
+    text-shadow: 
 }
 
 a.sideB:hover,a.sideB:active { 
@@ -133,9 +135,7 @@ a.sideB:hover,a.sideB:active {
 	width:100%;
 	height:100%;
 	background: rgba(255,255,255,0.75);
-	display: none;
-
-	
+	display: none;	
 }
 #buildMenu {
 	width:600px;
