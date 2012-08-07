@@ -120,7 +120,7 @@ a {
 				</td>
 			</tr>
 		<?php endif; ?>
-		<?php if ($_GET['unamereq']): ?>
+		<?php if ($_GET['namereq']): ?>
 			<tr>
 				<td colspan="2" id="error" class="nohover">
 					User name required.

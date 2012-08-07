@@ -3,12 +3,12 @@
 	require_once('inc/db.inc');
 	require_once('inc/hashing.inc');
 	
-	if (strlen($_POST['username'] < 1)) {
+	if (strlen($_POST['username']) < 1) {
 		header('Location: ../index.php?namereq=1');
 		die();
 	}
 	
-	if (strlen($_POST['password'] < 8)) {
+	if (strlen($_POST['password']) < 8) {
 		header('Location: ../index.php?pwshort=1');
 		die();
 	}
