@@ -1,5 +1,4 @@
 <?php
-if ($_SERVER["HTTP_HOST"] != "localhost"){
 	session_start();
 	if (!isset($_SESSION['nh_uid'])) {
 		header('Location: index.php');
@@ -8,7 +7,6 @@ if ($_SERVER["HTTP_HOST"] != "localhost"){
 		require_once('backend/inc/db.inc');
 		move_player($_SESSION['nh_uid'], intval($_GET['region']));
 	}
-}
 ?>
 <!DOCTYPE html>
 <html>
