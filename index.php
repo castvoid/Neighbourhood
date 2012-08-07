@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	if (isset($_SESSION['nh_uid'])) {
+		header('Location: ../game.php');
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
