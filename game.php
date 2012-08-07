@@ -35,9 +35,9 @@ if ($_SERVER['HTTP_HOST'] != "localhost" && $_SERVER['HTTP_HOST'] != "localhost:
 		<a class="button" href="/backend/signout.php">Log Out</a>
 	</div>
 	<div id="sidebar">
-		<div class="profile">
+		<div id="profile">
 			<ul>
-				<li><i class="icon-user icon-large"></i><span id="playername">Player</span>
+				<li><i class="icon-user icon-large"></i> <span id="playername">Player</span>
 				<li><i class="icon-money icon-large"></i> &pound;<span id="currentmoney">0</span>
 			</ul>
 		</div>

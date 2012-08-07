@@ -14,10 +14,9 @@ var map, addP, json, selected = -1,
         }
     },
     modal = function () {
-        m = $('#modal')
         $('#modal h3').html(json[selected].name);
-        $('#modal .modal-body').html('YEAAAAAHHHH!')
-        m.modal('toggle');
+        $('#modal .modal-body').html('<p>What would you like to build or destroy in ' + json[selected].name + '? There are:</p><ul><li>' + json[selected].schools + ' schools <a href="#" class="btn btn-mini btn-success">Build school</a> <a href="#" class="btn btn-mini btn-danger">Destroy school</a></li><li>' + json[selected].hospitals + ' hospitals <a href="#" class="btn btn-mini btn-success">Build hospital</a> <a href="#" class="btn btn-mini btn-danger">Destroy hospital</a></li></ul>');
+        $('#modal').modal('show');
     },
     happiness = function (j) { // J is the ID of the place in the JSON db
         h = 50

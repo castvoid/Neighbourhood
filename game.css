@@ -105,6 +105,17 @@ a.button:hover {
     list-style: none;
     position: relative;
 }
+#profile li,
+#profile ul {
+    list-style: none;
+    position: relative;
+}
+#modal li,
+#modal ul {
+    list-style: none;
+    position: relative;
+    padding-left: 5px;
+}
 a{
 	text-decoration: none;
 }
@@ -172,7 +183,4 @@ a{
     display: none;
     padding-left: 5px;
     border: 1px solid #999;
-}
-.modal-footer .btn:active {
-    box-shadow: none;
 }
