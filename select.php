@@ -3,6 +3,7 @@
 	if (!isset($_SESSION['nh_uid'])) {
 		header('Location: index.php');
 	} else {
+		require_once('backend/inc/db.inc');
 		$user = user_details($_SESSION['nh_uid']);
 		if ($user['currentregion'] != -1) {
 			header('Location: game.php');
