@@ -90,7 +90,13 @@ var map, addP, json, selected = -1,
         },
 
         function (data) {
-            player.controlOf = data.split(',');
+            player.controlOf = JSON.parse(data);
+            for (i=0;i<player.controlOf.length;i++) {
+				j = player.controlOf[i];
+				json[j].poly.setOptions({
+					fillColor: '#2f2'
+				});
+			}
             $('#currentregions').html(player.controlOf.length);
         });
 

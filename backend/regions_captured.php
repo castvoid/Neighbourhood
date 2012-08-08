@@ -10,7 +10,7 @@
 	for ($i=0;$i<11;$i++) {
 		$region = region_details($uid, $i);
 		if ($region['conquerstatus'] == 1) {
-			array_push($regionlist, $region['number']);
+			array_push($regionlist, intval($region['number']));
 		}
 	}
 	echo json_encode($regionlist);
