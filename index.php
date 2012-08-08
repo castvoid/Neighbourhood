@@ -132,6 +132,11 @@ a {
 	display: none;
 	color:#000;
 }
+
+#infodiv{
+	padding-left: 5px;
+	padding-top: 5px;	
+}
 </style>
 <link type="text/css" href="bootstrap.min.css" rel="stylesheet"/>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -139,7 +144,7 @@ a {
 </head>
 <body>
 <h1>Neighbourhood</h1>
-<button class="btn" onClick="$('#myModal').modal();">info</button>
+<div id="infodiv"><button class="btn" onClick="$('#myModal').modal();">info</button></div>
 <form action="backend/auth.php" method="post" id="loginform">
 	<table class="login">
 		<?php if ($_GET['err']): ?>
