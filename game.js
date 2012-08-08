@@ -35,7 +35,7 @@ var map, addP, json, selected = -1,
     }
     function get_hospitals(region) {
 		var hospitals;
-		$.ajax(
+		$.ajax({
 			type: 'POST',
 			url: "backend/region.php",
 			data: { uid: "CURRENT", rid: region, field: "hospitals" },
@@ -48,7 +48,7 @@ var map, addP, json, selected = -1,
 	}
 	function get_schools(region) {
 		var schools;
-		$.ajax(
+		$.ajax({
 			type: 'POST',
 			url: "backend/region.php",
 			data: { uid: "CURRENT", rid: region, field: "schools" },
