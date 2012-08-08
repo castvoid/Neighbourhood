@@ -7,5 +7,6 @@
 		$uid = $_POST['uid'];
 	}
 	$user = user_details($uid);
+	if ($_POST['field'] == "upass") die('Access denied.');
 	echo $user[$_POST['field']];
 ?>
