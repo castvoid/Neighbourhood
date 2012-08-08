@@ -6,6 +6,7 @@
 	} else {
 		$uid = $_POST['uid'];
 	}
+	$detail = $_POST['field'];
 	$region = region_details($uid, $_POST['rid']);
-	echo $region[$_POST['detail']];
+	echo $region[$_POST['field']];
 ?>
