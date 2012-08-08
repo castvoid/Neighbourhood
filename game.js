@@ -8,7 +8,7 @@ var map, addP, json, selected = -1,
         if (i > -1) {
             selected = i
             $('.stats').html('<h1>Loading...</h1>');
-            var sidebar = '<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '<li><label>Hospitals: </labels>' + json[i].hospitals + '</ul><ul id="bars"><li class="tip" title="Happiness of this region"><i class="icon-minus icon-large"></i><span id="happiness" class="bar"><span style="width: ' + json[i].happiness + '%;"></span></span><i class="icon-plus icon-large"></i></li><li class="tip" title="Oppression of this region"><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: ' + json[i].opression + '%;"></span></span><i class="icon-bolt icon-large"></i></li></ul>';
+            var sidebar = '<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '<li><label>Hospitals: </labels>' + json[i].hospitals + '</ul><ul id="bars"><li class="tip" title="Happiness of this region"><i class="icon-minus icon-large"></i><span id="happiness" class="bar"><span style="width: ' + json[i].happiness + '%;"></span></span><i class="icon-plus icon-large"></i></li><li class="tip" title="Oppression of this region"><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: ' + json[i].oppression + '%;"></span></span><i class="icon-bolt icon-large"></i></li></ul>';
 			if (jQuery.inArray(selected, player.controlOf) != -1) {
 				sidebar = sidebar + '<a class="sideB btn tip" title="Build something in this region" href="javascript:modal();">Build</a>';
 			}
@@ -36,7 +36,7 @@ var map, addP, json, selected = -1,
         }
         return Math.round(h)
     },
-    opression = function(j){
+    oppression = function(j){
 	    o = 50
 	    o += (Math.sqrt(json[j].density) - 16) / 3.5
 	    o -= json[j].schools / json[j].population * 2000 + json[0].hospitals / json[0].population * 1500000
@@ -184,6 +184,6 @@ var map, addP, json, selected = -1,
         for (x = 0; x < 12; x++) {
             addP(x);
             json[x].happiness = happiness(x);
-            json[x].opression = opression(x);
+            json[x].oppression = oppression(x);
         }
     }
