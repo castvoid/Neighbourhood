@@ -18,21 +18,31 @@ body {
 i { text-shadow: none !important }
 #bottom_menu {
     height: 36px;
-    background-image: -moz-linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
-    background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
-    background-image: linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    background-image: -moz-linear-gradient(bottom, #888 0%, #fff 100%);
+    background-image: -webkit-linear-gradient(bottom, #888 0%, #fff 100%);
+    background-image: linear-gradient(bottom, #888 0%, #fff 100%);
     position: absolute;
     bottom: 0px;
     padding: 0;
     padding-left: 10px;
     line-height: 36px;
-    width: 100%;
     text-align: right;
     right: 0px;
+    left: 252px;
     padding-right: 5px;
+    box-shadow: 0 -6px 8px -6px #555;
+    z-index: 50;
 }
 a.button { text-align: right }
-
+#bottom_menu .btn {
+    border:  none;
+    background-image: -moz-linear-gradient(bottom, #888 0%, #fff 100%);
+    background-image: -webkit-linear-gradient(bottom, #888 0%, #fff 100%);
+    background-image: linear-gradient(bottom, #888 0%, #fff 100%);
+}
+#bottom_menu .btn:hover {
+    background: #bbb;
+}
 
 #playername{
 	font-weight: bold;
