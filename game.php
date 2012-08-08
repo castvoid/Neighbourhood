@@ -7,6 +7,8 @@ if ($_SERVER['HTTP_HOST'] != "localhost" && $_SERVER['HTTP_HOST'] != "localhost:
 		require_once('backend/inc/db.inc');
 		if (isset($_GET['region'])) {
 			move_player($_SESSION['nh_uid'], intval($_GET['region']));
+			require_once('backend/inc/region_init.inc');
+			init_regions($_SESSION['nh_uid']);
 		} else {
 			$user = user_details($_SESSION['nh_uid']);
 			if ($user['currentregion'] == -1) {
