@@ -155,9 +155,7 @@ a {
     
     <?php
 	require_once('backend/inc/db.inc');
-	
-	$user = user_details($_SESSION['un_uin']);
-	
+	$user = user_details($_SESSION['nh_uid']);
 	?>
     
 		<tr>
