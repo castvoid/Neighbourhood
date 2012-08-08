@@ -80,20 +80,15 @@ var map, addP, json, selected = -1,
             $('#currentmoney').html(data);
             player.money = data
         });
-        
 
-        $('#currentregions').html(player.controlOf.length);
-
-        /*$.post("backend/user.php", {
-            uid: "CURRENT",
-            field: "currentregion"
+        $.post("backend/regions_captured.php", {
+            uid: "CURRENT"
         },
 
         function (data) {
-            $('#currentregion').html(json[data].name);
-            json[data].poly.setOptions({fillColor: '#22ff22'});
             player.controlOf.push(data);
-        });*/
+            $('#currentregions').html(player.controlOf.length);
+        });
 
         
         $('.tip').tooltip({ 'placement': 'right' });

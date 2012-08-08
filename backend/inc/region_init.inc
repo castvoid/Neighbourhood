@@ -14,6 +14,9 @@
 		mysql_query("INSERT INTO regions (user, number, hospitals, schools) VALUES (" . intval($uid) . ", 9, 106, 1833)");
 		mysql_query("INSERT INTO regions (user, number, hospitals, schools) VALUES (" . intval($uid) . ", 10, 33, 1210)");
 		mysql_query("INSERT INTO regions (user, number, hospitals, schools) VALUES (" . intval($uid) . ", 11, 222, 2755)");
+		
+		$user = user_details($uid);
+		mysql_query("UPDATE regions SET conquerstatus=1 WHERE user=" . $uid . " AND number=" . $user['currentregion']);
 	}
 	
 	if (isset($_GET['setup'])) {
