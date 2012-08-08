@@ -2,6 +2,7 @@
 	session_start();
 	require_once('inc/db.inc');
 	require_once('inc/hashing.inc');
+	require_once('inc/region_init.inc');
 	
 	if (strlen($_POST['username']) < 1) {
 		header('Location: ../index.php?namereq=1');
@@ -17,6 +18,7 @@
 		header('Location: ../index.php?err=1');
 	} else {
 		$user = uname_details(sanitise_lower($_POST['username']));
+		init_regions($user['UID']);
 		$_SESSION['nh_uid'] = $user['UID'];
 		header('Location: ../select.php');
 	}
