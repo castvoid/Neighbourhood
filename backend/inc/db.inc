@@ -8,8 +8,8 @@
 		$response = mysql_query("SELECT * FROM users WHERE uname='" . $uname . "'");
 		return mysql_fetch_array($response);
 	}
-	function region_details($rid) {
-		$response = mysql_query("SELECT * FROM regions WHERE RID=" . $rid);
+	function region_details($uid, $rid) {
+		$response = mysql_query("SELECT * FROM regions WHERE user=" . $uid . " AND number=" . $rid);
 		return mysql_fetch_array($response);
 	}
 	function sanitise($string, $lower) {

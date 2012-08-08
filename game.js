@@ -7,7 +7,7 @@ var map, addP, json, selected = -1,
     showStats = function (i) {
         if (i > -1) {
             selected = i
-            $('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '<li><label>Hospitals: </labels>' + json[i].hospitals + '</ul><ul id="bars"><li class="tip" title="Happiness of this region"><i class="icon-minus icon-large"></i><span id="happiness" class="bar"><span style="width: ' + json[i].happiness + '%;"></span></span><i class="icon-plus icon-large"></i></li><li class="tip" title="Oppression of this region"><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: ' + json[i].opression + '%;"></span></span><i class="icon-bolt icon-large"></i></li></ul><a class="sideB btn tip" title="Build something in this region" href="javascript:modal();">Build</a>');
+            $('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + get_schools(i) + '<li><label>Hospitals: </labels>' + get_hospitals(i) + '</ul><ul id="bars"><li class="tip" title="Happiness of this region"><i class="icon-minus icon-large"></i><span id="happiness" class="bar"><span style="width: ' + json[i].happiness + '%;"></span></span><i class="icon-plus icon-large"></i></li><li class="tip" title="Oppression of this region"><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: ' + json[i].opression + '%;"></span></span><i class="icon-bolt icon-large"></i></li></ul><a class="sideB btn tip" title="Build something in this region" href="javascript:modal();">Build</a>');
 			$('.tip').tooltip({ 'placement': 'top' });
         } else {
             selected = -1
@@ -33,6 +33,32 @@ var map, addP, json, selected = -1,
 	    o -= json[j].schools / json[j].population * 2000 + json[0].hospitals / json[0].population * 1500000
 	    return o 
     }
+    function get_hospitals(region) {
+		var hospitals;
+		$.post("backend/region.php", {
+			uid: "CURRENT",
+            rid: region,
+            field: "hospitals"
+        },
+
+        function (data) {
+            hospitals = data;
+        });
+        return hospitals;
+	}
+	function get_schools(region) {
+		var schools;
+		$.post("backend/region.php", {
+			uid: "CURRENT",
+            rid: region,
+            field: "schools"
+        },
+
+        function (data) {
+            schools = data;
+        });
+        return schools;
+	}
     function initialize() {
         $.post("backend/user.php", {
             uid: "CURRENT",
@@ -102,8 +128,8 @@ var map, addP, json, selected = -1,
             },
             maxZoom: 10,
             minZoom: 5,
-            streetViewControl: false,
             panControl: false,
+            streetViewControl: false,
             zoomControl: true,
             zoomControlOptions: {
                 style: google.maps.ZoomControlStyle.SMALL,
