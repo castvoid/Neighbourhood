@@ -44,6 +44,9 @@ table#regions{
 	margin-top:-200px;
 	font-weight: bold;
 	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select:none;
 
 }
 
@@ -59,10 +62,14 @@ table#regions  td{
 	-moz-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+				
 }
-table#regions td:hover:not(#help){
+table#regions td:not(#help):not(.nosave){
+	cursor:pointer !important;
+}
+table#regions td:hover:not(#help):not(.nosave){
 	background: rgba(29, 195, 223, 0.1);
-	cursor:pointer;
+
 	
 }
 table#regions tr:last-child td{
@@ -70,6 +77,11 @@ table#regions tr:last-child td{
 }
 table#regions tr td:last-child{
 	border-right: none;
+}
+td{
+	-webkit-transition: background 0.2s;
+	-moz-transition:background .2s;
+	transition:background .2s;
 }
 footer{
 	width:500px;
@@ -87,14 +99,39 @@ footer{
 a {
 	color: #fff;
 }
+.continue.nosave{
+	cursor: default;
+	opacity: 0.5;
+}
+.continue:not(.nosave){
+	background:rgba(0,255,0,0.2) !important;
+}
+.continue:hover:not(.nosave){
+	background: rgba(0,200,0,.2) !important;
+}
+input{
+	padding:5px;
+	border: none;
+	background: rgba(0,0,0,.1);
+	font-size: 16px;
+	color: #fff;
+	font-weight: bold;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+		-webkit-font-smoothing:antialiased;
+			-moz-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+			margin-top: 3px;
+			text-align: center;
+}
 </style>
 </head>
 <body>
 <h1>Neighbourhood</h1>
 <table cellspacing="0" id="regions">
 	<tr>
-		<td id="help" colspan="3">Please select the region you would like to start in.</td>
-		<td class="continue">Continue game</td>
+		<td id="help" colspan="3"><p>My name is</p><input></input></td>
+		<td class="nosave continue">Continue game</td>
 	</tr>
 	<tr>
 		<td class="region" data-id="0">London</td>
@@ -119,8 +156,19 @@ a {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
 	$('td.region').click(function(event){
-		window.location = 'game.php?region=' + $(this).data('id')
+		if ($('input').val() != ''){
+		localStorage.setItem('newGame', JSON.stringify({name:$('input').val(),region:$(this).data('id')}));
+		window.location = 'game.php'
+		}else{
+			alert('Your name cannot be blank');
+		}
 	});
+	if (typeof localStorage.getItem('saveGame') == "string"){
+		$('.continue.nosave').removeClass('nosave');
+		$('.continue').click(function(){
+			window.location = 'game.php'
+		})
+	}
 </script>
 </body>
 </html>

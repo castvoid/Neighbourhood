@@ -1,24 +1,3 @@
-<?php
-if ($_SERVER['HTTP_HOST'] != "localhost" && $_SERVER['HTTP_HOST'] != "localhost:21482" && !isset($_REQUEST["testing"])) { //Do NOT use in produtction, can be spoofed fairly easily
-	session_start();
-	if (!isset($_SESSION['nh_uid'])) {
-		header('Location: index.php');
-	} else {
-		require_once('backend/inc/db.inc');
-		if (isset($_GET['region'])) {
-			move_player($_SESSION['nh_uid'], intval($_GET['region']));
-			require_once('backend/inc/region_init.inc');
-			init_regions($_SESSION['nh_uid']);
-			header('Location: game.php');
-		} else {
-			$user = user_details($_SESSION['nh_uid']);
-			if ($user['currentregion'] == -1) {
-				header('Location: select.php');
-			}
-		}
-	}
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,15 +12,14 @@ if ($_SERVER['HTTP_HOST'] != "localhost" && $_SERVER['HTTP_HOST'] != "localhost:
 <script src="bootstrap.min.js"></script>
 <script src="game.js"></script>
 </head>
-<body onload="initialize();run()">
+<body onload="initialize();run();update();">
 <div id="map_canvas">
 </div>
 <!-- The Google Map -->
 <div class="ui">
 	<!-- All the UI elements -->
 	<div id="bottom_menu">
-		<a class="button btn" href="#">&nbsp;Profile</a>
-		<a class="button btn" href="/backend/signout.php">&nbsp;Log Out</a>
+		<a class="button btn" onclick="eraseGame()" href="#">Log Out</a>
 	</div>
 	<div id="sidebar">
 		<div id="profile">
