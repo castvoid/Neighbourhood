@@ -218,10 +218,10 @@ a {
 <div class="modal hide" id="myModal">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal">×</button>
-    <h3>Modal header</h3>
+    <h3>Neighbourhood</h3>
   </div>
   <div class="modal-body">
-    <p>One fine body…</p>
+    <p>Neighbourhood is a game using open data from various sources to effect the gameplay stats. You first login or sign up and select where you want to play from. Your aim is to take over the whole of the UK.</p>
   </div>
   <div class="modal-footer">
     <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
