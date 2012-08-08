@@ -172,17 +172,3 @@ var map, addP, json, selected = -1,
             json[x].happiness = happiness(x);
             json[x].opression = opression(x);
         }
-<<<<<<< HEAD
-    }
-	
-	function locationdivexpand () {
-		document.getElementById("expandinglocationdiv").style.height = "auto";	
-	}
-	
-	function locationdivshrink () {
-		document.getElementById("expandinglocationdiv").style.height = 36+"px";	
-	}
-	
-=======
-    }
->>>>>>> parent of 7220da2... Locations shrink expand.
