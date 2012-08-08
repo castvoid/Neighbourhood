@@ -40,9 +40,6 @@ a.button { text-align: right }
     background-image: -webkit-linear-gradient(bottom, #888 0%, #fff 100%);
     background-image: linear-gradient(bottom, #888 0%, #fff 100%);
 }
-#bottom_menu .btn:hover {
-    background: #bbb;
-}
 
 #playername{
 	font-weight: bold;
