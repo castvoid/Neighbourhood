@@ -40,7 +40,7 @@ if ($_SERVER['HTTP_HOST'] != "localhost" && $_SERVER['HTTP_HOST'] != "localhost:
 <div class="ui">
 	<!-- All the UI elements -->
 	<div id="bottom_menu">
-		<a class="button btn" href="#">Profile</a>
+		<a class="button btn" href="/profile.php">Profile</a>
 		<a class="button btn" href="/backend/signout.php">Log Out</a>
 	</div>
 	<div id="sidebar">
