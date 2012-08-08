@@ -87,6 +87,7 @@ var map, addP, json, selected = -1,
         function (data) {
             $('#currentregion').html(json[data].name);
             json[data].poly.setOptions({fillColor: '#22ff22'});
+            player.controlOf.push(data);
         });
         
         $('.tip').tooltip({ 'placement': 'right' });
