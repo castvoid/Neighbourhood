@@ -84,7 +84,7 @@ a.button:visited{
 }
 
 a.button:hover {
-	colour: #F00;
+	background-color: #CCC;
 }
 
 .sideB {
