@@ -38,6 +38,8 @@ a.button { text-align: right }
 	font-weight: bold;
 	font-size: 1.3em;
 	width: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 #sidebar {
     width: 231px;
@@ -113,8 +115,6 @@ a.button:hover {
 #profile ul {
     list-style: none;
     position: relative;
-    text-overflow: ellipsis;
-    overflow: hidden;
 }
 #modal li,
 #modal ul {
