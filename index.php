@@ -126,6 +126,8 @@ a {
     border: 1px solid #999;
 }
 </style>
+<link type="text/css" href="bootstrap.min.css" rel="stylesheet"/>
+<script src="bootstrap.min.js"></script>
 </head>
 <body>
 <h1>Neighbourhood</h1>
@@ -204,6 +206,20 @@ a {
 		document.getElementById("loginform").action = "backend/signup.php";
 		$('#loginform').submit();
 	});
+	$('#myModal').modal({show:false});
 </script>
+    <div class="modal hide" id="myModal">
+    	<div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal">×</button>
+    	<h3>Modal header</h3>
+    </div>
+    <div class="modal-body">
+    	<p>One fine body…</p>
+    </div>
+    <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+    <a href="#" class="btn btn-primary">Save changes</a>
+    </div>
+    </div>
 </body>
 </html>
