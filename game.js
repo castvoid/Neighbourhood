@@ -127,7 +127,7 @@ var map, addP, json, selected = -1,
             mapTypeControlOptions: {
                 mapTypeIds: []
             },
-            maxZoom: 10,
+            maxZoom: 8,
             minZoom: 5,
             panControl: false,
             streetViewControl: false,
