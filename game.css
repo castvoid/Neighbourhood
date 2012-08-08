@@ -110,7 +110,7 @@ a.button:hover {
 #profile ul {
     list-style: none;
     position: relative;
-    word-wrap: normal;
+    text-overflow: ellipsis;
 }
 #modal li,
 #modal ul {
