@@ -9,6 +9,7 @@ if ($_SERVER['HTTP_HOST'] != "localhost" && $_SERVER['HTTP_HOST'] != "localhost:
 			move_player($_SESSION['nh_uid'], intval($_GET['region']));
 			require_once('backend/inc/region_init.inc');
 			init_regions($_SESSION['nh_uid']);
+			header('Location: game.php');
 		} else {
 			$user = user_details($_SESSION['nh_uid']);
 			if ($user['currentregion'] == -1) {
