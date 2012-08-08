@@ -160,12 +160,12 @@ a {
     
 		<tr>
 			<td colspan="2" id="uname-td">
-				Username: <?php echo $user['username']; ?>
+				Username: <?php echo $user['uname']; ?>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="2" id="upass-td">
-				Money: <?php echo $user['money']; ?>
+				Money: &pound;<?php echo $user['money']; ?>
 			</td>
 		</tr>
         <tr>
