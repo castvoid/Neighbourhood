@@ -173,3 +173,12 @@ var map, addP, json, selected = -1,
             json[x].opression = opression(x);
         }
     }
+	
+	function locationdivexpand () {
+		document.getElementById("expandinglocationdiv").style.height = "auto";	
+	}
+	
+	function locationdivshrink () {
+		document.getElementById("expandinglocationdiv").style.height = 36+"px";	
+	}
+	
