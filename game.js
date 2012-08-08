@@ -48,7 +48,7 @@ var map, addP, json, selected = -1,
 			success: function (data) {
 				hospitals = data;
 			},
-			async: false
+			async: true
 		});
 		return hospitals;
 	}
@@ -61,7 +61,7 @@ var map, addP, json, selected = -1,
 			success: function (data) {
 				schools = data;
 			},
-			async: false
+			async: true
 		});
 		return schools;
 	}
