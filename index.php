@@ -234,7 +234,7 @@ a {
        Each area has a rating for money, population, population density, crime, and a number of schools and hospitals, all of these have an impact on your happiness and your oppression levels.
        Happiness and oppression are effectively two different ways of ruling your country, if your people are happy they won't want to revolt, if your people are oppressed they won't be able to revolt.
        Your job is to change these values so that you are in a strong enough position to take over neighbouring areas of Britain.
-       You can change them by buiding new schools, hospitals and police stations.</p>
+       You can change them by buiding new schools, hospitals and police stations. (It's not quite finished yet...)</p>
   </div>
   <div class="modal-footer">
     <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
