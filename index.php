@@ -16,6 +16,9 @@
 	padding: 0;
 	
 }
+a{
+	text-decoration: none;
+}
 body{
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	background: url(images/index_bg.jpg) no-repeat center center fixed; 
@@ -125,13 +128,18 @@ a {
     padding-left: 5px;
     border: 1px solid #999;
 }
+#myModal{
+	display: none;
+	color:#000;
+}
 </style>
 <link type="text/css" href="bootstrap.min.css" rel="stylesheet"/>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="bootstrap.min.js"></script>
 </head>
 <body>
 <h1>Neighbourhood</h1>
-<div id="indexinfobtn">info</div>
+<button class="btn" onClick="$('#myModal').modal();">info</button>
 <form action="backend/auth.php" method="post" id="loginform">
 	<table class="login">
 		<?php if ($_GET['err']): ?>
@@ -191,7 +199,6 @@ a {
 	</table>
 </form>
 <footer>A game by Harry, Chris, Hal & Pete for <a href="http://youngrewiredstate.org/">YRS2012</a></footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
 	$('td#uname-td').click(function(event){
 		$('#uname').focus();
@@ -208,18 +215,17 @@ a {
 	});
 	$('#myModal').modal({show:false});
 </script>
-    <div class="modal hide" id="myModal">
-    	<div class="modal-header">
-    	<button type="button" class="close" data-dismiss="modal">×</button>
-    	<h3>Modal header</h3>
-    </div>
-    <div class="modal-body">
-    	<p>One fine body…</p>
-    </div>
-    <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">Close</a>
-    <a href="#" class="btn btn-primary">Save changes</a>
-    </div>
-    </div>
+<div class="modal hide" id="myModal">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
+  </div>
+</div>
 </body>
 </html>
