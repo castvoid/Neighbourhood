@@ -37,6 +37,7 @@ a.button { text-align: right }
 #playername{
 	font-weight: bold;
 	font-size: 1.3em;
+	width: 150px;
 }
 #sidebar {
     width: 231px;
@@ -114,7 +115,6 @@ a.button:hover {
     position: relative;
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 200px;
 }
 #modal li,
 #modal ul {
