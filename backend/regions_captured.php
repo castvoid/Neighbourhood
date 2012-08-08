@@ -6,13 +6,13 @@
 	} else {
 		$uid = $_REQUEST['uid'];
 	}
+	$regionlist = '[';
 	for ($i=0;$i<11;$i++) {
-		echo $i;
 		$region = region_details($uid, $i);
 		if ($region['conquerstatus'] == 1) {
 			$regionlist .= $region['RID'] . ',';
 		}
 	}
-	$regionlist = substr($regionlist, 0, -1);
-	echo '[' . $regionlist . ']';
+	$regionlist .= ']';
+	echo $regionlist;
 ?>
