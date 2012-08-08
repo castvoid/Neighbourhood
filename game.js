@@ -172,3 +172,4 @@ var map, addP, json, selected = -1,
             json[x].happiness = happiness(x);
             json[x].opression = opression(x);
         }
+    }
