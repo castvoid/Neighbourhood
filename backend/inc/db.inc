@@ -1,11 +1,11 @@
 <?php
 	require_once("db_login.inc");
 	function user_details($uid) {
-		$response = mysql_query("SELECT * FROM users WHERE UID=" . $uid);
+		$response = mysql_query("SELECT UID, uname, money, currentregion FROM users WHERE UID=" . $uid);
 		return mysql_fetch_array($response);
 	}
 	function uname_details($uname) {
-		$response = mysql_query("SELECT * FROM users WHERE uname='" . $uname . "'");
+		$response = mysql_query("SELECT UID, uname, money, currentregion FROM users WHERE uname='" . $uname . "'");
 		return mysql_fetch_array($response);
 	}
 	function region_details($uid, $rid) {

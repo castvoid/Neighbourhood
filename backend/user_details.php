@@ -7,5 +7,5 @@
 		$uid = $_POST['uid'];
 	}
 	$user = user_details($uid);
-	echo $user[$_POST['field']];
+	echo json_encode($user);
 ?>
