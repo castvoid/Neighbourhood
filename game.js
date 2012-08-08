@@ -62,15 +62,11 @@ var map, addP, json, selected = -1,
 	    $('#currentmoney').html(player.money);
     },
     save = function(){
-    	j2o = json
-    	for(i=0;i<12;i++){
-	    	delete j2o[i].poly
-    	}
 	    j = {
 		    player:player,
-		    json:j2o
+		    json:json
 	    }
-	    localStorage.setItem('saveGame',JSON.stringify(j));
+	    localStorage.setItem('saveGame',JSON.stringify(j,function(k,v){if (k=="poly")return undefined;else return v;}));
     }
     function initialize() {
         if (typeof localStorage.getItem('newGame') == 'string'){
