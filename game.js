@@ -84,6 +84,7 @@ var map, addP, json, selected = -1,
 
         function (data) {
             $('#currentregion').html(json[data].name);
+            json[data].poly.setOptions({fillColor: '#22ff22'});
         });
         
         $('.tip').tooltip({ 'placement': 'right' });
@@ -140,7 +141,7 @@ var map, addP, json, selected = -1,
         addP = function (i) {
             json[i].poly = new google.maps.Polygon({
                 path: makePath(json[i].path),
-                strokeColor: "#ff0000",
+                strokeColor: "#222",
                 strokeWeight: '2',
                 fillColor: '#ff0000',
                 fillOpacity: '0.5',
