@@ -138,7 +138,7 @@ a {
 	padding-top: 5px;	
 }
     .modal-body {
-        line-height: 26px;
+        line-height: 20px;
         word-spacing: 2px;
     }
 </style>
