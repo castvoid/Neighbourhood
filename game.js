@@ -25,12 +25,15 @@ var map, addP, json, selected = -1,
         $('#modal .modal-body').html('<p>What would you like to build or destroy in ' + json[selected].name + '? There are:</p><table><tr class="bb"><td><strong>' + json[selected].schools + '</strong> schools</td> <td><a href="#" class="btn btn-mini btn-success">Build school</a></td> <td><a href="#" class="btn btn-mini btn-danger">Destroy school</a></td></tr><tr class="bb"><td><strong>' + json[selected].hospitals + '</strong> hospitals</td> <td><a href="#" class="btn btn-mini btn-success">Build hospital</a></td> <td><a href="#" class="btn btn-mini btn-danger">Destroy hospital</a></td></tr></table>');
         $('#modal').modal('show');
     },
-    happiness = function (j) { // J is the ID of the place in the JSON db
-        h = 50
-        if (json[j].density > 150) h -= (Math.sqrt(json[j].density - 150) / 4);
-        else h += 10;
-        h += -json[j].crime / 3 + json[j].schools / json[j].population * 23000 + json[0].hospitals / json[0].population * 2000000
-        h += json[j].gva / 650 - 20 
+    happiness = function(j) { // J is the ID of the place in the JSON db
+        h = 10;
+        h -= Math.sqrt((Math.abs(json[j].density - 150))) / 3;
+        h -= json[j].crime * 3000 / json[j].population;
+        h += json[j].schools / json[j].population * 20000 + json[0].hospitals / json[0].population * 2000000;
+        h += ((json[j].gva) * (json[j].gva)) * 0.00000003;
+        if(h > 100) {
+            h = 100;
+        }
         return Math.round(h)
     },
     opression = function(j){
@@ -100,13 +103,7 @@ var map, addP, json, selected = -1,
         },
 
         function (data) {
-            player.controlOf = JSON.parse(data);
-            for (i=0;i<player.controlOf.length;i++) {
-				j = player.controlOf[i];
-				json[j].poly.setOptions({
-					fillColor: '#2f2'
-				});
-			}
+            player.controlOf = data.split(',');
             $('#currentregions').html(player.controlOf.length);
         });
         
