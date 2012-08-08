@@ -35,28 +35,28 @@ var map, addP, json, selected = -1,
     }
     function get_hospitals(region) {
 		var hospitals;
-		$.post("backend/region.php", {
-			uid: "CURRENT",
-            rid: region,
-            field: "hospitals"
-        },
-
-        function (data) {
-            hospitals = data;
-        });
+		$.ajax(
+			type: 'POST',
+			url: "backend/region.php",
+			data: { uid: "CURRENT", rid: region, field: "hospitals" },
+			success: function (data) {
+				hospitals = data;
+			},
+			async: false
+		});
         return hospitals;
 	}
 	function get_schools(region) {
 		var schools;
-		$.post("backend/region.php", {
-			uid: "CURRENT",
-            rid: region,
-            field: "schools"
-        },
-
-        function (data) {
-            schools = data;
-        });
+		$.ajax(
+			type: 'POST',
+			url: "backend/region.php",
+			data: { uid: "CURRENT", rid: region, field: "schools" },
+			success: function (data) {
+				schools = data;
+			},
+			async: false
+		});
         return schools;
 	}
     function initialize() {
