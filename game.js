@@ -7,6 +7,7 @@ var map, addP, json, selected = -1,
     showStats = function (i) {
         if (i > -1) {
             selected = i
+            $('.stats').html('<h1>Loading...</h1>');
             $('.stats').html('<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + get_schools(i) + '<li><label>Hospitals: </labels>' + get_hospitals(i) + '</ul><ul id="bars"><li class="tip" title="Happiness of this region"><i class="icon-minus icon-large"></i><span id="happiness" class="bar"><span style="width: ' + json[i].happiness + '%;"></span></span><i class="icon-plus icon-large"></i></li><li class="tip" title="Oppression of this region"><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: ' + json[i].opression + '%;"></span></span><i class="icon-bolt icon-large"></i></li></ul><a class="sideB btn tip" title="Build something in this region" href="javascript:modal();">Build</a>');
 			$('.tip').tooltip({ 'placement': 'top' });
         } else {
@@ -16,6 +17,7 @@ var map, addP, json, selected = -1,
     },
     modal = function () {
         $('#modal h3').html(json[selected].name);
+        $('#modal .modal-body').html('<h1>Loading...</h1>');
         $('#modal .modal-body').html('<p>What would you like to build or destroy in ' + json[selected].name + '? There are:</p><ul><li><strong>' + get_schools(selected) + '</strong> schools <a href="#" class="btn btn-mini btn-success">Build school</a> <a href="#" class="btn btn-mini btn-danger">Destroy school</a></li><li><strong>' + get_hospitals(selected) + '</strong> hospitals <a href="#" class="btn btn-mini btn-success">Build hospital</a> <a href="#" class="btn btn-mini btn-danger">Destroy hospital</a></li></ul>');
         $('#modal').modal('show');
     },
