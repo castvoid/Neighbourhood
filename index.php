@@ -223,10 +223,14 @@ a {
 <div class="modal hide" id="myModal">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal">×</button>
-    <h3>Neighbourhood</h3>
+    <h3>What is neighbourhood?</h3>
   </div>
   <div class="modal-body">
-    <p>Neighbourhood is a game using open data from various sources to effect the gameplay stats. You first login or sign up and select where you want to play from. Your aim is to take over the whole of the UK.</p>
+    <p>Neighbourhood is a civ-style game where you start off owning one of the 12 main areas of britain.
+       Each area has a rating for money, population, population density, crime, and a number of schools and hospitals, all of these have an impact on your happiness and your oppression levels.
+       Happiness and oppression are effectively two different ways of ruling your country, if your people are happy they won't want to revolt, if your people are oppressed they won't be able to revolt.
+       Your job is to change these values so that you are in a strong enough position to take over neighbouring areas of britain.
+       You can change them by buiding new schools, hospitals and police stations.</p>
   </div>
   <div class="modal-footer">
     <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
