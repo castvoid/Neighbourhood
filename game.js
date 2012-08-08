@@ -67,6 +67,7 @@ var map, addP, json, selected = -1,
 
         function (data) {
             $('#playername').html(data);
+            player.name = data
         });
         $.post("backend/user.php", {
             uid: "CURRENT",
@@ -75,6 +76,7 @@ var map, addP, json, selected = -1,
 
         function (data) {
             $('#currentmoney').html(data);
+            player.money = data
         });
         
         $.post("backend/user.php", {
