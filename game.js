@@ -79,7 +79,20 @@ var map, addP, json, selected = -1,
             player.money = data
         });
         
+
         $('#currentregions').html(player.controlOf.length);
+
+        /*$.post("backend/user.php", {
+            uid: "CURRENT",
+            field: "currentregion"
+        },
+
+        function (data) {
+            $('#currentregion').html(json[data].name);
+            json[data].poly.setOptions({fillColor: '#22ff22'});
+            player.controlOf.push(data);
+        });*/
+
         
         $('.tip').tooltip({ 'placement': 'right' });
         var styles = [{
