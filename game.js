@@ -90,7 +90,7 @@ var map, addP, json, selected = -1,
         },
 
         function (data) {
-            player.controlOf = data;
+            player.controlOf = data.split(',');
             $('#currentregions').html(player.controlOf.length);
         });
 
