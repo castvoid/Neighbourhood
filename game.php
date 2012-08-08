@@ -45,7 +45,7 @@ if ($_SERVER['HTTP_HOST'] != "localhost" && $_SERVER['HTTP_HOST'] != "localhost:
 			<ul>
 				<li><i class="icon-user icon-large tip" title="Your player name"></i> <span id="playername">Player</span></li>
 				<li><i class="icon-money icon-large tip" title="Your money"></i> &pound;<span id="currentmoney">0</span></li>
-				<li><i class="icon-map-marker icon-large tip" title="Your current location"></i> <span id="currentregion">Loading...</span></li>
+				<li><i class="icon-map-marker icon-large tip" title="Locations you own"></i> <span id="currentregions">0</span></li>
 			</ul>
 		</div>
 		<div class="stats" id="stats">
