@@ -99,15 +99,41 @@ footer{
 a {
 	color: #fff;
 }
-.continue.nosave{
+
+@keyframes pulsate {
+	0% { background: rgba(0,255,0,0.2); }
+	50% { background: rgba(0,255,0,0.4); }
+	100% { background: rgba(0,255,0,0.2); }
+}
+
+@-moz-keyframes pulsate {
+	0% { background: rgba(0,255,0,0.2); }
+	50% { background: rgba(0,255,0,0.4); }
+	100% { background: rgba(0,255,0,0.2); }
+}
+
+@-webkit-keyframes pulsate {
+	0% { background: rgba(0,255,0,0.2); }
+	50% { background: rgba(0,255,0,0.4); }
+	100% { background: rgba(0,255,0,0.2); }
+}
+
+@-o-keyframes pulsate {
+	0% { background: rgba(0,255,0,0.2); }
+	50% { background: rgba(255,255,0,1); }
+	100% { background: rgba(0,255,0,0.2); }
+}
+
+.continue.nosave {
 	cursor: default;
 	opacity: 0.5;
 }
 .continue:not(.nosave){
 	background:rgba(0,255,0,0.2) !important;
-}
-.continue:hover:not(.nosave){
-	background: rgba(0,200,0,.2) !important;
+	-moz-animation: pulsate 2.5s infinite;
+		-webkit-animation: pulsate 2.5s infinite;
+			-o-animation: pulsate 0.125s infinite;
+				animation: pulsate 2.5s infinite;
 }
 input{
 	padding:5px;
@@ -124,6 +150,7 @@ input{
 			margin-top: 3px;
 			text-align: center;
 }
+
 </style>
 </head>
 <body>
