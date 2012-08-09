@@ -203,10 +203,23 @@ a{
     border: 1px solid #999;
 }
 .modal-body td {
-    padding: 5px;
+    background-image: -moz-linear-gradient(bottom, #ccc 0%, #eee 100%);
+    background-image: -webkit-linear-gradient(bottom, #ccc 0%, #eee 100%);
+    background-image: linear-gradient(bottom, #ccc 0%, #eee 100%);
 }
-.modal-body td:nth-child(3), .modal-body td:last-child {
-    padding: 0;
+.modal-body td:first-child, .modal-body td:last-child {
+    border-radius: 5px;
+}
+.modal-body td:first-child .btn {
+    margin-right: -2px;
+}
+.modal-body td:last-child .btn {
+    margin-left: -2px;
+}
+.modal-body td:nth-child(2) {
+    padding: 0 5px 0 5px;
+    box-shadow: inset 0 0 0 1px #bbb;
+    text-align: center;
 }
 .modal-body td .btn {
     display: block;
@@ -218,12 +231,8 @@ a{
     font-size: 16px;
 }
 .modal-body td .btn-success {
-        border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
 }
 .modal-body td .btn-danger {
     border-radius: 0 5px 5px 0;
-    margin-left: -7px;
-}
-.modal-body td input {
-    width: 20px;
 }
