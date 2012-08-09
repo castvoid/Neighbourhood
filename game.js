@@ -306,7 +306,7 @@ defaultJSON = [{
 buildings = {
 	schools:{
 		cost:2000,
-		amount:100
+		amount:30
 	},
 	hospitals:{
 		cost:4000,
