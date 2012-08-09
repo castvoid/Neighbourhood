@@ -11,11 +11,11 @@ var map, addP, json, selected = -1,
 	    window.location = 'index.php'
 	    }
     }
-    showStats = function (i) {
-        if (i > -1) {
+    showStats = function(i) {
+        if(i > -1) {
             selected = i
             var sidebar = '<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Schools: </label>' + json[i].schools + '<li><label>Hospitals: </labels>' + json[i].hospitals + '</ul><ul id="bars"><li class="tip" title="Happiness of this region"><i class="icon-minus icon-large"></i><span id="happiness" class="bar"><span style="width: ' + json[i].happiness + '%;"></span></span><i class="icon-plus icon-large"></i></li><li class="tip" title="Oppression of this region"><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: ' + json[i].oppression + '%;"></span></span><i class="icon-bolt icon-large"></i></li></ul>';
-            if (player.controlOf[selected] == true) {
+            if(player.controlOf[selected] == true) {
                 sidebar = sidebar + '<a class="sideB btn tip" title="Build something in this region" href="javascript:modal();">Build</a>';
             }
             $('.stats').html(sidebar);
@@ -27,46 +27,52 @@ var map, addP, json, selected = -1,
             $('.stats').html('<h1>No Selection</h1>')
         }
     },
-    modal = function () {
+    modal = function() {
         $('#modal h3').html(json[selected].name);
         $('#modal .modal-body').html('<h1>Loading...</h1>');
         $('#modal .modal-body').html('<p>What would you like to build or destroy in ' + json[selected].name + '? There are:</p><table><tr class="bb"><td><strong>' + json[selected].schools + '</strong> schools</td> <td><a href="#" class="btn btn-mini btn-success">Build school</a></td> <td><a href="#" class="btn btn-mini btn-danger">Destroy school</a></td></tr><tr class="bb"><td><strong>' + json[selected].hospitals + '</strong> hospitals</td> <td><a href="#" class="btn btn-mini btn-success">Build hospital</a></td> <td><a href="#" class="btn btn-mini btn-danger">Destroy hospital</a></td></tr></table>');
         $('#modal').modal('show');
     },
-    happiness = function (j) { // J is the ID of the place in the JSON db
-        h = 10;
-        h -= Math.sqrt((Math.abs(json[j].density - 150))) / 3;
-        h -= json[j].crime * 3000 / json[j].population;
-        h += json[j].schools / json[j].population * 20000 + json[0].hospitals / json[0].population * 2000000;
-        h += ((json[j].gva) * (json[j].gva)) * 0.00000003;
-        if (h > 100) {
+    happiness = function(j) { // J is the ID of the place in the JSON db
+        h = 50;
+        var l = json[j];
+        if(l.density > 150) {
+            h -= Math.sqrt(l.density - 150) / 1;
+        }
+        if(l.density < 100) {
+            h -= (100 - l.density);
+        }
+        h -= l.crime * 3000 / l.population;
+        h += l.schools / l.population * 10000 + l.hospitals / l.population * 100000;
+        h += Math.pow(l.gva, 2.5) * 0.0000000004;
+        if(h > 100) {
             h = 100;
         }
         return Math.round(h)
     },
-    oppression = function (j) {
+    oppression = function(j) {
         o = 50
         o += (Math.sqrt(json[j].density) - 16) / 3.5
         o -= json[j].schools / json[j].population * 2000 + json[0].hospitals / json[0].population * 1500000
         return o
     },
-    update = function(){
-    	var num=0;
-	    for (i=0;i<player.controlOf.length;i++){
-	    	if (player.controlOf[i] == true){
-		    	json[i].poly.setOptions({fillColor:"#2f2"});
-		    	num++;
-		    }
-	    }
-	    $('#currentregions').html(num);
-	    $('#currentmoney').html(player.money);
+    update = function() {
+        var num = 0;
+        for(i = 0; i < player.controlOf.length; i++) {
+            if(player.controlOf[i] == true) {
+                json[i].poly.setOptions({ fillColor: "#2f2" });
+                num++;
+            }
+        }
+        $('#currentregions').html(num);
+        $('#currentmoney').html(player.money);
     },
-    save = function(){
-	    j = {
-		    player:player,
-		    json:json
-	    }
-	    localStorage.setItem('saveGame',JSON.stringify(j,function(k,v){if (k=="poly")return undefined;else return v;}));
+    save = function() {
+        j = {
+            player: player,
+            json: json
+        }
+        localStorage.setItem('saveGame', JSON.stringify(j, function(k, v) { if(k == "poly") return undefined; else return v; }));
     }
     function initialize() {
         if (typeof localStorage.getItem('newGame') == 'string'){
