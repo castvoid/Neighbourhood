@@ -39,7 +39,7 @@
 		</div>
 		<div class="modal-body">
 			<p>
-				Loading...
+				<img src="loader.gif" /> Loading...
 			</p>
 		</div>
 		<div class="modal-footer">

@@ -29,7 +29,7 @@ var map, addP, json, selected = -1,
     },
     modal = function () {
         $('#modal h3').html(json[selected].name);
-        $('#modal .modal-body').html('<h1>Loading...</h1>');
+        $('#modal .modal-body').html('<img src="loader.gif" /> <h1>Loading...</h1>');
         $('#modal .modal-body').html('<p>What would you like to build or destroy in ' + json[selected].name + '? There are:</p><table><tr class="bb"><td><strong>' + json[selected].schools + '</strong> schools</td> <td><a href="#" class="btn btn-mini btn-success">Build school</a></td> <td><a href="#" class="btn btn-mini btn-danger">Destroy school</a></td></tr><tr class="bb"><td><strong>' + json[selected].hospitals + '</strong> hospitals</td> <td><a href="#" class="btn btn-mini btn-success">Build hospital</a></td> <td><a href="#" class="btn btn-mini btn-danger">Destroy hospital</a></td></tr></table>');
         $('#modal').modal('show');
     },
