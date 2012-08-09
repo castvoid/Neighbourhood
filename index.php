@@ -1,9 +1,3 @@
-<?php
-	session_start();
-	if (isset($_SESSION['nh_uid'])) {
-		header('Location: game.php');
-	}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +9,6 @@
 	margin: 0;
 	padding: 0;
 	
-}
-a{
-	text-decoration: none;
 }
 body{
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
@@ -43,7 +34,7 @@ h1{
 		-webkit-text-shadow: 0px 5px 3px #888;
 			text-shadow: 0px 5px 3px #888;
 }
-table.login{
+table#regions{
 	position: absolute;
 	top:50%;
 	left:50%;
@@ -53,32 +44,44 @@ table.login{
 	margin-top:-200px;
 	font-weight: bold;
 	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select:none;
 
 }
 
-table.login  td{
+table#regions  td{
 	width:150px;
 	height:100px;
 	text-align: center;
+	border-bottom: 1px solid rgba(51,51,51,.5);
+	border-right: 1px solid rgba(51,51,51,.5);
 	background: rgba(0,0,0,.1);
 	padding:10px;
+	box-sizing: border-box;
 	-moz-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+				
 }
-table.login td:hover:not(.nohover){
+table#regions td:not(#help):not(.nosave){
+	cursor:pointer !important;
+}
+table#regions td:hover:not(#help):not(.nosave){
 	background: rgba(29, 195, 223, 0.1);
-	cursor:pointer;
+
+	
 }
-table.login td#error {
-	background: rgba(255,0,0,.2);
+table#regions tr:last-child td{
+	border-bottom:none;
 }
-table.login td#success {
-	background: rgba(0,255,0,.2);
+table#regions tr td:last-child{
+	border-right: none;
 }
-input {
-	padding: 5px;
-	width: 60%;
+td{
+	-webkit-transition: background 0.2s;
+	-moz-transition:background .2s;
+	transition:background .2s;
 }
 footer{
 	width:500px;
@@ -96,149 +99,76 @@ footer{
 a {
 	color: #fff;
 }
-
-#indexinfobtn {
-	top: 0px;
-	left: 0px;	
-	padding-left: 5px;
-	padding-top: 5px;
+.continue.nosave{
+	cursor: default;
+	opacity: 0.5;
 }
-
-#infoBox{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	background: rgba(255,255,255,0.75);
-	display: none;
-
-
+.continue:not(.nosave){
+	background:rgba(0,255,0,0.2) !important;
 }
-#infoMenu {
-   width: 600px;
-    height: 500px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -250px;
-    margin-left: -300px;
-    background: #fff;
-    display: none;
-    padding-left: 5px;
-    border: 1px solid #999;
+.continue:hover:not(.nosave){
+	background: rgba(0,200,0,.2) !important;
 }
-#myModal{
-	display: none;
-	color:#000;
+input{
+	padding:5px;
+	border: none;
+	background: rgba(0,0,0,.1);
+	font-size: 16px;
+	color: #fff;
+	font-weight: bold;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+		-webkit-font-smoothing:antialiased;
+			-moz-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+			margin-top: 3px;
+			text-align: center;
 }
-
-#infodiv{
-	padding-left: 5px;
-	padding-top: 5px;	
-}
-    .modal-body {
-        line-height: 20px;
-        word-spacing: 2px;
-    }
 </style>
-<link type="text/css" href="bootstrap.min.css" rel="stylesheet"/>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="bootstrap.min.js"></script>
 </head>
 <body>
 <h1>Neighbourhood</h1>
-<div id="infodiv"><button class="btn" onClick="$('#myModal').modal();">info</button></div>
-<form action="backend/auth.php" method="post" id="loginform">
-	<table class="login">
-		<?php if ($_GET['err']): ?>
-			<tr>
-				<td colspan="2" id="error" class="nohover">
-					User name or password incorrect.
-				</td>
-			</tr>
-		<?php endif; ?>
-		<?php if ($_GET['inuse']): ?>
-			<tr>
-				<td colspan="2" id="error" class="nohover">
-					User name already in use.
-				</td>
-			</tr>
-		<?php endif; ?>
-		<?php if ($_GET['namereq']): ?>
-			<tr>
-				<td colspan="2" id="error" class="nohover">
-					User name required.
-				</td>
-			</tr>
-		<?php endif; ?>
-		<?php if ($_GET['pwshort']): ?>
-			<tr>
-				<td colspan="2" id="error" class="nohover">
-					Password must be at least 8 characters.
-				</td>
-			</tr>
-		<?php endif; ?>
-		<?php if ($_GET['out']): ?>
-			<tr>
-				<td colspan="2" id="success" class="nohover">
-					You have successfully logged out.
-				</td>
-			</tr>
-		<?php endif; ?>
-		<tr>
-			<td colspan="2" id="uname-td">
-				<input type="text" name="username" placeholder="User name" id="uname" />
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2" id="upass-td">
-				<input type="password" name="password" placeholder="Password" id="upass" />
-			</td>
-		</tr>
-		<tr>
-			<td id="signin">
-				Sign in
-				<button type="submit" style="display:none">Sign in</button>
-			</td>
-			<td id="signup">
-				Sign up
-			</td>
-		</tr>
-	</table>
-</form>
-<footer>A game by Harry, Chris, Hal & Pete for <a href="http://youngrewiredstate.org/">YRS2012</a></footer>
+<table cellspacing="0" id="regions">
+	<tr>
+		<td id="help" colspan="3"><p>My name is</p><input></input></td>
+		<td class="nosave continue">Continue game</td>
+	</tr>
+	<tr>
+		<td class="region" data-id="0">London</td>
+		<td class="region" data-id="1">North East England</td>
+		<td class="region" data-id="2">North West England</td>
+		<td class="region" data-id="3">Yorkshire & the Humber</td>
+	</tr>
+	<tr>
+		<td class="region" data-id="4">East Midlands</td>
+		<td class="region" data-id="5">West Midlands</td>
+		<td class="region" data-id="7">South East England</td>
+		<td class="region" data-id="8">South West England</td>
+	</tr>
+	<tr>
+		<td class="region" data-id="6">East of England</td>
+		<td class="region" data-id="9">Wales</td>
+		<td class="region" data-id="10">Northern Ireland</td>
+		<td class="region" data-id="11">Scotland</td>
+	</tr>
+</table>
+<footer>A game by Harry, Chris, Hal & Pete for <a href="http://youngrewiredstate.org">YRS2012</a></footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
-	$('td#uname-td').click(function(event){
-		$('#uname').focus();
+	$('td.region').click(function(event){
+		if ($('input').val() != ''){
+		localStorage.setItem('newGame', JSON.stringify({name:$('input').val(),region:$(this).data('id')}));
+		window.location = 'game.php'
+		}else{
+			alert('Your name cannot be blank');
+		}
 	});
-	$('td#upass-td').click(function(event){
-		$('#upass').focus();
-	});
-	$('td#signin').click(function(event){
-		$('#loginform').submit();
-	});
-	$('td#signup').click(function(event){
-		document.getElementById("loginform").action = "backend/signup.php";
-		$('#loginform').submit();
-	});
-	$('#myModal').modal({show:false});
+	if (typeof localStorage.getItem('saveGame') == "string"){
+		$('.continue.nosave').removeClass('nosave');
+		$('.continue').click(function(){
+			window.location = 'game.php'
+		})
+	}
 </script>
-<div class="modal hide" id="myModal">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">×</button>
-    <h3>What is Neighbourhood?</h3>
-  </div>
-  <div class="modal-body">
-    <p>Neighbourhood is a civ-style game where you start off owning one of the 12 main areas of Britain.
-       Each area has a rating for money, population, population density, crime, and a number of schools and hospitals, all of these have an impact on your happiness and your oppression levels.
-       Happiness and oppression are effectively two different ways of ruling your country, if your people are happy they won't want to revolt, if your people are oppressed they won't be able to revolt.
-       Your job is to change these values so that you are in a strong enough position to take over neighbouring areas of Britain.
-       You can change them by buiding new schools, hospitals and police stations. (It's not quite finished yet...)</p>
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
-  </div>
-</div>
 </body>
 </html>
