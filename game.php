@@ -19,7 +19,7 @@
 <div class="ui">
 	<!-- All the UI elements -->
 	<div id="bottom_menu">
-		<a class="button btn" onclick="eraseGame()" href="#">Erase Game</a>
+		<a class="button btn" onclick="eraseGame()" style="text-align:center;" href="#">Erase Game</a>
 	</div>
 	<div id="sidebar">
 		<div id="profile">
