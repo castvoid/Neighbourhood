@@ -296,9 +296,8 @@ defaultJSON = [{
     schools: 2755,
     hospitals: 222
 }],
-buildings = {
-	schools:{
-		cost:1000,
-		
-	}
+costs = {
+	schools:1000,
+	hospitals:4000,
+	armies:10000
 }
