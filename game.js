@@ -8,7 +8,7 @@ var map, addP, json, selected = -1,
         if (confirm('Are you sure?')) {
             localStorage.removeItem('saveGame')
             localStorage.removeItem('newGame')
-            window.location = 'index.php'
+            window.location = 'index'
         }
     },
     build = function (event) {

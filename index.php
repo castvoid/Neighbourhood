@@ -186,11 +186,11 @@ input{
 		if ($('input').val() != ''){
 			if (localStorage.getItem('saveGame') === null) {
 				localStorage.setItem('newGame', JSON.stringify({name:$('input').val(),region:$(this).data('id')}));
-				window.location = 'game.php'
+				window.location = 'game'
 			} else {
 				if (confirm("Creating a new game will overwrite your saved game. Do you want to continue?")) {
 					localStorage.setItem('newGame', JSON.stringify({name:$('input').val(),region:$(this).data('id')}));
-					window.location = 'game.php'
+					window.location = 'game'
 				}
 			}
 		}else{
@@ -200,7 +200,7 @@ input{
 	if (typeof localStorage.getItem('saveGame') == "string"){
 		$('.continue.nosave').removeClass('nosave');
 		$('.continue').click(function(){
-			window.location = 'game.php'
+			window.location = 'game'
 		})
 	}
 </script>
