@@ -15,10 +15,12 @@ var map, addP, json, selected = -1,
     	event.preventDefault();
         e = $(this).data('e');
         b = $(this).data('b');
-        if (json[selected][b] > 0){
-        json[selected][b] += e;
+        
+        if (json[selected][b] > buildings[b].amount || e == 1){
+        json[selected][b] += e * buildings[b].amount;
         $('#modal .modal-body').html('<p>What would you like to build/destroy in ' + json[selected].name + '? There are:</p><table><tr class="bb"><td><strong>' + json[selected].schools + '</strong> schools</td> <td><a href="#" data-e="1" data-b="schools" class="btn btn-mini btn-success">Build school</a></td> <td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="schools">Destroy school</a></td></tr><tr class="bb"><td><strong>' + json[selected].hospitals + '</strong> hospitals</td> <td><a href="#" class="btn btn-mini btn-success" data-e="1" data-b="hospitals">Build hospital</a></td> <td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="hospitals">Destroy hospital</a></td></tr><tr class="bb"><td><strong>' + json[selected].armies + '</strong> armies</td> <td><a href="#" class="btn btn-mini btn-success" data-e="1" data-b="armies">Build army</a></td> <td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="armies">Destroy army</a></td></tr></table>');
-        $('#modal .btn-success,#modal .btn-danger').click(build);    
+        $('#modal .btn-success,#modal .btn-danger').click(build);   
+        json[selected].happiness = happiness(selected) 
         showStats(selected);
          
         }
@@ -301,8 +303,17 @@ defaultJSON = [{
     schools: 2755,
     hospitals: 222
 }],
-costs = {
-	schools:1000,
-	hospitals:4000,
-	armies:10000
+buildings = {
+	schools:{
+		cost:2000,
+		amount:100
+	},
+	hospitals:{
+		cost:4000,
+		amount:3
+	},
+	armies:{
+		cost:10000,
+		amount:2
+	}
 }
