@@ -45,14 +45,17 @@ modal = function () {
     $('#modal .btn-success,#modal .btn-danger').click(build);
 },
 happiness = function (j) { // J is the ID of the place in the JSON db
-    h = 10;
-    h -= Math.sqrt((Math.abs(json[j].density - 150))) / 3;
-    h -= json[j].crime * 3000 / json[j].population;
-    h += json[j].schools / json[j].population * 20000 + json[0].hospitals / json[0].population * 2000000;
-    h += ((json[j].gva) * (json[j].gva)) * 0.00000003;
-    if (h > 100) {
-        h = 100;
+    h = 50;
+    var plc = json[j];
+    if(plc.density>150){
+        h -= Math.sqrt(plc.density - 150);
     }
+    if(plc.density<100){
+        h -= (100 - plc.density)/4;
+    }
+    h -= plc.crime/6;
+    h += plc.schools / plc.population * 50000 + plc.hospitals / plc.population * 500000;
+    h += Math.pow(plc.gva, 8) * 0.00000000000000000000000000000000006;
     return Math.round(h)
 },
 oppression = function (j) {
