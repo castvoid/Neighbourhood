@@ -64,13 +64,22 @@ happiness = function(j) { // J is the ID of the place in the JSON db
     if(h > 100) {
         h = 100;
     }
+    if(h < 0) {
+        h = 0;
+    }
     return Math.round(h)
 },
-oppression = function (j) {
-    o = 50
+oppression = function(j) {
+    o = 50;
     var plc = json[j];
-    o += (Math.sqrt(plc.density) - 16) / 3.5
-    o -= plc.schools / plc.population * 2000 + plc.hospitals / plc.population * 1500000
+    o += (Math.sqrt(plc.density)) / 3.5;
+    o -= plc.schools / plc.population * 2000 + plc.hospitals / plc.population * 1500000;
+    if(o > 100) {
+        o = 100;
+    }
+    if(o < 0) {
+        o = 0;
+    }
     return o
 },
 update = function () {
