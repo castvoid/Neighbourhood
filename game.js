@@ -21,6 +21,7 @@ var map, addP, json, selected = -1,
         $('#modal .modal-body').html('<p>What would you like to build/destroy in ' + json[selected].name + '? There are:</p><table><tr class="bb"><td><strong>' + json[selected].schools + '</strong> schools</td> <td><a href="#" data-e="1" data-b="schools" class="btn btn-mini btn-success">Build school</a></td> <td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="schools">Destroy school</a></td></tr><tr class="bb"><td><strong>' + json[selected].hospitals + '</strong> hospitals</td> <td><a href="#" class="btn btn-mini btn-success" data-e="1" data-b="hospitals">Build hospital</a></td> <td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="hospitals">Destroy hospital</a></td></tr><tr class="bb"><td><strong>' + json[selected].armies + '</strong> armies</td> <td><a href="#" class="btn btn-mini btn-success" data-e="1" data-b="armies">Build army</a></td> <td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="armies">Destroy army</a></td></tr></table>');
         $('#modal .btn-success,#modal .btn-danger').click(build);   
         json[selected].happiness = happiness(selected) 
+        json[selected].oppression = oppression(selected) 
         showStats(selected);
          
         }
