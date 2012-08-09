@@ -135,7 +135,9 @@ footer{
 a {
 	color: #fff;
 }
-.continue.nosave{
+
+
+.continue.nosave {
 	cursor: default;
 	opacity: 0.5;
 }
@@ -144,6 +146,7 @@ a {
     -moz-animation: pulsate 1s infinite;
     -o-animation: pulsate 1s infinite;
     animation: pulsate 1s infinite;
+				animation: pulsate 2.5s infinite;
 }
 input{
 	padding:5px;
@@ -160,6 +163,7 @@ input{
 			margin-top: 3px;
 			text-align: center;
 }
+
 </style>
 </head>
 <body>
