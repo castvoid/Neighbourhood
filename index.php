@@ -22,6 +22,50 @@ body{
 	-webkit-font-smoothing:antialiased;
 	overflow: hidden;
 }
+@-moz-keyframes pulsate {
+        0% {
+        background: rgba(0,255,0,0.3) !important;
+    }
+    50% {
+        background: rgba(0,100,0,0.3) !important;
+    }
+    100% {
+        background: rgba(0,255,0,0.3) !important;
+    }
+    }
+@-webkit-keyframes pulsate {
+        0% {
+        background: rgba(0,255,0,0.3) !important;
+    }
+    50% {
+        background: rgba(0,100,0,0.3) !important;
+    }
+    100% {
+        background: rgba(0,255,0,0.3) !important;
+    }
+    }
+@-o-keyframes pulsate {
+        0% {
+        background: rgba(0,255,0,0.3) !important;
+    }
+    50% {
+        background: rgba(0,100,0,0.3) !important;
+    }
+    100% {
+        background: rgba(0,255,0,0.3) !important;
+    }
+    }
+@keyframes pulsate {
+        0% {
+        background: rgba(0,255,0,0.3) !important;
+    }
+    50% {
+        background: rgba(0,100,0,0.3) !important;
+    }
+    100% {
+        background: rgba(0,255,0,0.3) !important;
+    }
+    }
 h1{
 	font-size: 70px;
 	position: absolute;
@@ -64,14 +108,6 @@ table#regions  td{
 			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
 				
 }
-table#regions td:not(#help):not(.nosave){
-	cursor:pointer !important;
-}
-table#regions td:hover:not(#help):not(.nosave){
-	background: rgba(29, 195, 223, 0.1);
-
-	
-}
 table#regions tr:last-child td{
 	border-bottom:none;
 }
@@ -104,10 +140,10 @@ a {
 	opacity: 0.5;
 }
 .continue:not(.nosave){
-	background:rgba(0,255,0,0.2) !important;
-}
-.continue:hover:not(.nosave){
-	background: rgba(0,200,0,.2) !important;
+	-webkit-animation: pulsate 1s infinite;
+    -moz-animation: pulsate 1s infinite;
+    -o-animation: pulsate 1s infinite;
+    animation: pulsate 1s infinite;
 }
 input{
 	padding:5px;
