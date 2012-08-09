@@ -1,6 +1,6 @@
 var map, addP, json, selected = -1,
     player = {
-        money: 5000,
+        money: 0,
         name: 'Player',
         controlOf: [false, false, false, false, false, false, false, false, false, false, false, false]
     },
@@ -113,6 +113,7 @@ function initialize() {
         player.controlOf[j.region] = true;
         localStorage.removeItem('newGame');
         json = defaultJSON;
+        player.money += json[j.region].gva
         for (x = 0; x < 12; x++) {
             json[x].armies = Math.floor(Math.random() * json[x].crime + 5) + json[x].crime - 20;
         }
