@@ -16,14 +16,16 @@ var map, addP, json, selected = -1,
         e = $(this).data('e');
         b = $(this).data('b');
         
-        if (json[selected][b] > buildings[b].amount || e == 1){
+        if (json[selected][b] > buildings[b].amount && e == -1 || buildings[b].cost < player.money && e == 1){
         json[selected][b] += e * buildings[b].amount;
+        e == 1 ? player.money -= buildings[b].cost : player.money += buildings[b].cost / 4
+        $('#currentmoney').html(player.money);
         $('#modal .modal-body').html('<p>What would you like to build/destroy in ' + json[selected].name + '? There are:</p><table><tr class="bb"><td><a href="#" data-e="1" data-b="schools" class="btn btn-mini btn-success">Build school</a></td> <td><strong>' + json[selected].schools + '</strong> Schools</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="schools">Destroy school</a></td></tr><tr class="bb"><td><a href="#" data-e="1" data-b="schools" class="btn btn-mini btn-success">Build hospital</a></td><td><strong>' + json[selected].hospitals + '</strong> Hospitals</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="hospitals">Destroy hospital</a></td></tr><tr class="bb"><td><a href="#" data-e="1" data-b="armies" class="btn btn-mini btn-success">Build army</a></td><td><strong>' + json[selected].armies + '</strong> Armies</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="armies">Destroy army</a></td></tr></table>');
         $('#modal .btn-success,#modal .btn-danger').click(build);   
         json[selected].happiness = happiness(selected) 
         json[selected].oppression = oppression(selected) 
         showStats(selected);
-         
+        save()
         }
     },
 showStats = function (i) {
