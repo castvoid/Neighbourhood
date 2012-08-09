@@ -18,8 +18,7 @@
 <!-- The Google Map -->
 <div class="ui">
 	<!-- All the UI elements -->
-	<div id="bottom_menu">
-		<a class="button btn" onclick="eraseGame()" href="#">Erase Game</a>
+	<div id="bottom_menu">		<a class="button btn" onclick="eraseGame()" href="#">Erase Game</a>
 	</div>
 	<div id="sidebar">
 		<div id="profile">
