@@ -48,24 +48,28 @@ modal = function () {
     $('#modal').modal('show');
     $('#modal .btn-success,#modal .btn-danger').click(build);
 },
-happiness = function (j) { // J is the ID of the place in the JSON db
+happiness = function(j) { // J is the ID of the place in the JSON db
     h = 50;
     var plc = json[j];
-    if(plc.density>150){
+    if(plc.density > 150) {
         h -= Math.sqrt(plc.density - 150);
     }
-    if(plc.density<100){
-        h -= (100 - plc.density)/4;
+    if(plc.density < 100) {
+        h -= (100 - plc.density) / 4;
     }
-    h -= plc.crime/6;
+    h -= plc.crime / 6;
     h += plc.schools / plc.population * 50000 + plc.hospitals / plc.population * 500000;
     h += Math.pow(plc.gva, 8) * 0.00000000000000000000000000000000006;
+    if(h > 100) {
+        h = 100;
+    }
     return Math.round(h)
 },
 oppression = function (j) {
     o = 50
-    o += (Math.sqrt(json[j].density) - 16) / 3.5
-    o -= json[j].schools / json[j].population * 2000 + json[0].hospitals / json[0].population * 1500000
+    var plc = json[j];
+    o += (Math.sqrt(plc.density) - 16) / 3.5
+    o -= plc.schools / plc.population * 2000 + plc.hospitals / plc.population * 1500000
     return o
 },
 update = function () {
