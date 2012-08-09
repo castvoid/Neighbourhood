@@ -50,6 +50,12 @@ happiness = function (j) { // J is the ID of the place in the JSON db
     h -= json[j].crime * 3000 / json[j].population;
     h += json[j].schools / json[j].population * 20000 + json[0].hospitals / json[0].population * 2000000;
     h += ((json[j].gva) * (json[j].gva)) * 0.00000003;
+        if(l.density < 100) {
+            h -= (100 - l.density);
+        }
+        h -= l.crime * 3000 / l.population;
+        h += l.schools / l.population * 10000 + l.hospitals / l.population * 100000;
+        h += Math.pow(l.gva, 2.5) * 0.0000000004;
     if (h > 100) {
         h = 100;
     }
