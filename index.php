@@ -24,46 +24,46 @@ body{
 }
 @-moz-keyframes pulsate {
         0% {
-        background: rgba(0,255,0,0.3) !important;
+        background: rgba(0,255,0,0.2) !important;
     }
     50% {
-        background: rgba(0,100,0,0.3) !important;
+        background: rgba(0,100,0,0.2) !important;
     }
     100% {
-        background: rgba(0,255,0,0.3) !important;
+        background: rgba(0,255,0,0.2) !important;
     }
     }
 @-webkit-keyframes pulsate {
         0% {
-        background: rgba(0,255,0,0.3) !important;
+        background: rgba(0,255,0,0.2) !important;
     }
     50% {
-        background: rgba(0,100,0,0.3) !important;
+        background: rgba(0,100,0,0.2) !important;
     }
     100% {
-        background: rgba(0,255,0,0.3) !important;
+        background: rgba(0,255,0,0.2) !important;
     }
     }
 @-o-keyframes pulsate {
         0% {
-        background: rgba(0,255,0,0.3) !important;
+        background: rgba(0,255,0,0.2) !important;
     }
     50% {
-        background: rgba(0,100,0,0.3) !important;
+        background: rgba(0,100,0,0.2) !important;
     }
     100% {
-        background: rgba(0,255,0,0.3) !important;
+        background: rgba(0,255,0,0.2) !important;
     }
     }
 @keyframes pulsate {
         0% {
-        background: rgba(0,255,0,0.3) !important;
+        background: rgba(0,255,0,0.2) !important;
     }
     50% {
-        background: rgba(0,100,0,0.3) !important;
+        background: rgba(0,100,0,0.2) !important;
     }
     100% {
-        background: rgba(0,255,0,0.3) !important;
+        background: rgba(0,255,0,0.2) !important;
     }
     }
 h1{
@@ -142,10 +142,10 @@ a {
 	opacity: 0.5;
 }
 .continue:not(.nosave){
-	-webkit-animation: pulsate 1s infinite;
-    -moz-animation: pulsate 1s infinite;
-    -o-animation: pulsate 1s infinite;
-    animation: pulsate 1s infinite;
+	-webkit-animation: pulsate 2s infinite;
+    -moz-animation: pulsate 2s infinite;
+    -o-animation: pulsate 2s infinite;
+    animation: pulsate 2s infinite;
 				animation: pulsate 2.5s infinite;
 }
 input{
