@@ -36,11 +36,11 @@ i { text-shadow: none !important }
 a.button { text-align: right }
 #bottom_menu .btn {
     border: none;
-    border-left: 1px solid rgba(255,255,255,0.4);
+    border-left: 1px solid rgba(255,255,255,0.25);
     background: none;
-    box-shadow: inset 1px 0 0 rgba(0,0,0,0.15);
+    box-shadow: inset 1px 0 0 rgba(0,0,0,0.25);
     border-radius: 0;
-    padding-left: 8px !important;
+    padding-left: 4px !important;
 }
     #bottom_menu .btn:hover {
     text-decoration: underline !important;

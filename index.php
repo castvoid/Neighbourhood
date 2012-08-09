@@ -157,10 +157,17 @@ input{
 <script>
 	$('td.region').click(function(event){
 		if ($('input').val() != ''){
-		localStorage.setItem('newGame', JSON.stringify({name:$('input').val(),region:$(this).data('id')}));
-		window.location = 'game.php'
+			if (localStorage.getItem('saveGame') === null) {
+				localStorage.setItem('newGame', JSON.stringify({name:$('input').val(),region:$(this).data('id')}));
+				window.location = 'game.php'
+			} else {
+				if (confirm("Creating a new game will overwrite your saved game. Do you want to continue?")) {
+					localStorage.setItem('newGame', JSON.stringify({name:$('input').val(),region:$(this).data('id')}));
+					window.location = 'game.php'
+				}
+			}
 		}else{
-			alert('Your name cannot be blank');
+			alert('Your name cannot be blank.');
 		}
 	});
 	if (typeof localStorage.getItem('saveGame') == "string"){
