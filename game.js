@@ -2,6 +2,8 @@ var map, addP, json, selected = -1,
     player = {
         money: 0,
         name: 'Player',
+        armies: 0,
+        happinessAvg: 0,
         controlOf: [false, false, false, false, false, false, false, false, false, false, false, false]
     },
     eraseGame = function () {
@@ -22,10 +24,10 @@ var map, addP, json, selected = -1,
         $('#currentmoney').text(player.money);
         $('#modal .modal-body').html('<p>What would you like to build/destroy in ' + json[selected].name + '? There are:</p><table><tr class="bb"><td><a href="#" data-e="1" data-b="schools" class="btn btn-mini btn-success">Build school</a></td> <td><strong>' + json[selected].schools + '</strong> Schools</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="schools">Destroy school</a></td></tr><tr class="bb"><td><a href="#" data-e="1" data-b="schools" class="btn btn-mini btn-success">Build hospital</a></td><td><strong>' + json[selected].hospitals + '</strong> Hospitals</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="hospitals">Destroy hospital</a></td></tr><tr class="bb"><td><a href="#" data-e="1" data-b="armies" class="btn btn-mini btn-success">Build army</a></td><td><strong>' + json[selected].armies + '</strong> Armies</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="armies">Destroy army</a></td></tr></table>');
         $('#modal .btn-success,#modal .btn-danger').click(build);   
-        json[selected].happiness = happiness(selected) 
-        json[selected].oppression = oppression(selected) 
+        json[selected].happiness = happiness(selected);
+        json[selected].oppression = oppression(selected);
         showStats(selected);
-        save()
+        save();
         }
     },
 showStats = function (i) {
@@ -35,14 +37,16 @@ showStats = function (i) {
         
         if (player.controlOf[selected] == true) {
             sidebar = sidebar + '<a class="sideB btn tip" title="Build something in this region" href="javascript:modal();">Build</a>';
-        }
+        } else {
+			sidebar = sidebar + '<a class="sideB btn tip" title="Take over this region" href="javascript:invadeModal();">Invade</a>';
+		}
         $('.stats').html(sidebar);
         $('.tip').tooltip({
             'placement': 'top'
         });
     } else {
         selected = -1
-        $('.stats').html('<h1>No Selection</h1>')
+        $('.stats').html('<h1>No selection</h1>')
     }
 },
 modal = function () {
@@ -96,6 +100,7 @@ update = function () {
     }
     $('#currentregions').text(num);
     $('#currentmoney').text(player.money);
+    $('#totalarmies').text(player.armies);
 },
 save = function () {
     j = {
@@ -106,6 +111,33 @@ save = function () {
         if (k == "poly") return undefined;
         else return v;
     }));
+}
+
+function invadeRegion(toInvade) {
+	var armyEffectiveness = ((player.happinessAvg / 220) + 1) * player.armies;
+	var theirEffectiveness = ((json[selected].happiness / 220) + 1) * json[selected].armies;
+	var myPower = armyEffectiveness * player.armies;
+	var theirPower = theirEffectiveness * json[selected].armies;
+	var diffInPower = myPower - theirPower;
+	var menLost = player.armies / diffInPower;
+	player.armies -= menLost;
+	player.armies += json[selected].armies;
+	player.controlOf[selected] = true;
+	update();
+}
+
+function invadeModal() {
+	var armyEffectiveness = ((player.happinessAvg / 220) + 1) * player.armies;
+	var theirEffectiveness = ((json[selected].happiness / 220) + 1) * json[selected].armies;
+	var result = "successful";
+	if (armyEffectiveness < theirEffectiveness) {
+		result = "unsuccessful";
+	}
+    $('#invadeModal h3').html(json[selected].name);
+    $('#invadeModal .modal-body').html('You have <strong>' + player.armies + '</strong> armies. ' + json[selected].name + ' has <strong>' + json[selected].armies + '</strong> armies. This means that your takeover is likely to be <strong>' + result + '</strong>. Would you like to invade?');
+    $('#invadeModal .modal-footer').html('<a href="#" class="btn" data-dismiss="modal">Cancel</a> <a href="#" onclick="invadeRegion(' + selected + ');" class="btn btn-primary" data-dismiss="modal">Invade</a>');
+    $('#invadeModal').modal('show');
+    $('#invadeModal .btn-success,#modal .btn-danger').click();
 }
 
 function initialize() {
@@ -125,7 +157,19 @@ function initialize() {
         json = j.json;
         player = j.player;
     }
+    
+	var regionsOwned = 0;
+	for (i=0;i<12;i++) {
+		if (player.controlOf[i] == true) {
+			player.armies += json[i].armies;
+			player.happinessAvg += json[i].happiness;
+			regionsOwned++;
+		}
+	}
+	player.happinessAvg /= regionsOwned;
+	
     $('#playername').text(player.name);
+    $('#totalarmies').text(player.armies);
     $('.tip').tooltip({
         'placement': 'right'
     });
