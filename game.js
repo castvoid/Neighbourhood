@@ -37,7 +37,7 @@ var map, addP, json, selected = -1,
 showStats = function (i) {
     if (i > -1) {
         selected = i
-        var sidebar = '<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>&pound;' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Armies: </label>' + json[i].armies + '</li><li><label>Schools: </label>' + json[i].schools + '<li><label>Hospitals: </labels>' + json[i].hospitals + '</ul><ul id="bars"><li class="tip" title="Happiness of this region"><i class="icon-minus icon-large"></i><span id="happiness" class="bar"><span style="width: ' + json[i].happiness + '%;"></span></span><i class="icon-plus icon-large"></i></li><li class="tip" title="Oppression of this region"><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: ' + json[i].oppression + '%;"></span></span><i class="icon-bolt icon-large"></i></li></ul>';
+        var sidebar = '<h1>' + json[i].name + '</h1><h2>Stats</h2><ul><li><label>Population: </label>' + json[i].population + '<li><label>Population Density: </label>' + json[i].density + '<li><label>Money: </label>&pound;' + json[i].gva + '<li><label>Crime: ' + json[i].crime + '<li><label>Soldiers: </label>' + json[i].armies + '</li><li><label>Schools: </label>' + json[i].schools + '<li><label>Hospitals: </labels>' + json[i].hospitals + '</ul><ul id="bars"><li class="tip" title="Happiness of this region"><i class="icon-minus icon-large"></i><span id="happiness" class="bar"><span style="width: ' + json[i].happiness + '%;"></span></span><i class="icon-plus icon-large"></i></li><li class="tip" title="Oppression of this region"><i class="icon-bolt icon-large"></i><span id="oppression" class="bar"><span style="width: ' + json[i].oppression + '%;"></span></span><i class="icon-bolt icon-large"></i></li></ul>';
         
         if (player.controlOf[selected] == true) {
             sidebar = sidebar + '<a class="sideB btn tip" title="Build something in this region" href="javascript:modal();">Build</a>';
@@ -123,7 +123,7 @@ function invadeRegion(toInvade) {
 	var theirPower = json[selected].armies; // ((json[selected].happiness / 220) + 1) *
 	var diffInPower = Math.abs(myPower - theirPower);
 	var menLost = Math.round(player.armies / diffInPower * 3);
-	if (theirPower > myPower) {
+	if (theirPower + Math.round(Math.random * 6) - 3 > myPower) {
 		menLost *= 4;
 		menLost += Math.floor(Math.random()*5);
 		$("#invadeModal .alert").addClass('alert-error');
@@ -140,6 +140,7 @@ function invadeRegion(toInvade) {
 	oldArmies = player.armies;
 	player.armies -= menLost;
 	if (player.armies < Math.round(oldArmies / 3)) player.armies =  Math.round(player.armies / 3);
+	if(player.armies < 0) player.armies = 0;
 	update();
 	save();
 }
