@@ -121,7 +121,7 @@ function invadeRegion(toInvade) {
 	var diffInPower = Math.abs(myPower - theirPower);
 	var menLost = Math.round(player.armies / diffInPower);
 	if (theirPower > myPower) {
-		menLost *= 2;
+		menLost *= 4;
 		menLost += Math.floor(Math.random()*5);
 		$("#invadeModal .alert").addClass('alert-error');
 		$("#invadeModal .alert h4").text('Invading was unsuccessful. You lost ' + menLost + " men.");
