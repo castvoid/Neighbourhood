@@ -119,19 +119,28 @@ save = function () {
 }
 
 function invadeRegion(toInvade) {
+	
 	var myPower = player.armies / player.regions; // ((player.happinessAvg / 220) + 1) *
 	var theirPower = json[selected].armies; // ((json[selected].happiness / 220) + 1) *
 	var diffInPower = Math.abs(myPower - theirPower);
 	var menLost = Math.round(player.armies / diffInPower);
 	if (theirPower > myPower) {
-		alert('Invasion unsuccessful!');
 		menLost *= 2;
+		menLost += Math.floor(Math.random()*5);
+		$("#invadeModal .alert").addClass('alert-error');
+		$("#invadeModal .alert h4").text('Invading was unsuccessful. You lost ' + menLost + " men.");
+		$('#invadeModal .modal-footer').html('<a href="#" class="btn" data-dismiss="modal">Close</a>');
 	} else {
 		//player.armies += json[selected].armies;
+		$("#invadeModal .alert").addClass('alert-success');
+		$("#invadeModal .alert h4").text('Invading was successful. You lost ' + menLost + " men.");
+		$('#invadeModal .modal-footer').html('<a href="#" class="btn" onclick="player.controlOf[selected] = true;player.money += Math.round(json[selected].gva * (1+((json[selected].happiness / 500) + (json[selected].oppression / 250))));" data-dismiss="modal">Close</a>');
 		player.controlOf[selected] = true;
-		player.money += Math.round(json[selected].gva * (1+((json[selected].happiness / 500) + (json[selected].oppression / 250))));
+		player.money += json[selected].gva;
 	}
-	player.armies -= menLost + Math.floor(Math.random()*5);
+	oldArmies = player.armies;
+	player.armies -= menLost;
+	if (player.armies < Math.round(player.armies / 3)) player.armies =  Math.round(player.armies / 3);
 	update();
 	save();
 }
@@ -146,10 +155,11 @@ function invadeModal() {
 		result = "successful";
 	}
     $('#invadeModal h3').html(json[selected].name);
-    $('#invadeModal .modal-body').html('You have <strong>' + player.armies + '</strong> armies. ' + json[selected].name + ' has <strong>' + json[selected].armies + '</strong> armies. Based on the happiness of your areas, this means that your takeover is likely to be <strong>' + result + '</strong>. Would you like to invade?');
-    $('#invadeModal .modal-footer').html('<a href="#" class="btn" data-dismiss="modal">Cancel</a> <a href="#" onclick="invadeRegion(' + selected + ');" class="btn btn-primary" data-dismiss="modal">Invade</a>');
+    $('#invadeModal .modal-body').html('You have <strong>' + player.armies + '</strong> armies. ' + json[selected].name + ' has <strong>' + json[selected].armies + '</strong> armies. Based on the happiness of your areas, this means that your takeover is likely to be <strong>' + result + '</strong>. Would you like to invade?<div class="alert"><h4>Blah</h4></div>');
+    $('#invadeModal .modal-footer').html('<a href="#" class="btn" data-dismiss="modal">Cancel</a> <a href="#" onclick="invadeRegion(' + selected + ');" class="btn btn-primary" >Invade</a>');
+
     $('#invadeModal').modal('show');
-    $('#invadeModal .btn-success,#modal .btn-danger').click();
+    //$('#invadeModal .btn-success,#modal .btn-danger').click();
 }
 
 function initialize() {
