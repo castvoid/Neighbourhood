@@ -11,7 +11,7 @@ var map, addP, json, selected = -1,
         if (confirm('Are you sure?')) {
             localStorage.removeItem('saveGame');
             localStorage.removeItem('newGame');
-            window.location = 'index';
+            window.location = 'index.html';
         }
     },
     build = function (event) {
@@ -119,10 +119,10 @@ save = function () {
 
 function invadeRegion(toInvade) {
 	
-	var myPower = player.armies / player.regions; // ((player.happinessAvg / 220) + 1) *
+	var myPower = player.armies + Math.ceil((player.armies/20)*(player.regions-1)); // ((player.happinessAvg / 220) + 1) *
 	var theirPower = json[selected].armies; // ((json[selected].happiness / 220) + 1) *
 	var diffInPower = Math.abs(myPower - theirPower);
-	var menLost = Math.round(player.armies / diffInPower);
+	var menLost = Math.round(player.armies / diffInPower * 3);
 	if (theirPower > myPower) {
 		menLost *= 4;
 		menLost += Math.floor(Math.random()*5);
@@ -146,7 +146,7 @@ function invadeRegion(toInvade) {
 
 function invadeModal() {
 	var result;
-	var myPower = player.armies / player.regions; // ((player.happinessAvg / 220) + 1) *
+	var myPower = player.armies + Math.ceil((player.armies/20)*(player.regions-1)); // ((player.happinessAvg / 220) + 1) *
 	var theirPower = json[selected].armies; // ((json[selected].happiness / 220) + 1) *
 	if (myPower < theirPower) {
 		result = "unsuccessful";
