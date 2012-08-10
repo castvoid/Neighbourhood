@@ -154,7 +154,7 @@ function invadeModal() {
 		result = "successful";
 	}
     $('#invadeModal h3').html(json[selected].name);
-    $('#invadeModal .modal-body').html('You have <strong>' + player.armies + '</strong> armies. ' + json[selected].name + ' has <strong>' + json[selected].armies + '</strong> armies. Based on the happiness of your areas, this means that your takeover is likely to be <strong>' + result + '</strong>. Would you like to invade?<div class="alert"><h4>Blah</h4></div>');
+    $('#invadeModal .modal-body').html('You have <strong>' + player.armies + '</strong> armies. ' + json[selected].name + ' has <strong>' + json[selected].armies + '</strong> armies. Based on the average army size for all of the areas you own, this means that your takeover is likely to be <strong>' + result + '</strong>. Would you like to invade?<div class="alert"><h4>Blah</h4></div>');
     $('#invadeModal .modal-footer').html('<a href="#" class="btn" data-dismiss="modal">Cancel</a> <a href="#" onclick="invadeRegion(' + selected + ');" class="btn btn-primary" >Invade</a>');
 
     $('#invadeModal').modal('show');
