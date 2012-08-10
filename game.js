@@ -4,13 +4,14 @@ var map, addP, json, selected = -1,
         name: 'Player',
         armies: 0,
         happinessAvg: 0,
+        regions: 0,
         controlOf: [false, false, false, false, false, false, false, false, false, false, false, false]
     },
     eraseGame = function () {
         if (confirm('Are you sure?')) {
-            localStorage.removeItem('saveGame')
-            localStorage.removeItem('newGame')
-            window.location = 'index'
+            localStorage.removeItem('saveGame');
+            localStorage.removeItem('newGame');
+            window.location = 'index';
         }
     },
     build = function (event) {
@@ -45,8 +46,8 @@ showStats = function (i) {
             'placement': 'top'
         });
     } else {
-        selected = -1
-        $('.stats').html('<h1>No selection</h1>')
+        selected = -1;
+        $('.stats').html('<h1>No selection</h1>');
     }
 },
 modal = function () {
@@ -73,7 +74,7 @@ happiness = function(j) { // J is the ID of the place in the JSON db
     if(h < 0) {
         h = 0;
     }
-    return Math.round(h)
+    return Math.round(h);
 },
 oppression = function(j) {
     o = 50;
@@ -86,19 +87,19 @@ oppression = function(j) {
     if(o < 0) {
         o = 0;
     }
-    return o
+    return o;
 },
 update = function () {
-    var num = 0;
+    player.regions = 0;
     for (i = 0; i < player.controlOf.length; i++) {
         if (player.controlOf[i] == true) {
             json[i].poly.setOptions({
                 fillColor: "#2f2"
             });
-            num++;
+            player.regions++;
         }
     }
-    $('#currentregions').text(num);
+    $('#currentregions').text(player.regions);
     $('#currentmoney').text(player.money);
     $('#totalarmies').text(player.armies);
 },
@@ -114,34 +115,34 @@ save = function () {
 }
 
 function invadeRegion(toInvade) {
-	var myPower = ((player.happinessAvg / 220) + 1) * player.armies;
-	var theirPower = ((json[selected].happiness / 220) + 1) * json[selected].armies;
+	var myPower = player.armies / player.regions; // ((player.happinessAvg / 220) + 1) *
+	var theirPower = json[selected].armies; // ((json[selected].happiness / 220) + 1) *
 	var diffInPower = myPower - theirPower;
 	var menLost = Math.round(player.armies / diffInPower);
 	if (theirPower > myPower) {
 		alert('Invasion unsuccessful!');
 		menLost *= 2;
 	} else {
-		Math.floor((Math.random()*10)+1);
 		player.armies += json[selected].armies;
 		player.controlOf[selected] = true;
 		player.money += Math.round(json[selected].gva * (1+((json[selected].happiness / 500) + (json[selected].oppression / 250))));
 	}
-	player.armies += Math.floor((Math.random()*10)-5);
-	player.armies -= menLost;
+	player.armies -= (menLost + Math.floor(Math.random()*5));
 	update();
 	save();
 }
 
 function invadeModal() {
-	var myPower = ((player.happinessAvg / 220) + 1) * player.armies;
-	var theirPower = ((json[selected].happiness / 220) + 1) * json[selected].armies;
-	var result = "successful";
+	var result;
+	var myPower = player.armies / player.regions; // ((player.happinessAvg / 220) + 1) *
+	var theirPower = json[selected].armies; // ((json[selected].happiness / 220) + 1) *
 	if (myPower < theirPower) {
 		result = "unsuccessful";
+	} else {
+		result = "successful";
 	}
     $('#invadeModal h3').html(json[selected].name);
-    $('#invadeModal .modal-body').html('You have <strong>' + player.armies + '</strong> armies. ' + json[selected].name + ' has <strong>' + json[selected].armies + '</strong> armies. This means that your takeover is likely to be <strong>' + result + '</strong>. Would you like to invade?');
+    $('#invadeModal .modal-body').html('You have <strong>' + player.armies + '</strong> armies. ' + json[selected].name + ' has <strong>' + json[selected].armies + '</strong> armies. Based on the happiness of your areas, this means that your takeover is likely to be <strong>' + result + '</strong>. Would you like to invade?');
     $('#invadeModal .modal-footer').html('<a href="#" class="btn" data-dismiss="modal">Cancel</a> <a href="#" onclick="invadeRegion(' + selected + ');" class="btn btn-primary" data-dismiss="modal">Invade</a>');
     $('#invadeModal').modal('show');
     $('#invadeModal .btn-success,#modal .btn-danger').click();
@@ -165,15 +166,14 @@ function initialize() {
         player = j.player;
     }
     
-	var regionsOwned = 0;
 	for (i=0;i<12;i++) {
 		if (player.controlOf[i] == true) {
 			player.armies += json[i].armies;
 			player.happinessAvg += json[i].happiness;
-			regionsOwned++;
+			player.regions++;
 		}
 	}
-	player.happinessAvg /= regionsOwned;
+	player.happinessAvg /= player.regions;
 	
     $('#playername').text(player.name);
     $('#totalarmies').text(player.armies);
