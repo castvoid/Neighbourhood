@@ -117,17 +117,17 @@ save = function () {
 function invadeRegion(toInvade) {
 	var myPower = player.armies / player.regions; // ((player.happinessAvg / 220) + 1) *
 	var theirPower = json[selected].armies; // ((json[selected].happiness / 220) + 1) *
-	var diffInPower = myPower - theirPower;
+	var diffInPower = Math.abs(myPower - theirPower);
 	var menLost = Math.round(player.armies / diffInPower);
 	if (theirPower > myPower) {
 		alert('Invasion unsuccessful!');
 		menLost *= 2;
 	} else {
-		player.armies += json[selected].armies;
+		//player.armies += json[selected].armies;
 		player.controlOf[selected] = true;
 		player.money += Math.round(json[selected].gva * (1+((json[selected].happiness / 500) + (json[selected].oppression / 250))));
 	}
-	player.armies -= (menLost + Math.floor(Math.random()*5));
+	player.armies -= menLost + Math.floor(Math.random()*5);
 	update();
 	save();
 }
@@ -158,8 +158,8 @@ function initialize() {
         player.money += json[j.region].gva
         for (x = 0; x < 12; x++) {
             json[x].armies = Math.floor(Math.random() * json[x].crime + 5) + json[x].crime - 20;
-            player.armies += json[x].armies;
         }
+        player.armies += json[j.region].armies;
         save()
     } else {
         j = JSON.parse(localStorage.getItem('saveGame'));
