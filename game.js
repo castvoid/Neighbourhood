@@ -170,7 +170,7 @@ function initialize() {
         json = defaultJSON;
         player.money += json[j.region].gva
         for (x = 0; x < 12; x++) {
-            json[x].armies = Math.floor(Math.random() * json[x].crime + 5) + json[x].crime - 20;
+            json[x].armies = Math.floor(Math.random() *  5) + json[x].crime - 20;
         }
         player.armies += json[j.region].armies;
         save()
