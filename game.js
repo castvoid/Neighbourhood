@@ -18,7 +18,9 @@ var map, addP, json, selected = -1,
     	event.preventDefault();
         e = $(this).data('e');
         b = $(this).data('b');
-        
+        if (b == "armies"){
+	        player.armies += e * buildings[b].amount;
+        }
         if (json[selected][b] > buildings[b].amount && e == -1 &&  buildings[b].cost / 4 <= player.money || buildings[b].cost <= player.money && e == 1){
         json[selected][b] += e * buildings[b].amount;
         e == 1 ? player.money -= buildings[b].cost : player.money -= buildings[b].cost / 4
