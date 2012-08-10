@@ -30,8 +30,8 @@ var map, addP, json, selected = -1,
 			json[selected].happiness = happiness(selected);
 			json[selected].oppression = oppression(selected);
 			showStats(selected);
-			save();
 			update();
+			save();
         }
     },
 showStats = function (i) {
