@@ -119,8 +119,8 @@ save = function () {
 
 function invadeRegion(toInvade) {
 	
-	var myPower = player.armies + Math.ceil((player.armies/20)*(player.regions-1)); // ((player.happinessAvg / 220) + 1) *
-	var theirPower = json[selected].armies; // ((json[selected].happiness / 220) + 1) *
+	var myPower = player.armies + Math.ceil((player.armies/20)*(player.regions-1));
+	var theirPower = json[selected].armies;
 	var diffInPower = Math.abs(myPower - theirPower);
 	var menLost = Math.round(player.armies / diffInPower * 3);
 	if (theirPower > myPower) {
@@ -158,7 +158,6 @@ function invadeModal() {
     $('#invadeModal .modal-footer').html('<a href="#" class="btn" data-dismiss="modal">Cancel</a> <a href="#" onclick="invadeRegion(' + selected + ');" class="btn btn-primary" >Invade</a>');
 
     $('#invadeModal').modal('show');
-    //$('#invadeModal .btn-success,#modal .btn-danger').click();
 }
 
 function initialize() {
