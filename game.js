@@ -11,7 +11,7 @@ var map, addP, json, selected = -1,
         if (confirm('Are you sure?')) {
             localStorage.removeItem('saveGame');
             localStorage.removeItem('newGame');
-            window.location = 'index.html';
+            window.location = 'index';
         }
     },
     build = function (event) {
@@ -123,7 +123,7 @@ function invadeRegion(toInvade) {
 	var theirPower = json[selected].armies;
 	var diffInPower = Math.abs(myPower - theirPower);
 	var menLost = Math.round(player.armies / diffInPower * 3);
-	if (theirPower + Math.round(Math.random * 6) - 3 > myPower) {
+	if (theirPower + Math.round(Math.random() * 6) - 3 > myPower) {
 		menLost *= 4;
 		menLost += Math.floor(Math.random()*5);
 		$("#invadeModal .alert").addClass('alert-error');
