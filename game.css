@@ -11,13 +11,13 @@ body {
     overflow: hidden;
 }
 .hide {
-    display: none
+    display: none;
 }
 #map_canvas {
-    height: 100%
+    height: 100%;
 }
 i {
-    text-shadow: none !important
+    text-shadow: none !important;
 }
 #bottom_menu {
     height: 36px;
@@ -37,18 +37,16 @@ i {
     z-index: 50;
 }
 a.button {
-    text-align: right
+    text-align: right;
 }
 #bottom_menu .btn {
     border: none;
-    border-left: 1px solid rgba(255,255,255,0.25);
     background: none;
-    box-shadow: inset 1px 0 0 rgba(0,0,0,0.25);
     border-radius: 0;
     padding-left: 4px !important;
 }
 #bottom_menu .btn:hover {
-    text-decoration: underline !important
+    text-decoration: underline !important;
 }
 #playername {
     font-weight: bold;
@@ -74,7 +72,7 @@ a.button {
     overflow: hidden;
 }
 #sidebar h1 {
-    height: 78px
+    height: 78px;
 }
 #stats {
     width: 100%;
@@ -83,7 +81,7 @@ a.button {
     color: #fff;
 }
 #stats ul {
-    margin-left: 10px
+    margin-left: 10px;
 }
 #stats li {
     list-style: none;
@@ -105,12 +103,6 @@ a.button:visited {
     border-radius: 5px;
     background: #fff;
 }
-a.button:visited {
-    color: #000
-}
-a.button:hover {
-    colour: #F00
-}
 .sideB {
     display: block;
     margin: 5px;
@@ -121,10 +113,10 @@ a.button:hover {
     box-shadow: 0 -1px 0 0 rgba(0,0,0,0.25);
 }
 .sideB:hover {
-    background: #ddd
+    background: #ddd;
 }
 .sideB:active {
-    box-shadow: none
+    box-shadow: none;
 }
 #stats li,
 #stats ul {
@@ -143,13 +135,13 @@ a.button:hover {
     padding-left: 5px;
 }
 a {
-    text-decoration: none
+    text-decoration: none;
 }
 #bars {
-    margin: 5px 0 20px 0
+    margin: 5px 0 20px 0;
 }
 #bars li {
-    cursor: pointer
+    cursor: pointer;
 }
 #bars li:hover i.icon-plus {
     color: #0d0
@@ -245,10 +237,4 @@ a {
 }
 #invadeModal .alert:not(.alert-error):not(.alert-success) {
     display: none
-}
-#sharescore {
-    left: 0px;
-    bottom: 0px;
-    border-left: 5px;
-    border-bottom: 5px;
 }
