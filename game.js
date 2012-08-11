@@ -123,7 +123,7 @@ function invadeRegion(toInvade) {
 	var theirPower = json[selected].armies;
 	var diffInPower = Math.abs(myPower - theirPower);
 	var menLost = Math.round(player.armies / diffInPower * 3);
-	if (theirPower + Math.round(Math.random() * 6) - 3 > myPower) {
+	if (theirPower + Math.round(Math.random() * 6) - 3 > myPower * 0.8) {
 		menLost *= 4;
 		menLost += Math.floor(Math.random()*5);
 		$("#invadeModal .alert").addClass('alert-error');
