@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -8,19 +7,23 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
     overflow: hidden;
 }
-.hide{
-	display:none;
+.hide {
+    display: none
 }
-#map_canvas { height: 100% }
-i { text-shadow: none !important }
+#map_canvas {
+    height: 100%
+}
+i {
+    text-shadow: none !important
+}
 #bottom_menu {
     height: 36px;
-    background-image: -moz-linear-gradient(bottom, #888 0%, #fff 100%);
-    background-image: -webkit-linear-gradient(bottom, #888 0%, #fff 100%);
-    background-image: linear-gradient(bottom, #888 0%, #fff 100%);
+    background-image: -moz-linear-gradient(bottom,#888 0%,#fff 100%);
+    background-image: -webkit-linear-gradient(bottom,#888 0%,#fff 100%);
+    background-image: linear-gradient(bottom,#888 0%,#fff 100%);
     position: absolute;
     bottom: 0px;
     padding: 0;
@@ -33,7 +36,9 @@ i { text-shadow: none !important }
     box-shadow: 0 -6px 8px -6px #555;
     z-index: 50;
 }
-a.button { text-align: right }
+a.button {
+    text-align: right
+}
 #bottom_menu .btn {
     border: none;
     border-left: 1px solid rgba(255,255,255,0.25);
@@ -42,14 +47,13 @@ a.button { text-align: right }
     border-radius: 0;
     padding-left: 4px !important;
 }
-    #bottom_menu .btn:hover {
-    text-decoration: underline !important;
+#bottom_menu .btn:hover {
+    text-decoration: underline !important
 }
-
-#playername{
-	font-weight: bold;
-	font-size: 1.3em;
-	width: 150px;
+#playername {
+    font-weight: bold;
+    font-size: 1.3em;
+    width: 150px;
     text-overflow: ellipsis;
     overflow: hidden;
 }
@@ -69,56 +73,58 @@ a.button { text-align: right }
     text-overflow: ellipsis;
     overflow: hidden;
 }
-    #sidebar h1 { height: 78px }
+#sidebar h1 {
+    height: 78px
+}
 #stats {
     width: 100%;
     height: 50%;
     top: 0;
     color: #fff;
 }
-    #stats ul { margin-left: 10px }
-    #stats li {
-        list-style: none;
-        font-size: 14px;
-    }
-    #stats h1 {
-        margin: 0;
-        font-weight: bold;
-        padding-bottom: 5px;
-        margin-bottom: 10px;
-
-        box-shadow: inset 0 -1px 0 0 rgba(0,0,0,0.25);
-        border-bottom: 1px solid rgba(255,255,255,0.15);
-    }
-a.button:link, a.button:visited {
+#stats ul {
+    margin-left: 10px
+}
+#stats li {
+    list-style: none;
+    font-size: 14px;
+}
+#stats h1 {
+    margin: 0;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    box-shadow: inset 0 -1px 0 0 rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+a.button:link,
+a.button:visited {
     color: #000;
     text-decoration: none;
     padding: 4px;
     border-radius: 5px;
     background: #fff;
 }
-a.button:visited{
-	color: #000;
+a.button:visited {
+    color: #000
 }
-
 a.button:hover {
-	colour: #F00;
+    colour: #F00
 }
-
 .sideB {
     display: block;
     margin: 5px;
     margin-left: 0;
     border-radius: 5px;
     margin-top: 5px;
-    border:  none;
+    border: none;
     box-shadow: 0 -1px 0 0 rgba(0,0,0,0.25);
 }
 .sideB:hover {
-    background: #ddd;
+    background: #ddd
 }
 .sideB:active {
-    box-shadow: none;
+    box-shadow: none
 }
 #stats li,
 #stats ul {
@@ -136,25 +142,26 @@ a.button:hover {
     position: relative;
     padding-left: 5px;
 }
-a{
-	text-decoration: none;
+a {
+    text-decoration: none
 }
 #bars {
-    margin: 5px 0 20px 0;
+    margin: 5px 0 20px 0
 }
 #bars li {
-    cursor: pointer;
+    cursor: pointer
 }
 #bars li:hover i.icon-plus {
-    color: #0d0;
+    color: #0d0
 }
 #bars li:hover i.icon-minus {
-    color: #f50000;
+    color: #f50000
 }
 #bars li:hover i.icon-bolt {
-    color: #fd0;
+    color: #fd0
 }
-#bars li i.icon-plus, #bars li i.icon-bolt:last-child {
+#bars li i.icon-plus,
+#bars li i.icon-bolt:last-child {
     position: absolute;
     right: 10px;
 }
@@ -170,7 +177,6 @@ a{
     border-radius: 3px;
     border-top: 1px solid rgba(0,0,0,0.15);
 }
-
 .bar span {
     background: #fff;
     height: 100%;
@@ -178,16 +184,16 @@ a{
     border-radius: 3px;
 }
 #bars li:hover .bar span {
-    background: #ddd;
+    background: #ddd
 }
-#buildBox{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	background: rgba(255,255,255,0.75);
-	display: none;
+#buildBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.75);
+    display: none;
 }
 #buildMenu {
     width: 600px;
@@ -203,18 +209,19 @@ a{
     border: 1px solid #999;
 }
 .modal-body td {
-    background-image: -moz-linear-gradient(bottom, #ccc 0%, #eee 100%);
-    background-image: -webkit-linear-gradient(bottom, #ccc 0%, #eee 100%);
-    background-image: linear-gradient(bottom, #ccc 0%, #eee 100%);
+    background-image: -moz-linear-gradient(bottom,#ccc 0%,#eee 100%);
+    background-image: -webkit-linear-gradient(bottom,#ccc 0%,#eee 100%);
+    background-image: linear-gradient(bottom,#ccc 0%,#eee 100%);
 }
-.modal-body td:first-child, .modal-body td:last-child {
-    border-radius: 5px;
+.modal-body td:first-child,
+.modal-body td:last-child {
+    border-radius: 5px
 }
 .modal-body td:first-child .btn {
-    margin-right: -2px;
+    margin-right: -2px
 }
 .modal-body td:last-child .btn {
-    margin-left: -2px;
+    margin-left: -2px
 }
 .modal-body td:nth-child(2) {
     padding: 0 5px 0 5px;
@@ -231,18 +238,17 @@ a{
     font-size: 16px;
 }
 .modal-body td .btn-success {
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px
 }
 .modal-body td .btn-danger {
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0
 }
-#invadeModal .alert:not(.alert-error):not(.alert-success){
-	display: none;
+#invadeModal .alert:not(.alert-error):not(.alert-success) {
+    display: none
 }
-
 #sharescore {
-	left: 0px;
-	bottom: 0px;
-	border-left: 5px;
-	border-bottom: 5px;	
+    left: 0px;
+    bottom: 0px;
+    border-left: 5px;
+    border-bottom: 5px;
 }
