@@ -239,3 +239,10 @@ a{
 #invadeModal .alert:not(.alert-error):not(.alert-success){
 	display: none;
 }
+
+#sharescore {
+	left: 0px;
+	bottom: 0px;
+	border-left: 5px;
+	border-bottom: 5px;	
+}
