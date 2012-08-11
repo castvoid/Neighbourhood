@@ -169,6 +169,10 @@ input{
 			text-align: center;
 }
 
+#socialbox {
+	padding-left: 5px;
+	padding-top: 5px;
+}
 </style>
 </head>
 <body>
@@ -198,11 +202,16 @@ input{
 	</tr>
 </table>
 <footer>A game by Harry, Chris, Hal & Pete for <a href="http://youngrewiredstate.org">YRS2012</a></footer>
+<div id="socialbox">
+<a href="https://twitter.com/PlayNHGame" class="twitter-follow-button" data-show-count="false">Follow @PlayNHGame</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
-$("td.region").click(function(a){if($("input").val()!=""){if(localStorage.getItem("saveGame")==null){localStorage.setItem("newGame",JSON.stringify({name:$("input").val(),region:$(this).data("id")}));window.location="game.html"}else{if(confirm("Creating a new game will overwrite your saved game. Do you want to continue?")){localStorage.setItem("newGame",JSON.stringify({name:$("input").val(),region:$(this).data("id")}));window.location="game"}}}else{alert("Your name cannot be blank.")}});if(typeof localStorage.getItem("saveGame")=="string"){$(".continue.nosave").removeClass("nosave");$(".continue").click(function(){window.location="game"})}var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-34011898-1"]);_gaq.push(["_trackPageview"]);(function(){var a=document.createElement("script");a.type="text/javascript";a.async=true;a.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})()
+$("td.region").click(function(a){if($("input").val()!=""){if(localStorage.getItem("saveGame")===null){localStorage.setItem("newGame",JSON.stringify({name:$("input").val(),region:$(this).data("id")}));window.location="game"}else{if(confirm("Creating a new game will overwrite your saved game. Do you want to continue?")){localStorage.setItem("newGame",JSON.stringify({name:$("input").val(),region:$(this).data("id")}));window.location="game"}}}else{alert("Your name cannot be blank.")}});if(typeof localStorage.getItem("saveGame")=="string"){$(".continue.nosave").removeClass("nosave");$(".continue").click(function(){window.location="game"})}var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-34011898-1"]);_gaq.push(["_trackPageview"]);(function(){var a=document.createElement("script");a.type="text/javascript";a.async=true;a.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})()
 </script>
 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://neighbourhood.hackit.me.uk" data-text="Play this game!" data-via="PlayNHGame" data-related="PlayNHGame" data-hashtags="NHGame">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+</div>
 </body>
 </html>
