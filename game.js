@@ -5,7 +5,7 @@ var map, addP, json, selected = -1,
         armies: 0,
         happinessAvg: 0,
         regions: 0,
-        controlOf: [false, false, false, false, false, false, false, false, false, false, false, false]
+        controlOf: [0,0,0,0,0,0,0,0,0,0,0,0]
     },
     eraseGame = function () {
         if (confirm('Are you sure?')) {
@@ -14,6 +14,9 @@ var map, addP, json, selected = -1,
             window.location = 'index';
         }
     },
+    modalText = function(){
+        return '<p>What would you like to build/destroy in ' + json[selected].name + '? There are:</p><table><tr class="bb"><td><a href="#" data-e="1" data-b="schools" class="btn btn-mini btn-success">Build school</a></td> <td><strong>' + json[selected].schools + '</strong> Schools</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="schools">Destroy school</a></td></tr><tr class="bb"><td><a href="#" data-e="1" data-b="hospitals" class="btn btn-mini btn-success">Build hospital</a></td><td><strong>' + json[selected].hospitals + '</strong> Hospitals</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="hospitals">Destroy hospital</a></td></tr><tr class="bb"><td><a href="#" data-e="1" data-b="armies" class="btn btn-mini btn-success">Build soldiers</a></td><td><strong>' + json[selected].armies + '</strong> Soldiers</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="armies">Destroy soldiers</a></td></tr></table>';
+    }
     build = function (event) {
     	event.preventDefault();
         e = $(this).data('e');
@@ -25,7 +28,7 @@ var map, addP, json, selected = -1,
 			json[selected][b] += e * buildings[b].amount;
 			e == 1 ? player.money -= buildings[b].cost : player.money -= buildings[b].cost / 4
 			$('#currentmoney').text(player.money);
-			$('#modal .modal-body').html('<p>What would you like to build/destroy in ' + json[selected].name + '? There are:</p><table><tr class="bb"><td><a href="#" data-e="1" data-b="schools" class="btn btn-mini btn-success">Build school</a></td> <td><strong>' + json[selected].schools + '</strong> Schools</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="schools">Destroy school</a></td></tr><tr class="bb"><td><a href="#" data-e="1" data-b="hospitals" class="btn btn-mini btn-success">Build hospital</a></td><td><strong>' + json[selected].hospitals + '</strong> Hospitals</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="hospitals">Destroy hospital</a></td></tr><tr class="bb"><td><a href="#" data-e="1" data-b="armies" class="btn btn-mini btn-success">Build soldiers</a></td><td><strong>' + json[selected].armies + '</strong> Soldiers</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="armies">Destroy soldiers</a></td></tr></table>');
+			$('#modal .modal-body').html(modalText());
 			$('#modal .btn-success,#modal .btn-danger').click(build);   
 			json[selected].happiness = happiness(selected);
 			json[selected].oppression = oppression(selected);
@@ -55,7 +58,7 @@ showStats = function (i) {
 },
 modal = function () {
     $('#modal h3').html(json[selected].name);
-    $('#modal .modal-body').html('<p>What would you like to build/destroy in ' + json[selected].name + '? There are:</p><table><tr class="bb"><td><a href="#" data-e="1" data-b="schools" class="btn btn-mini btn-success">Build school</a></td> <td><strong>' + json[selected].schools + '</strong> Schools</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="schools">Destroy school</a></td></tr><tr class="bb"><td><a href="#" data-e="1" data-b="hospitals" class="btn btn-mini btn-success">Build hospital</a></td><td><strong>' + json[selected].hospitals + '</strong> Hospitals</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="hospitals">Destroy hospital</a></td></tr><tr class="bb"><td><a href="#" data-e="1" data-b="armies" class="btn btn-mini btn-success">Build soldiers</a></td><td><strong>' + json[selected].armies + '</strong> Soldiers</td><td><a href="#" class="btn btn-mini btn-danger" data-e="-1" data-b="armies">Destroy soldiers</a></td></tr></table>');
+    $('#modal .modal-body').html(modalText());
     $('#modal').modal('show');
     $('#modal .btn-success,#modal .btn-danger').click(build);
 },
@@ -122,8 +125,8 @@ function invadeRegion(toInvade) {
 	var myPower = player.armies + Math.ceil((player.armies/20)*(player.regions-1));
 	var theirPower = json[selected].armies;
 	var diffInPower = Math.abs(myPower - theirPower);
-	var menLost = Math.round(player.armies / diffInPower * 3);
-	if (theirPower + Math.round(Math.random() * 6) - 3 > myPower * 0.8) {
+	var menLost = ~~(player.armies / diffInPower * 3);
+	if (theirPower + ~~(Math.random() * 6) - 3 > myPower * 0.8) {
 		menLost *= 4;
 		menLost += Math.floor(Math.random()*5);
 		$("#invadeModal .alert").addClass('alert-error');
@@ -139,7 +142,7 @@ function invadeRegion(toInvade) {
 	}
 	oldArmies = player.armies;
 	player.armies -= menLost;
-	if (player.armies < Math.round(oldArmies / 3)) player.armies =  Math.round(player.armies / 3);
+	if (player.armies < ~~(oldArmies / 3)) player.armies =  ~~(player.armies / 3);
 	if(player.armies < 0) player.armies = 0;
 	update();
 	save();
@@ -235,8 +238,8 @@ function initialize() {
         },
         maxZoom: 8,
         minZoom: 5,
-        panControl: false,
-        streetViewControl: false,
+        panControl: 0,
+        streetViewControl: 0,
         zoomControl: true,
         zoomControlOptions: {
             style: google.maps.ZoomControlStyle.SMALL,
