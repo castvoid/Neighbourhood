@@ -2,182 +2,10 @@
 <html>
 <head>
 <link rel="shortcut icon" href="favicon.ico" type="x/icon" />
-<!--[if IE 5]><meta http-equiv="Refresh" content="0;url=internetexplorer.html"><![endif]-->
-<!--[if IE 6]><meta http-equiv="Refresh" content="0;url=internetexplorer.html"><![endif]-->
-<!--[if IE 7]><meta http-equiv="Refresh" content="0;url=internetexplorer.html"><![endif]-->
 <title>Neighbourhood</title>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
-<style type="text/css">
-*{
-	margin: 0;
-	padding: 0;
-	
-}
-body{
-	font-family: "Helvetica Neue", Helvetica, sans-serif;
-	background: url(images/index_bg.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	list-style: none;
-	color: #fff;
-	-webkit-font-smoothing:antialiased;
-	overflow: hidden;
-}
-@-moz-keyframes pulsate {
-        0% {
-        background: rgba(0,255,0,0.2);
-    }
-    50% {
-        background: rgba(0,100,0,0.2);
-    }
-    100% {
-        background: rgba(0,255,0,0.2);
-    }
-    }
-@-webkit-keyframes pulsate {
-        0% {
-        background: rgba(0,255,0,0.2);
-    }
-    50% {
-        background: rgba(0,100,0,0.2);
-    }
-    100% {
-        background: rgba(0,255,0,0.2);
-    }
-    }
-@-o-keyframes pulsate {
-        0% {
-        background: rgba(0,255,0,0.2);
-    }
-    50% {
-        background: rgba(0,100,0,0.2);
-    }
-    100% {
-        background: rgba(0,255,0,0.2);
-    }
-    }
-@keyframes pulsate {
-        0% {
-        background: rgba(0,255,0,0.2);
-    }
-    50% {
-        background: rgba(0,100,0,0.2);
-    }
-    100% {
-        background: rgba(0,255,0,0.2);
-    }
-    }
-h1{
-	font-size: 70px;
-	position: absolute;
-	top:50%;
-	left:50%;
-	width:500px;
-	margin-top: -300px;
-	margin-left: -250px;
-	-moz-text-shadow: 0px 5px 3px #888;
-		-webkit-text-shadow: 0px 5px 3px #888;
-			text-shadow: 0px 5px 3px #888;
-}
-table#regions{
-	position: absolute;
-	top:50%;
-	left:50%;
-	width:600px;
-	height:400px;
-	margin-left: -300px;
-	margin-top:-200px;
-	font-weight: bold;
-	overflow: hidden;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select:none;
-
-}
-
-table#regions  td{
-	width:150px;
-	height:100px;
-	text-align: center;
-	border-bottom: 1px solid rgba(51,51,51,.5);
-	border-right: 1px solid rgba(51,51,51,.5);
-	background: rgba(0,0,0,.1);
-	padding:10px;
-	box-sizing: border-box;
-	-moz-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
-		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
-			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
-				
-}
-    table#regions td:not(#help) {
-        cursor: pointer;
-    }
-    table#regions td:not(.continue):not(#help):hover {
-        background: rgba(0,180,200,.1);
-    }
-table#regions tr:last-child td{
-	border-bottom:none;
-}
-table#regions tr td:last-child{
-	border-right: none;
-}
-td{
-	-webkit-transition: background 0.2s;
-	-moz-transition:background .2s;
-	transition:background .2s;
-}
-footer{
-	width:500px;
-	position: absolute;
-	bottom:2px;
-	left:50%;
-	margin-left: -250px;
-	text-align: center;
-	font-weight: bold;
-	font-size: 13px;
-	-moz-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
-		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
-			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
-}
-a {
-	color: #fff;
-}
-
-
-.continue.nosave {
-	cursor: default !important;
-	opacity: 0.5;
-}
-.continue:not(.nosave){
-	-webkit-animation: pulsate 2s infinite;
-    -moz-animation: pulsate 2s infinite;
-    -o-animation: pulsate 2s infinite;
-    animation: pulsate 2s infinite;
-}
-input{
-	padding:5px;
-	border: none;
-	background: rgba(0,0,0,.1);
-	font-size: 16px;
-	color: #fff;
-	font-weight: bold;
-	font-family: "Helvetica Neue", Helvetica, sans-serif;
-		-webkit-font-smoothing:antialiased;
-			-moz-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
-		-webkit-text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
-			text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
-			margin-top: 3px;
-			text-align: center;
-}
-
-#socialbox {
-	padding-left: 5px;
-	padding-top: 5px;
-}
-</style>
+<link href="css/home.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <h1>Neighbourhood</h1>
@@ -211,11 +39,8 @@ input{
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
-$("td.region").click(function(a){if($("input").val()!=""){if(localStorage.getItem("saveGame")===null){localStorage.setItem("newGame",JSON.stringify({name:$("input").val(),region:$(this).data("id")}));window.location="game"}else{if(confirm("Creating a new game will overwrite your saved game. Do you want to continue?")){localStorage.setItem("newGame",JSON.stringify({name:$("input").val(),region:$(this).data("id")}));window.location="game"}}}else{alert("Your name cannot be blank.")}});if(typeof localStorage.getItem("saveGame")=="string"){$(".continue.nosave").removeClass("nosave");$(".continue").click(function(){window.location="game"})}var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-34011898-1"]);_gaq.push(["_trackPageview"]);(function(){var a=document.createElement("script");a.type="text/javascript";a.async=true;a.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})()
+$("td.region").click(function(a){if($("input").val()!=""){if(localStorage.getItem("saveGame")===null){localStorage.setItem("newGame",JSON.stringify({name:$("input").val(),region:$(this).data("id")}));window.location="game"}else{if(confirm("Creating a new game will overwrite your saved game. Do you want to continue?")){localStorage.setItem("newGame",JSON.stringify({name:$("input").val(),region:$(this).data("id")}));window.location="game"}}}else{alert("Your name cannot be blank.")}});if(typeof localStorage.getItem("saveGame")=="string"){$(".continue.nosave").removeClass("nosave");$(".continue").click(function(){window.location="game"})}
 </script>
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://neighbourhood.hackit.me.uk" data-text="Play this game!" data-via="PlayNHGame" data-related="PlayNHGame" data-hashtags="NHGame">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fneighbourhood.hackit.me.uk%2F&amp;send=false&amp;layout=button_count&amp;width=auto&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=341855425866664" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
 </div>
 </body>
 </html>
