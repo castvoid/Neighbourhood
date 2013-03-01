@@ -1,0 +1,5 @@
+Make data external
+Remove tracking code
+Refractor game JS
+Implement msgpack on data?
+Update readme
