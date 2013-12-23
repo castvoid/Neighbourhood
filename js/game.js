@@ -9,7 +9,7 @@ player = {
 },
 initialize = function () {
 
-    if (JSON.parse(localStorage.getItem('neighbourhoodData')).paths[0][0][0] == 1.7){
+    if (typeof localStorage.getItem('neighbourhoodData') === 'undefined' && JSON.parse(localStorage.getItem('neighbourhoodData')).paths[0][0][0] == 1.7){
         var data = JSON.parse(localStorage.getItem('neighbourhoodData'));
     }else{
         var data;
